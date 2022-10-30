@@ -31,7 +31,8 @@ branches:
 #       enforce_admins: true
 #       required_linear_history: true
 #       restrictions: null
-  - name: main
+branches:
+  - name: master
     protection:
       required_pull_request_reviews: null
       required_status_checks: null
