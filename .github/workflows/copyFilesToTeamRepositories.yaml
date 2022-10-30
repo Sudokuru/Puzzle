@@ -47,7 +47,7 @@ jobs:
       uses: derberg/copy-files-to-other-repositories@v1.0.0
       with:
         github_token: ${{ secrets.GH_TOKEN }}
-        patterns_to_include: ./github/settings.yml
+        patterns_to_include: .github/settings.yml
         committer_username: asyncapi-bot
         committer_email: info@asyncapi.io
         commit_message: "chore: update respository settings"
