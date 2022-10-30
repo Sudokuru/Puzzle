@@ -4,7 +4,8 @@ on:
   push:
     branches: [ main ]
     paths:
-      - '.github/workflows/**'
+      - '.github/**'
+      - '.github/settings.yml'
       - 'License.md'
       - 'openAPIs/**'
   workflow_dispatch:
@@ -18,7 +19,7 @@ on:
 jobs:
 
   # This replicates all Licenses to repos with the production topic
-  replicate_coc:
+  replicate_license:
       name: Replicate License in all repositories
       runs-on: ubuntu-latest
       environment: copyFiles
@@ -34,9 +35,26 @@ jobs:
           committer_email: info@asyncapi.io
           commit_message: "chore: update License.md"
           topics_to_include: production
+          
+  replicate_repository_settings:
+    name: Replicate Repository Settings in all repositories
+    runs-on: ubuntu-latest
+    environment: copyFiles
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Replicating file
+      uses: derberg/copy-files-to-other-repositories@v1.0.0
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
+        patterns_to_include: .github/settings.yml
+        committer_username: asyncapi-bot
+        committer_email: info@asyncapi.io
+        commit_message: "chore: update respository settings"
+        topics_to_include: production
 
   # This replicates all openAPIs to repos with the openapi3 topic
-  replicate_contributing:
+  replicate_openAPIs:
       name: Replicate openAPIs to all repositories
       runs-on: ubuntu-latest
       environment: copyFiles
