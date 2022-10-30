@@ -1,9 +1,7 @@
 repository:
   # See https://docs.github.com/en/rest/reference/repos#update-a-repository for all available settings.
   
-  name: Backend
-  
-  private: false
+  private: true
 
   # Either `true` to enable issues for this repository, `false` to disable them.
   has_issues: true
