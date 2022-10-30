@@ -52,6 +52,7 @@ jobs:
         committer_email: info@asyncapi.io
         commit_message: "chore: update respository settings"
         topics_to_include: production
+        destination: .github
 
   # This replicates all openAPIs to repos with the openapi3 topic
   replicate_openAPIs:
