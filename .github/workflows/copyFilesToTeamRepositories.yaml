@@ -35,8 +35,7 @@ jobs:
           commit_message: "chore: update License.md"
           topics_to_include: production
 
-  # This replicates all openAPIs to repos with the production topic
-  # May create seperate topic called openAPIs and change this later. 
+  # This replicates all openAPIs to repos with the openapi3 topic
   replicate_contributing:
       name: Replicate openAPIs to all repositories
       runs-on: ubuntu-latest
@@ -52,7 +51,7 @@ jobs:
           committer_username: asyncapi-bot
           committer_email: info@asyncapi.io
           commit_message: "chore: update openAPIs"
-          topics_to_include: production
+          topics_to_include: openapi3
 
 #   replicate_go_workflows:
 #       name: Replicate workflows for Go projects
