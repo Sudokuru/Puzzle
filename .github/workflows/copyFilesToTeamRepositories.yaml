@@ -71,7 +71,7 @@ jobs:
       with:
         github_token: ${{ secrets.GH_TOKEN }}
         patterns_to_include: .github
-        patterns_to_ignore: .github/workflows/copyFilesToTeamRepositories.yml,github/workflows/codeql-analysis.yml
+        patterns_to_ignore: .github/workflows/copyFilesToTeamRepositories.yaml,github/workflows/codeql-analysis.yml
         committer_username: asyncapi-bot
         committer_email: info@asyncapi.io
         commit_message: "chore: update respository settings"
