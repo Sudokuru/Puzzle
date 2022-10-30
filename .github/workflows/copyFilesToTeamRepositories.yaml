@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - '.github/settings.yml'
+      - 'settings.yml'
       - 'License.md'
       - 'openAPIs/**'
   workflow_dispatch:
