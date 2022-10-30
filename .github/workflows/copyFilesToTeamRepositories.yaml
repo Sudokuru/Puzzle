@@ -34,48 +34,6 @@ jobs:
           committer_email: info@asyncapi.io
           commit_message: "chore: update License.md"
           topics_to_include: production
-          
-#   replicate_repository_settings:
-#     name: Replicate Repository Settings in all repositories
-#     runs-on: ubuntu-latest
-#     environment: copyFiles
-#     steps:
-#       - name: Checkout repository
-#         uses: actions/checkout@v2
-#       - uses: sator-imaging/Copy-to-Another-Repository@v1
-#         with:
-#           # required parameters
-#           target-filepath: '.github/settings.yml'      # file path to copy
-#           output-branch: 'main'   # branch name to create pull request
-#           output-repo: 'Sudokuru/AnotherRepository'
-#           git-token: ${{ secrets.TOKEN_TO_ACCESS_OUTPUT_REPO }}
-          
-#           # optional parameters and default values
-#           commit-message-prefix: '[actions] '   # followed by source repository and file name
-#           output-directory: "${{ github.event.repository.name }}"   # copy file into sub directory
-#           pr-branch-prefix: "actions/${{ github.event.repository.name }}"   # branch name prefix followed by date and time
-#           pr-title: "GitHub Actions: ${{ github.event.repository.name }}"   # followed by source repository and file name
-#           pr-message: "${{ github.workflow }} on ${{ github.server_url }}/${{ github.repository }}"   # followed by action repository
-#           git-name: "github-actions[bot]"   # your name can be set by ${{ github.actor }}
-#           git-email: 'github-actions[bot]@users.noreply.github.com'   # associated user icon is shown in commit page
-          
-  replicate_repository_settings:
-    name: Replicate Repository Settings in all repositories
-    runs-on: ubuntu-latest
-    environment: copyFiles
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - name: Replicating file
-      uses: derberg/copy-files-to-other-repositories@v1.0.0
-      with:
-        github_token: ${{ secrets.GH_TOKEN }}
-        patterns_to_include: .github
-        patterns_to_ignore: .github/workflows/copyFilesToTeamRepositories.yaml,.github/workflows/codeql-analysis.yml
-        committer_username: asyncapi-bot
-        committer_email: info@asyncapi.io
-        commit_message: "chore: update respository settings"
-        topics_to_include: production
 
   # This replicates all openAPIs to repos with the openapi3 topic
   replicate_openAPIs:
