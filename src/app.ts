@@ -18,7 +18,7 @@ app.use(expressApp.json());
 
 const baseRoute: string = "/api/v1";
 
-const globalRouter = require('./app/routes/global.router');
+const globalRouter = require('./app/routes/routes');
 app.use(baseRoute, globalRouter);
 
 app.use(errorHandler);
