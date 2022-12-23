@@ -29,7 +29,6 @@ const PuzzleModel = require("../models/db.model");
 
 // Upload book to database
 async function upload(book) {
-    console.log(book)
     await module.exports.connectToDB();
     try{
         return await PuzzleModel.insertMany(book, { ordered: false });

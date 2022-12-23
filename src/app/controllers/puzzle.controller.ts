@@ -5,7 +5,6 @@ const Puzzle = require('../models/db.model');
 
 async function create(req, res, next) {
     try {
-        console.log(req.body);
         res.json(await puzzleService.create(req.body));
 
     } catch(err) {
