@@ -1,10 +1,11 @@
 import { sanitizeErrorMessage} from "../models/error.model";
 
 const puzzleService = require('../services/puzzle.service');
-const Puzzle = require('../models/puzzle.model');
+const Puzzle = require('../models/db.model');
 
 async function create(req, res, next) {
     try {
+        res.json(await puzzleService.create(res.body));
 
     } catch(err) {
         console.log(err);
