@@ -29,14 +29,10 @@ const PuzzleModel = require("../models/db.model");
 
 // Upload book to database
 async function upload(book) {
+    console.log(book)
     await module.exports.connectToDB();
     try{
-        return await PuzzleModel.insertMany(
-            [
-                book
-            ],
-            { ordered: false }
-        );
+        return await PuzzleModel.insertMany(book, { ordered: false });
     } catch(err){
         console.log(err)
         throw new CustomError(CustomErrorEnum.DATABASE_REQUEST_REJECTED, 500);

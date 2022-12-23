@@ -22,6 +22,6 @@ const PuzzleModelSchema = new Schema<Puzzle>({
     calendarDate: { type: Date, required: false },
     imageUrl: { type: String, required: false },
     description: { type: String, required: false }
-});
+}, { _id: false  });
 
 module.exports = mongoose.model("PuzzleModel", PuzzleModelSchema);
