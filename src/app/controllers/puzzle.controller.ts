@@ -16,7 +16,7 @@ async function create(req, res, next) {
 
 async function search(req, res, next) {
     try {
-
+        res.json(await puzzleService.search(req.query));
     } catch(err) {
         console.log(err);
         sanitizeErrorMessage(err);
@@ -36,7 +36,7 @@ async function update(req, res, next) {
 
 async function remove(req, res, next) {
     try {
-
+        res.json(await puzzleService.remove(req.query));
     } catch(err) {
         console.log(err);
         sanitizeErrorMessage(err);

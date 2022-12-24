@@ -38,4 +38,36 @@ async function upload(book) {
     }
 }
 
-module.exports = { upload, connectToDB };
+async function querySearchAND(filterValues) {
+    let res;
+    await module.exports.connectToDB();
+    try{
+        // await means that this async function won't return until it finishes
+        res = await PuzzleModel.find({ $and : filterValues });
+    } catch (err){
+        console.log(err);
+        throw new CustomError(CustomErrorEnum.DATABASE_REQUEST_REJECTED, 500);
+    }
+    if (res.length == 0){
+        throw new CustomError(CustomErrorEnum.PUZZLE_NOT_FOUND, 404);
+    }
+    return res;
+}
+
+async function queryDeleteAND(filterValues) {
+    let res;
+    await module.exports.connectToDB();
+    try{
+        // await means that this async function won't return until it finishes
+        res = await PuzzleModel.deleteMany({ $and : filterValues });
+    } catch (err){
+        console.log(err);
+        throw new CustomError(CustomErrorEnum.DATABASE_REQUEST_REJECTED, 500);
+    }
+    if (res.length == 0){
+        throw new CustomError(CustomErrorEnum.PUZZLE_NOT_FOUND, 404);
+    }
+    return res;
+}
+
+module.exports = { upload, connectToDB, querySearchAND: querySearchAND, queryDeleteAND: queryDeleteAND };
