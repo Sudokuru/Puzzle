@@ -2,7 +2,6 @@ import { Schema } from 'mongoose';
 import * as mongoose from "mongoose";
 import { Puzzle } from "./interfaces";
 
-
 mongoose.set({ debug: true, autoCreate: true})
 
 const PuzzleModelSchema = new Schema<Puzzle>({
