@@ -25,25 +25,25 @@ async function connectToDB() {
     }
 }
 
-const PuzzleModel = require("../models/db.puzzle.model");
+//const PuzzleModel = require("../models/db.puzzle.model");
 
-// Upload book to database
-async function upload(book) {
+// Upload puzzles to database
+async function upload(puzzles, collection) {
     await module.exports.connectToDB();
     try{
-        return await PuzzleModel.insertMany(book, { ordered: false });
+        return await collection.insertMany(puzzles, { ordered: false });
     } catch(err){
         console.log(err)
         throw new CustomError(CustomErrorEnum.DATABASE_REQUEST_REJECTED, 500);
     }
 }
 
-async function querySearchAND(filterValues) {
+async function querySearchAND(filterValues, collection) {
     let res;
     await module.exports.connectToDB();
     try{
         // await means that this async function won't return until it finishes
-        res = await PuzzleModel.find({ $and : filterValues });
+        res = await collection.find({ $and : filterValues });
     } catch (err){
         console.log(err);
         throw new CustomError(CustomErrorEnum.DATABASE_REQUEST_REJECTED, 500);
@@ -54,12 +54,12 @@ async function querySearchAND(filterValues) {
     return res;
 }
 
-async function queryDeleteAND(filterValues) {
+async function queryDeleteAND(filterValues, collection) {
     let res;
     await module.exports.connectToDB();
     try{
         // await means that this async function won't return until it finishes
-        res = await PuzzleModel.deleteMany({ $and : filterValues });
+        res = await collection.deleteMany({ $and : filterValues });
     } catch (err){
         console.log(err);
         throw new CustomError(CustomErrorEnum.DATABASE_REQUEST_REJECTED, 500);
