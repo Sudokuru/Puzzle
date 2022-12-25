@@ -25,7 +25,7 @@ async function connectToDB() {
     }
 }
 
-const PuzzleModel = require("../models/db.model");
+const PuzzleModel = require("../models/db.puzzle.model");
 
 // Upload book to database
 async function upload(book) {

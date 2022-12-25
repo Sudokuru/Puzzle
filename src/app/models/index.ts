@@ -10,6 +10,6 @@ const db = {
 };
 db.mongoose = mongoose;
 db.url = dbConfig.url;
-db.puzzle = require("./db.model")(mongoose);
+db.puzzle = require("./db.puzzle.model")(mongoose);
 
 module.exports = db;

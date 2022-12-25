@@ -1,7 +1,7 @@
 import { sanitizeErrorMessage} from "../models/error.model";
 
 const puzzleService = require('../services/puzzle.service');
-const Puzzle = require('../models/db.model');
+const Puzzle = require('../models/db.puzzle.model');
 
 async function create(req, res, next) {
     try {

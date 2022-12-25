@@ -24,4 +24,4 @@ const PuzzleModelSchema = new Schema<Puzzle>({
     description: { type: String, required: false }
 }, { _id: false  });
 
-module.exports = mongoose.model("PuzzleModel", PuzzleModelSchema);
+module.exports = mongoose.model("PuzzleModel", PuzzleModelSchema, 'puzzle');
