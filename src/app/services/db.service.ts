@@ -28,7 +28,7 @@ async function connectToDB() {
 //const PuzzleModel = require("../models/db.puzzle.model");
 
 // Upload puzzles to database
-async function upload(puzzles, collection) {
+async function queryUpload(puzzles, collection) {
     await module.exports.connectToDB();
     try{
         return await collection.insertMany(puzzles, { ordered: false });
@@ -70,4 +70,4 @@ async function queryDeleteAND(filterValues, collection) {
     return res;
 }
 
-module.exports = { upload, connectToDB, querySearchAND: querySearchAND, queryDeleteAND: queryDeleteAND };
+module.exports = { queryUpload: queryUpload, connectToDB, querySearchAND: querySearchAND, queryDeleteAND: queryDeleteAND };

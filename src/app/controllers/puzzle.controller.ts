@@ -1,7 +1,6 @@
 import { sanitizeErrorMessage} from "../models/error.model";
 
 const puzzleService = require('../services/puzzle.service');
-const Puzzle = require('../models/db.puzzle.model');
 
 async function create(req, res, next) {
     try {
@@ -44,4 +43,4 @@ async function remove(req, res, next) {
     }
 }
 
-module.exports = {create, search, update, remove }
+module.exports = {create: create, search: search, update: update, remove: remove }

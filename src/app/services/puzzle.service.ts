@@ -3,7 +3,7 @@ const dataBase = require ('./db.service');
 const PuzzleModel = require("../models/db.puzzle.model");
 
 async function Create(puzzles) {
-    return await dataBase.upload(puzzles, PuzzleModel);
+    return await dataBase.queryUpload(puzzles, PuzzleModel);
 }
 
 async function Search(puzzles) {
