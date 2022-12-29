@@ -34,7 +34,7 @@ export interface Puzzle {
     description?: string
 }
 
-export interface UserInfo {
+export interface UserProfile {
     userId: string,
     userEmail: string,
     userName: string,
@@ -52,7 +52,7 @@ export interface UserInfo {
     }
 }
 
-export interface UserGameInfo {
+export interface UserGameStatistics {
     userId: string,
     gameStatistics: {
         averageSolveTime: number,
@@ -66,7 +66,7 @@ export interface UserGameInfo {
     }
 }
 
-export interface UserGameSearchInfo {
+export interface UserGameSearchFilters {
     userId: string,
     gameSearchPreferences: {
         defaultSearchType: string,

@@ -1,10 +1,10 @@
 import { Schema } from 'mongoose';
 import * as mongoose from "mongoose";
-import { UserInfo, UserGameInfo, UserGameSearchInfo } from "./interfaces";
+import { UserProfile, UserGameStatistics, UserGameSearchFilters } from "./interfaces";
 
 mongoose.set({ debug: true, autoCreate: true})
 
-const UserInfoSchema = new Schema<UserInfo>({
+const UserProfileSchema = new Schema<UserProfile>({
     userId: { type: String, required: true, unique: true },
     userEmail: { type: String, required: true, unique: true },
     userName: { type: String, required: true },
@@ -22,7 +22,7 @@ const UserInfoSchema = new Schema<UserInfo>({
     },
 });
 
-const UserGameInfoSchema = new Schema<UserGameInfo>({
+const UserGameStatisticsSchema = new Schema<UserGameStatistics>({
     userId: { type: String, required: true, unique: true },
     gameStatistics: {
         averageSolveTime: { type: Number, required: true },
@@ -39,7 +39,7 @@ const UserGameInfoSchema = new Schema<UserGameInfo>({
     }
 });
 
-const UserGameSearchInfoSchema = new Schema<UserGameSearchInfo>({
+const UserGameSearchFiltersSchema = new Schema<UserGameSearchFilters>({
     userId: { type: String, required: true, unique: true },
     gameSearchPreferences: {
         defaultSearchType: {type: String, enum: ['auto', 'manual', 'random'], required: true, default: 'auto' },
@@ -55,8 +55,8 @@ const UserGameSearchInfoSchema = new Schema<UserGameSearchInfo>({
     }
 });
 
-let UserInfo = mongoose.model("UserInfo", UserInfoSchema, 'userinfo');
-let UserGameInfo = mongoose.model("UserGameInfo", UserGameInfoSchema, 'userinfo');
-let UserGameSearchInfo = mongoose.model("UserGameSearchInfo", UserGameSearchInfoSchema, 'userinfo');
+let UserInfo = mongoose.model("UserInfo", UserProfileSchema, 'user_info');
+let UserGameInfo = mongoose.model("UserGameInfo", UserGameStatisticsSchema, 'user_info');
+let UserGameSearchInfo = mongoose.model("UserGameSearchInfo", UserGameSearchFiltersSchema, 'user_info');
 
 module.exports = { UserInfo, UserGameInfo, UserGameSearchInfo };

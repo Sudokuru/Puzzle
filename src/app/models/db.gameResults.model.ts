@@ -54,7 +54,7 @@ const userGameHistorySchema = new Schema<userGameHistory>({
 });
 
 
-let UserInProgressGames = mongoose.model("UserInProgressGames", userInProgressGamesSchema, 'gameresults');
-let UserGameHistory = mongoose.model("UserGameHistory", userGameHistorySchema, 'gameresults');
+let UserInProgressGames = mongoose.model("UserInProgressGames", userInProgressGamesSchema, 'user_game_results');
+let UserGameHistory = mongoose.model("UserGameHistory", userGameHistorySchema, 'user_game_results');
 
 module.exports = { UserInProgressGames, UserGameHistory };
