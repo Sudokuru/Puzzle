@@ -1,10 +1,20 @@
-import * as mongoose from "mongoose";
 
-
-interface strategies {
-
+// Helper Interfaces
+interface numWrongCellsPlayedPerStrategy {
+    stratOne: number,
+    stratTwo: number,
+    stratThree: number
 }
 
+interface moves {
+    moveNumber: number,
+    row: number,
+    column: number,
+    value: number,
+    moveTime: number
+}
+
+// mongodb json object interfaces
 export interface Puzzle {
     puzzle: string,
     puzzleSolution: string,
@@ -12,7 +22,7 @@ export interface Puzzle {
         stratOne: number,
         stratTwo: number,
         stratThree: number
-    }
+    },
     fastestSolveTime: number,
     averageSolveTime: number,
     numUsersPlayed: number,
@@ -47,15 +57,12 @@ export interface UserGameInfo {
     gameStatistics: {
         averageSolveTime: number,
         fastestSolveTime: number,
+        averageMoveTime: number,
         numHintsAskedFor: number,
         numWrongCellsPlayed: number,
         numCorrectCellsPlayed: number,
         numGamesPlayed: number,
-        numWrongCellsPlayedPerStrategy: {
-            stratOne: number,
-            stratTwo: number,
-            stratThree: number
-        }
+        numWrongCellsPlayedPerStrategy: numWrongCellsPlayedPerStrategy
     }
 }
 
@@ -73,4 +80,33 @@ export interface UserGameSearchInfo {
             stratThree: boolean
         }
     }
+}
+
+export interface userInProgressGames {
+    userId: string,
+    inProgressGames: [{
+        puzzle: string,
+        currentTime: number,
+        moves: moves[],
+        numHintsAskedFor: number,
+        numWrongCellsPlayed: number,
+        numCorrectCellsPlayed: number,
+        numWrongCellsPlayedPerStrategy: numWrongCellsPlayedPerStrategy
+    }]
+}
+
+export interface userGameHistory {
+    userId: string,
+    gamesPlayed: [{
+        puzzle: string,
+        moves: moves[],
+        numTimesPlayed: number,
+        initialSolveTime: number,
+        fastestSolveTime: number,
+        averageMoveTime: number,
+        numHintsAskedFor: number,
+        numWrongCellsPlayed: number,
+        numCorrectCellsPlayed: number,
+        numWrongCellsPlayedPerStrategy: numWrongCellsPlayedPerStrategy
+    }]
 }
