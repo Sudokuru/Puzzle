@@ -1,4 +1,4 @@
-import { sanitizeErrorMessage} from "../models/error.model";
+import { sanitizeErrorMessage } from "../models/error.model";
 
 const puzzleService = require('../services/puzzle.service');
 
