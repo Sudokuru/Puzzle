@@ -25,16 +25,16 @@ const UserProfileSchema = new Schema<UserProfile>({
 const UserGameStatisticsSchema = new Schema<UserGameStatistics>({
     userId: { type: String, required: true, unique: true },
     gameStatistics: {
-        averageSolveTime: { type: Number, required: true },
-        fastestSolveTime: { type: Number, required: true },
-        numHintsAskedFor: { type: Number, required: true },
-        numWrongCellsPlayed: { type: Number, required: true },
-        numCorrectCellsPlayed: { type: Number, required: true },
-        numGamesPlayed: { type: Number, required: true },
+        averageSolveTime: { type: Number, required: true, default: 0 },
+        fastestSolveTime: { type: Number, required: true, defualt: 0 },
+        numHintsAskedFor: { type: Number, required: true, defualt: 0 },
+        numWrongCellsPlayed: { type: Number, required: true, defualt: 0 },
+        numCorrectCellsPlayed: { type: Number, required: true, defualt: 0 },
+        numGamesPlayed: { type: Number, required: true, defualt: 0 },
         numWrongCellsPlayedPerStrategy: {
-            stratOne: { type: Number, required: true },
-            stratTwo: { type: Number, required: true },
-            stratThree: { type: Number, required: true }
+            stratOne: { type: Number, required: true, defualt: 0 },
+            stratTwo: { type: Number, required: true, defualt: 0 },
+            stratThree: { type: Number, required: true, defualt: 0 }
         }
     }
 });
