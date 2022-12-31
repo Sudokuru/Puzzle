@@ -48,9 +48,6 @@ async function querySearchAND(filterValues, collection) {
         console.log(err);
         throw new CustomError(CustomErrorEnum.DATABASE_REQUEST_REJECTED, 500);
     }
-    if (res.length == 0){
-        throw new CustomError(CustomErrorEnum.PUZZLE_NOT_FOUND, 404);
-    }
     return res;
 }
 
@@ -63,9 +60,6 @@ async function queryDeleteAND(filterValues, collection) {
     } catch (err){
         console.log(err);
         throw new CustomError(CustomErrorEnum.DATABASE_REQUEST_REJECTED, 500);
-    }
-    if (res.length == 0){
-        throw new CustomError(CustomErrorEnum.PUZZLE_NOT_FOUND, 404);
     }
     return res;
 }
