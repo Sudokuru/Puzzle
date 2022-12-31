@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "29e2b842-7dee-4932-aa6e-254e6a7b63a5",
+		"_postman_id": "4bc70130-1d36-43ab-86a5-01cd64dba57a",
 		"name": "Backend-Functonal-Tests (DO-NOT-DELETE)",
 		"description": "These tests will be used as functional tests and will be run againts localhost and in the Dev environment if we have one. Tests will likely not be run in Production.\n\nEach user has a maximum of **1000 API calls** per month, so when developing try to use the Postman app to minimize API call useage.\n\n**NOTE: These tests will automatically clear the database before each test.**",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "23651156-29e2b842-7dee-4932-aa6e-254e6a7b63a5"
+		"_uid": "23651156-4bc70130-1d36-43ab-86a5-01cd64dba57a"
 	},
 	"item": [
 		{
@@ -22,7 +22,7 @@
 										{
 											"listen": "prerequest",
 											"script": {
-												"id": "7de86c62-4450-45c2-9043-96ea2bee2963",
+												"id": "d6e897b5-f31e-4c7f-804f-868a4c3c0953",
 												"exec": [
 													""
 												],
@@ -32,7 +32,7 @@
 										{
 											"listen": "test",
 											"script": {
-												"id": "87f36d3a-0f80-45ee-8f04-ed0b2d70de34",
+												"id": "d36b5ff6-4e08-4901-80ca-15e91f2b0aa8",
 												"exec": [
 													"pm.test(\"JSON response is correct\", function () {\r",
 													"    var jsonData = pm.response.json();\r",
@@ -45,7 +45,7 @@
 											}
 										}
 									],
-									"id": "faedf777-fc3f-4f6b-9e5b-ad47dcd6ca43",
+									"id": "9808f1b8-76b4-4b30-a09c-3acbb93191fe",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
@@ -82,7 +82,7 @@
 										{
 											"listen": "test",
 											"script": {
-												"id": "ec616218-0fbf-4c9d-a1a7-65ce6ffeb427",
+												"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
 												"exec": [
 													"pm.test(\"JSON response is correct\", function () {\r",
 													"    var jsonData = pm.response.json();\r",
@@ -93,7 +93,7 @@
 											}
 										}
 									],
-									"id": "7ad21e0f-4bc8-465c-a88c-2b3fb620b684",
+									"id": "0d957abc-4252-443e-a61c-83dc2d1b3bda",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
@@ -130,7 +130,7 @@
 										{
 											"listen": "test",
 											"script": {
-												"id": "932da95d-1a97-471b-bfab-a003f0463a6a",
+												"id": "bcbc066b-52e1-4310-8a57-1d8eb7b0b527",
 												"exec": [
 													"pm.test(\"JSON response is correct\", function () {\r",
 													"    var jsonData = pm.response.json();\r",
@@ -141,7 +141,7 @@
 											}
 										}
 									],
-									"id": "ac43e088-d0ed-46d7-89c1-1405b7d63858",
+									"id": "a6ac7ed5-bb7c-42cf-a2a6-04122c4f6d0f",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
@@ -178,7 +178,7 @@
 										{
 											"listen": "test",
 											"script": {
-												"id": "932da95d-1a97-471b-bfab-a003f0463a6a",
+												"id": "28803204-3096-4387-9438-6b6a2baaa803",
 												"exec": [
 													"pm.test(\"JSON response is correct\", function () {\r",
 													"    var jsonData = pm.response.json();\r",
@@ -195,7 +195,7 @@
 											}
 										}
 									],
-									"id": "98f68035-341c-4403-9b35-20239f825af5",
+									"id": "d2ae68f4-0a93-4934-8718-6a33efb5594e",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
@@ -227,12 +227,12 @@
 									"response": []
 								}
 							],
-							"id": "9dc5528d-95be-4b22-9b53-b5edcee2f9aa",
+							"id": "8da06f93-f02e-49d8-8fa0-34b96d22181d",
 							"event": [
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "fe144cdd-65e7-4152-b559-db1db9c8e61a",
+										"id": "eb17cf4c-f50a-44e8-9464-27db2e605929",
 										"type": "text/javascript",
 										"exec": [
 											""
@@ -242,7 +242,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "be655f6e-9bad-4d79-a54c-9753721046ab",
+										"id": "54b57d42-44d0-477e-8204-341927c38cfb",
 										"type": "text/javascript",
 										"exec": [
 											"// Test to see if Status Code is 201",
@@ -257,20 +257,20 @@
 						{
 							"name": "Code 400",
 							"item": [],
-							"id": "e80809f0-5c4e-4815-89b2-06d07e9549a0"
+							"id": "743d9b07-c901-4e4d-886e-ae7d96a66002"
 						},
 						{
 							"name": "Code 500",
 							"item": [],
-							"id": "ec24885f-1c28-4673-b422-b575349db14d"
+							"id": "224e805a-2f45-4433-bed6-ae3c23ee7b08"
 						}
 					],
-					"id": "e1a37955-e95b-4587-be69-9c6a113c4987",
+					"id": "de35ee88-768b-4ce7-930d-f05fc8ec85f7",
 					"event": [
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "7bbe3b65-9293-4ed5-b25b-bdaff7f64082",
+								"id": "a7112bbf-ac17-4b7e-9a5c-11088ff7ccef",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -280,7 +280,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "cd0f48bd-bea9-42b9-b4be-3c8ca25bf066",
+								"id": "c4fd4fbe-dbc6-4052-866a-8e750f9039d6",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -301,7 +301,7 @@
 										{
 											"listen": "test",
 											"script": {
-												"id": "25aab91b-304c-46b0-a395-b01a0528df57",
+												"id": "bcbb020f-38d3-4de4-827e-3fed727a7095",
 												"exec": [
 													"// Test to see if Status Code is 200\r",
 													"// pm.test(\"Status code is 200\", function () {\r",
@@ -312,7 +312,7 @@
 											}
 										}
 									],
-									"id": "76268f7f-15e9-4840-8697-c372fa86322d",
+									"id": "f5975a4f-4a40-4323-a66e-f647e4a2ed2a",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
@@ -343,12 +343,12 @@
 									"response": []
 								}
 							],
-							"id": "68dfe343-2a16-4457-b3aa-69cb34cc25d9"
+							"id": "5daf0ed7-4e7b-4aaa-8ecb-a588c2e078e8"
 						},
 						{
 							"name": "Code 400",
 							"item": [],
-							"id": "a057eb05-2065-4632-aa94-04a978afa524"
+							"id": "227feb3b-7875-4d52-8af1-d43c4f088b9a"
 						},
 						{
 							"name": "Code 404",
@@ -359,7 +359,7 @@
 										{
 											"listen": "test",
 											"script": {
-												"id": "25aab91b-304c-46b0-a395-b01a0528df57",
+												"id": "83823552-e693-4e9c-b7f9-00d65a95ce16",
 												"exec": [
 													""
 												],
@@ -369,7 +369,7 @@
 										{
 											"listen": "prerequest",
 											"script": {
-												"id": "1aaa6b79-39e1-4884-8f24-c76c02db5529",
+												"id": "b79d09d8-610d-4b23-8b00-3ffbebfd7f04",
 												"exec": [
 													""
 												],
@@ -377,7 +377,7 @@
 											}
 										}
 									],
-									"id": "fb465c03-312e-47db-ab82-512f3e700e7e",
+									"id": "d91ea180-2980-4406-9cb0-c7c943fd8598",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
@@ -400,12 +400,12 @@
 									"response": []
 								}
 							],
-							"id": "4da53c25-641c-48d9-bdb8-443f62bda4a9",
+							"id": "3123d837-5500-4113-afc1-aa73b04f6ecb",
 							"event": [
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "a7cd13d8-d99d-498a-b6ff-22da8e61197b",
+										"id": "bd4e84db-20c7-4ce7-879a-e53aafa38bd1",
 										"type": "text/javascript",
 										"exec": [
 											""
@@ -415,7 +415,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "fca6426f-a2aa-412a-9caa-531d0fe90ea2",
+										"id": "62ace093-78a0-47ef-ad75-70b1437a3347",
 										"type": "text/javascript",
 										"exec": [
 											"// Test to see if Status Code is 404",
@@ -435,10 +435,10 @@
 						{
 							"name": "Code 500",
 							"item": [],
-							"id": "fc57fe34-22c1-46b9-b2f6-014e0e73acba"
+							"id": "eb622737-3138-43e9-8b4e-db405f94668b"
 						}
 					],
-					"id": "d5d8c32c-44c0-439b-bc32-43e2d6b384c7"
+					"id": "2b75ad6b-ceb0-4513-9d28-0ae9959f9255"
 				},
 				{
 					"name": "1.3 Delete Requests",
@@ -449,7 +449,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "4eb7a6d8-ebe0-42f7-9a76-98dd467d6426",
+										"id": "1fa9982f-909c-4fb6-9b33-b617498393c9",
 										"exec": [
 											"// Test to see if Status Code is 200\r",
 											"pm.test(\"Status code is 200\", function () {\r",
@@ -460,7 +460,7 @@
 									}
 								}
 							],
-							"id": "dc848bd5-21a3-4b09-a3b8-df920df15a01",
+							"id": "d81bff50-2bd6-4b7c-be23-ab739009b97b",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -483,15 +483,15 @@
 							"response": []
 						}
 					],
-					"id": "b527e93d-2782-42b7-a805-022ab5d35728"
+					"id": "f07cab2c-84e7-422b-8578-cbd6f7b0291f"
 				}
 			],
-			"id": "f5b0dcc6-539f-47e1-a19b-91c3286ad728",
+			"id": "b3717b0c-aa68-41cb-91e6-289147b33ed5",
 			"event": [
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "b8798888-cc35-4fd5-9da9-0d3ed4484075",
+						"id": "14727c8c-eeee-4b27-aad8-6e8b151dfb20",
 						"type": "text/javascript",
 						"exec": [
 							"puzzleTools = {",
@@ -515,7 +515,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d49b59fb-e571-4ff3-a2a8-78d77ed4e0f6",
+						"id": "ebd2bf10-2adc-4d9e-a350-502b64425cf5",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -532,7 +532,7 @@
 					"item": [
 						{
 							"name": "localhost-createProfile",
-							"id": "ae038261-421a-4c7c-a897-01561f482e9e",
+							"id": "da1242cd-d7f4-4ed3-8a30-0c14a2596cd9",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -564,14 +564,14 @@
 							"response": []
 						}
 					],
-					"id": "4eb199e1-7152-4842-baf9-5e907123a7e3"
+					"id": "710815e9-4ac7-48c9-8caa-4f03a0993307"
 				},
 				{
 					"name": "Delete Requests",
 					"item": [
 						{
 							"name": "localhost-deleteAllProfiles",
-							"id": "254717db-eca1-4538-a13c-f885fde58672",
+							"id": "f59a78de-bd3c-4d88-84e7-52c4b0516fdd",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -594,14 +594,14 @@
 							"response": []
 						}
 					],
-					"id": "a56512cf-56ee-4deb-bcdc-962f3eba1058"
+					"id": "73c8c547-e450-4be5-9880-4de44c914daa"
 				},
 				{
 					"name": "Get Requests",
 					"item": [
 						{
 							"name": "localhost-getAllProfiles",
-							"id": "de631b4d-bfec-4130-8d3c-e831b0c245ad",
+							"id": "61698200-97a9-41cf-b50e-783a21272ea8",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -624,37 +624,37 @@
 							"response": []
 						}
 					],
-					"id": "d6f1df48-3b28-4c4b-8a22-15e7cc2be997"
+					"id": "19b2a173-8fb0-4f4c-b4a4-5cc27fd4def1"
 				}
 			],
-			"id": "0d68f13f-e5b0-4e67-9574-d53b70de66f3"
+			"id": "a7e868e8-4ab2-4c9c-b293-ab98c16b4803"
 		},
 		{
 			"name": "UserGameStatistics",
 			"item": [],
-			"id": "dc8aa9da-a199-432f-8a6c-2880c39f959f"
+			"id": "9100da66-a062-4674-96ed-46d0ea30993f"
 		},
 		{
 			"name": "UserGameSearchFilters",
 			"item": [],
-			"id": "08f60423-32af-4f44-abfc-e66a8d0809ae"
+			"id": "fb8eb93b-4955-41f3-bfe6-e4cbdcfb5a6f"
 		},
 		{
 			"name": "UserInProgressGames",
 			"item": [],
-			"id": "b4283448-ddf6-40ee-83c0-1d04b96f3394"
+			"id": "de2b2023-9db7-4c79-a268-3434b897cbc7"
 		},
 		{
 			"name": "UserGameHistory",
 			"item": [],
-			"id": "d9b687dc-455e-4a0a-84a2-46810d894ef5"
+			"id": "55c60a80-01a4-43d7-aecd-901655b2b01c"
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "47dd19d4-bdfc-4008-87a5-7ecbcb067a91",
+				"id": "2b7a23b3-a81f-4b8a-8bdb-3a91153f111b",
 				"type": "text/javascript",
 				"exec": [
 					"// retrieve baseUrl",
@@ -673,7 +673,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "3cb5db27-1bbf-4df8-b5b0-4d751de08495",
+				"id": "bdcd3e27-70e3-45c2-8748-a9c86c043a03",
 				"type": "text/javascript",
 				"exec": [
 					""
