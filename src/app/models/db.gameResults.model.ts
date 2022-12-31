@@ -1,10 +1,10 @@
 import { Schema } from 'mongoose';
 import * as mongoose from "mongoose";
-import { userInProgressGames, userGameHistory } from "./interfaces";
+import { userPausedGames, userGameHistory } from "./interfaces";
 
 mongoose.set({ debug: true, autoCreate: true})
 
-const userInProgressGamesSchema = new Schema<userInProgressGames>({
+const userPausedGamesSchema = new Schema<userPausedGames>({
     userId: { type: String, required: true, unique: true },
     inProgressGames: [{
         puzzle: { type: String, required: true, unique: true },
@@ -54,7 +54,7 @@ const userGameHistorySchema = new Schema<userGameHistory>({
 });
 
 
-let UserInProgressGames = mongoose.model("UserInProgressGames", userInProgressGamesSchema, 'user_game_results');
+let UserPausedGames = mongoose.model("UserPausedGames", userPausedGamesSchema, 'user_game_results');
 let UserGameHistory = mongoose.model("UserGameHistory", userGameHistorySchema, 'user_game_results');
 
-module.exports = { UserInProgressGames, UserGameHistory };
+module.exports = { UserPausedGames, UserGameHistory };

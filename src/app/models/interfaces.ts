@@ -82,7 +82,7 @@ export interface UserGameSearchFilters {
     }
 }
 
-export interface userInProgressGames {
+export interface userPausedGames {
     userId: string,
     inProgressGames: [{
         puzzle: string,
