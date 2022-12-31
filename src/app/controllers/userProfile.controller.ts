@@ -4,7 +4,7 @@ const userProfileService = require('../services/userProfile.service');
 
 async function create(req, res, next) {
     try {
-        res.json(await userProfileService.create(req.body));
+        res.status(201).json(await userProfileService.create(req.body));
 
     } catch(err) {
         console.log(err);

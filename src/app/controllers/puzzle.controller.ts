@@ -4,7 +4,7 @@ const puzzleService = require('../services/puzzle.service');
 
 async function create(req, res, next) {
     try {
-        res.json(await puzzleService.create(req.body));
+        res.status(201).json(await puzzleService.create(req.body));
 
     } catch(err) {
         console.log(err);
