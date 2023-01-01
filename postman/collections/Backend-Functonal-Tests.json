@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "4bc70130-1d36-43ab-86a5-01cd64dba57a",
-		"name": "Backend-Functonal-Tests (DO-NOT-DELETE)",
+		"name": "Backend-Functonal-Tests",
 		"description": "These tests will be used as functional tests and will be run againts localhost and in the Dev environment if we have one. Tests will likely not be run in Production.\n\nEach user has a maximum of **1000 API calls** per month, so when developing try to use the Postman app to minimize API call useage.\n\n**NOTE: These tests will automatically clear the database before each test.**",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_uid": "23651156-4bc70130-1d36-43ab-86a5-01cd64dba57a"
