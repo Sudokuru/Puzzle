@@ -8,6 +8,852 @@
 	},
 	"item": [
 		{
+			"name": "Global Invalid Paths",
+			"item": [
+				{
+					"name": "POST_INVALID_PATH_2_RETURN_400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "374858ef-2211-4162-b6a3-8903b12ef1ac",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_INVALID_PATH_4_RETURN_400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "8fd4615f-c6e3-4c84-baae-a38a6ddc053e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_INVALID_PATH_5_RETURN_400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "6c8d6890-4644-4746-9508-d577eebdbcdd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_INVALID_PATH_6_RETURN_400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "42c46419-2500-4ee0-83c0-09159aafd6d8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_INVALID_PATH_7_RETURN_400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "b3d573fc-5629-440a-9cc2-bd80b0525037",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_INVALID_PATH_2_RETURN_400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "700b41d8-f83e-4202-a62f-bdc6c9981e1b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_INVALID_PATH_4_RETURN_400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "eab80064-5b6b-49ce-86f3-51535396495c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_INVALID_PATH_5_RETURN_400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "66f8cceb-9b4a-4118-a1c9-9aba923e9bcc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_INVALID_PATH_6_RETURN_400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "9d6a5b5e-b9ed-48f4-9a2c-eca97141cf85",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_INVALID_PATH_7_RETURN_400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "20f9598d-68db-4286-8a86-03e5264e04b6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_INVALID_PATH_2_RETURN_400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "936302f0-c523-4fa4-9a3d-cd07743e8ab8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_INVALID_PATH_4_RETURN_400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "98261276-569f-4d82-b015-3b470d4a1c56",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_INVALID_PATH_5_RETURN_400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "e0092838-5ad4-444b-93ea-f15e3997ec5d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_INVALID_PATH_6_RETURN_400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "4e7ae287-21aa-4287-a8c4-80fa9d448fdd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_INVALID_PATH_7_RETURN_400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "27d41bd1-4e40-414e-92ed-03c1b0fc330e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "0846ce5b-27dc-4bbb-8165-9ff8ac7a5387",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "27f3c8f9-0398-429e-9a18-8a744b14fbe9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e2d6418b-3d2c-4406-8553-f3c4bdf45c9a",
+						"type": "text/javascript",
+						"exec": [
+							"// Test to see if Status Code is 400",
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"pm.test(\"Error response is correct\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.Error_Message).to.eql(\"Invalid Request\");",
+							"    pm.expect(jsonData.Status).to.eql(400);",
+							"});"
+						]
+					}
+				}
+			]
+		},
+		{
 			"name": "Puzzle",
 			"item": [
 				{
@@ -179,7 +1025,7 @@
 									"response": []
 								},
 								{
-									"name": "POST_TWENTY_MINIMAL_PUZZLES_RETURN_201",
+									"name": "POST_FOUR_MINIMAL_PUZZLES_RETURN_201",
 									"event": [
 										{
 											"listen": "test",
@@ -326,62 +1172,6 @@
 											"response": []
 										},
 										{
-											"name": "POST_INVALID_PATH_2_RETURN_400",
-											"event": [
-												{
-													"listen": "test",
-													"script": {
-														"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
-														"exec": [
-															""
-														],
-														"type": "text/javascript"
-													}
-												},
-												{
-													"listen": "prerequest",
-													"script": {
-														"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
-														"exec": [
-															""
-														],
-														"type": "text/javascript"
-													}
-												}
-											],
-											"id": "374858ef-2211-4162-b6a3-8903b12ef1ac",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [],
-												"body": {
-													"mode": "raw",
-													"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
-													"options": {
-														"raw": {
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "http://localhost:3000/api/v1/",
-													"protocol": "http",
-													"host": [
-														"localhost"
-													],
-													"port": "3000",
-													"path": [
-														"api",
-														"v1",
-														""
-													]
-												}
-											},
-											"response": []
-										},
-										{
 											"name": "POST_INVALID_PATH_3_RETURN_400",
 											"event": [
 												{
@@ -433,220 +1223,6 @@
 														"v1",
 														"puz"
 													]
-												}
-											},
-											"response": []
-										},
-										{
-											"name": "POST_INVALID_PATH_4_RETURN_400",
-											"event": [
-												{
-													"listen": "test",
-													"script": {
-														"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
-														"exec": [
-															""
-														],
-														"type": "text/javascript"
-													}
-												},
-												{
-													"listen": "prerequest",
-													"script": {
-														"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
-														"exec": [
-															""
-														],
-														"type": "text/javascript"
-													}
-												}
-											],
-											"id": "8fd4615f-c6e3-4c84-baae-a38a6ddc053e",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [],
-												"body": {
-													"mode": "raw",
-													"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
-													"options": {
-														"raw": {
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "http://localhost:3000/api/",
-													"protocol": "http",
-													"host": [
-														"localhost"
-													],
-													"port": "3000",
-													"path": [
-														"api",
-														""
-													]
-												}
-											},
-											"response": []
-										},
-										{
-											"name": "POST_INVALID_PATH_5_RETURN_400",
-											"event": [
-												{
-													"listen": "test",
-													"script": {
-														"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
-														"exec": [
-															""
-														],
-														"type": "text/javascript"
-													}
-												},
-												{
-													"listen": "prerequest",
-													"script": {
-														"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
-														"exec": [
-															""
-														],
-														"type": "text/javascript"
-													}
-												}
-											],
-											"id": "6c8d6890-4644-4746-9508-d577eebdbcdd",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [],
-												"body": {
-													"mode": "raw",
-													"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
-													"options": {
-														"raw": {
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "http://localhost:3000/api",
-													"protocol": "http",
-													"host": [
-														"localhost"
-													],
-													"port": "3000",
-													"path": [
-														"api"
-													]
-												}
-											},
-											"response": []
-										},
-										{
-											"name": "POST_INVALID_PATH_6_RETURN_400",
-											"event": [
-												{
-													"listen": "test",
-													"script": {
-														"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
-														"exec": [
-															""
-														],
-														"type": "text/javascript"
-													}
-												},
-												{
-													"listen": "prerequest",
-													"script": {
-														"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
-														"exec": [
-															""
-														],
-														"type": "text/javascript"
-													}
-												}
-											],
-											"id": "42c46419-2500-4ee0-83c0-09159aafd6d8",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [],
-												"body": {
-													"mode": "raw",
-													"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
-													"options": {
-														"raw": {
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "http://localhost:3000/",
-													"protocol": "http",
-													"host": [
-														"localhost"
-													],
-													"port": "3000",
-													"path": [
-														""
-													]
-												}
-											},
-											"response": []
-										},
-										{
-											"name": "POST_INVALID_PATH_7_RETURN_400",
-											"event": [
-												{
-													"listen": "test",
-													"script": {
-														"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
-														"exec": [
-															""
-														],
-														"type": "text/javascript"
-													}
-												},
-												{
-													"listen": "prerequest",
-													"script": {
-														"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
-														"exec": [
-															""
-														],
-														"type": "text/javascript"
-													}
-												}
-											],
-											"id": "b3d573fc-5629-440a-9cc2-bd80b0525037",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [],
-												"body": {
-													"mode": "raw",
-													"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
-													"options": {
-														"raw": {
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "http://localhost:3000",
-													"protocol": "http",
-													"host": [
-														"localhost"
-													],
-													"port": "3000"
 												}
 											},
 											"response": []
@@ -712,7 +1288,7 @@
 									"response": []
 								},
 								{
-									"name": "POST_DUPLICATE_PUZZLE_RETURN_400 Copy",
+									"name": "POST_DUPLICATE_PUZZLE_RETURN_400",
 									"event": [
 										{
 											"listen": "test",
@@ -729,7 +1305,7 @@
 											"script": {
 												"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
 												"exec": [
-													"// Script that posts duplicate puzzle\r",
+													"// Insert Puzzle\r",
 													"pm.sendRequest({\r",
 													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
 													"    method: 'POST',\r",
@@ -855,20 +1431,50 @@
 							"name": "Code 200",
 							"item": [
 								{
-									"name": "GET_ALL_PUZZLES_RETURN_200",
+									"name": "GET_ALL_ONE_PUZZLE_RETURN_200",
 									"event": [
 										{
 											"listen": "test",
 											"script": {
-												"id": "bcbb020f-38d3-4de4-827e-3fed727a7095",
+												"id": "1fa9982f-909c-4fb6-9b33-b617498393c9",
 												"exec": [
-													""
+													"pm.test(\"JSON response is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 0, \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", 5, 8, 4, 0, 0, 0, 0, false, 0);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "e0a0b1c8-e2fd-4c34-801b-7ebb14021ce1",
+												"exec": [
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [{\r",
+													"                \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r",
+													"                \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r",
+													"                \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r",
+													"            }]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});"
 												],
 												"type": "text/javascript"
 											}
 										}
 									],
-									"id": "f5975a4f-4a40-4323-a66e-f647e4a2ed2a",
+									"id": "fb30e610-3585-4a63-a639-ce8eec953db5",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
@@ -887,14 +1493,137 @@
 												"v1",
 												"puzzles",
 												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET_ALL_FOUR_PUZZLES_RETURN_200",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "1fa9982f-909c-4fb6-9b33-b617498393c9",
+												"exec": [
+													"pm.test(\"JSON response is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 0, \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", 5, 8, 4, 0, 0, 0, 0, false, 0);\r",
+													"\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 1, \"008645019010009700009702000040023870803097200100000093000004106000000930700306402\", \"278645319614839725539712648946523871853197264127468593382974156465281937791356482\", 5, 8, 4, 0, 0, 0, 0, false, 0);\r",
+													"\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 2, \"000080009832709015049520370175600040000005080090007006080170090000350020200006500\", \"751483269832769415649521378175638942426915783398247156583172694967354821214896537\", 5, 8, 4, 0, 0, 0, 0, false, 0);\r",
+													"\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 3, \"060004029400900006900160570610000082040000000302007600100050068009641700050302091\", \"861574329475923816923168574617435982548296137392817645134759268289641753756382491\", 5, 8, 4, 0, 0, 0, 0, false, 0);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "3073f901-2b9a-462a-92e9-460dc66fead6",
+												"exec": [
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [{\r",
+													"                \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r",
+													"                \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r",
+													"                \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r",
+													"            }]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});\r",
+													"\r",
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [{\r",
+													"                \"puzzle\": \"008645019010009700009702000040023870803097200100000093000004106000000930700306402\", \r",
+													"                \"puzzleSolution\": \"278645319614839725539712648946523871853197264127468593382974156465281937791356482\", \r",
+													"                \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r",
+													"            }]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});\r",
+													"\r",
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [{\r",
+													"                \"puzzle\": \"000080009832709015049520370175600040000005080090007006080170090000350020200006500\", \r",
+													"                \"puzzleSolution\": \"751483269832769415649521378175638942426915783398247156583172694967354821214896537\", \r",
+													"                \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r",
+													"            }]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});\r",
+													"\r",
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [{\r",
+													"                \"puzzle\": \"060004029400900006900160570610000082040000000302007600100050068009641700050302091\", \r",
+													"                \"puzzleSolution\": \"861574329475923816923168574617435982548296137392817645134759268289641753756382491\", \r",
+													"                \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r",
+													"            }]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "8ae02e30-c90f-4903-9ba1-3aa2fcfc9e21",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
+											"host": [
+												"localhost"
 											],
-											"query": [
-												{
-													"key": "",
-													"value": null,
-													"type": "text",
-													"disabled": true
-												}
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
 											]
 										}
 									},
@@ -930,8 +1659,158 @@
 						},
 						{
 							"name": "Code 400",
-							"item": [],
-							"id": "227feb3b-7875-4d52-8af1-d43c4f088b9a"
+							"item": [
+								{
+									"name": "Invalid Paths",
+									"item": [
+										{
+											"name": "GET_INVALID_PATH_1_RETURN_400",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"id": "285048fb-4e3c-455c-af10-a8b0cbca852a",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:3000/api/v1/puzzles/INVALID_PATH",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "3000",
+													"path": [
+														"api",
+														"v1",
+														"puzzles",
+														"INVALID_PATH"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "GET_INVALID_PATH_3_RETURN_400",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"id": "51c57780-d7ec-4aee-a845-8a67124ac23c",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:3000/api/v1/puz",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "3000",
+													"path": [
+														"api",
+														"v1",
+														"puz"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"id": "39090383-752a-4b3f-9005-c0f5bb9fb2b1"
+								}
+							],
+							"id": "227feb3b-7875-4d52-8af1-d43c4f088b9a",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "ab559a93-b3b1-4a11-bca3-ce9175b4fa37",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "aae389ff-df09-40b1-ad33-df75330ecbf8",
+										"type": "text/javascript",
+										"exec": [
+											"// Test to see if Status Code is 400",
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"pm.test(\"Error response is correct\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.Error_Message).to.eql(\"Invalid Request\");",
+											"    pm.expect(jsonData.Status).to.eql(400);",
+											"});"
+										]
+									}
+								}
+							]
 						},
 						{
 							"name": "Code 404",
@@ -1021,48 +1900,427 @@
 					"id": "2b75ad6b-ceb0-4513-9d28-0ae9959f9255"
 				},
 				{
-					"name": "1.3 Delete Requests",
+					"name": "Delete Requests",
 					"item": [
 						{
-							"name": "DELETE_ALL_PUZZLES_RETURN_200",
+							"name": "Code 200",
+							"item": [
+								{
+									"name": "DELETE_ALL_ZERO_PUZZLES_RETURN_200",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "1fa9982f-909c-4fb6-9b33-b617498393c9",
+												"exec": [
+													"pm.test(\"JSON response is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    backendTools.deleteResponseChecker(jsonData, true, 0);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "5db25ad9-e652-4fe3-83ff-895984c23efe",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "DELETE_ALL_ONE_PUZZLE_RETURN_200",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "1fa9982f-909c-4fb6-9b33-b617498393c9",
+												"exec": [
+													"pm.test(\"JSON response is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    backendTools.deleteResponseChecker(jsonData, true, 1);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "e0a0b1c8-e2fd-4c34-801b-7ebb14021ce1",
+												"exec": [
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [{\r",
+													"                \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r",
+													"                \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r",
+													"                \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r",
+													"            }]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "45105ba9-4b55-4629-87b9-7515b30e3fe6",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "DELETE_ALL_FOUR_PUZZLES_200",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "1fa9982f-909c-4fb6-9b33-b617498393c9",
+												"exec": [
+													"pm.test(\"JSON response is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    backendTools.deleteResponseChecker(jsonData, true, 4);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "3073f901-2b9a-462a-92e9-460dc66fead6",
+												"exec": [
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [{\r",
+													"                \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r",
+													"                \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r",
+													"                \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r",
+													"            }]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});\r",
+													"\r",
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [{\r",
+													"                \"puzzle\": \"008645019010009700009702000040023870803097200100000093000004106000000930700306402\", \r",
+													"                \"puzzleSolution\": \"278645319614839725539712648946523871853197264127468593382974156465281937791356482\", \r",
+													"                \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r",
+													"            }]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});\r",
+													"\r",
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [{\r",
+													"                \"puzzle\": \"000080009832709015049520370175600040000005080090007006080170090000350020200006500\", \r",
+													"                \"puzzleSolution\": \"751483269832769415649521378175638942426915783398247156583172694967354821214896537\", \r",
+													"                \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r",
+													"            }]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});\r",
+													"\r",
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [{\r",
+													"                \"puzzle\": \"060004029400900006900160570610000082040000000302007600100050068009641700050302091\", \r",
+													"                \"puzzleSolution\": \"861574329475923816923168574617435982548296137392817645134759268289641753756382491\", \r",
+													"                \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r",
+													"            }]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "d81bff50-2bd6-4b7c-be23-ab739009b97b",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "c69a658c-e4ff-43b0-8255-ad590a8701b6",
 							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "1d50f982-f8e8-4de1-b081-b66f9239412d",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
 								{
 									"listen": "test",
 									"script": {
-										"id": "1fa9982f-909c-4fb6-9b33-b617498393c9",
+										"id": "8ec76fe4-4f27-4381-903d-a6c8f0cc4980",
+										"type": "text/javascript",
 										"exec": [
-											"// Test to see if Status Code is 200\r",
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
+											"// Test to see if Status Code is 200",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
 											"});"
-										],
-										"type": "text/javascript"
+										]
 									}
 								}
-							],
-							"id": "d81bff50-2bd6-4b7c-be23-ab739009b97b",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3000/api/v1/puzzles/",
-									"protocol": "http",
-									"host": [
-										"localhost"
+							]
+						},
+						{
+							"name": "Code 400",
+							"item": [
+								{
+									"name": "Invalid Paths",
+									"item": [
+										{
+											"name": "DELETE_INVALID_PATH_1_RETURN_400",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"id": "781526dd-32f5-4b04-af91-397771c0ea5b",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:3000/api/v1/puzzles/INVALID_PATH",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "3000",
+													"path": [
+														"api",
+														"v1",
+														"puzzles",
+														"INVALID_PATH"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "DELETE_INVALID_PATH_3_RETURN_400",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"id": "b3ff9602-412d-4515-939c-b0befc3216b1",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:3000/api/v1/puz",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "3000",
+													"path": [
+														"api",
+														"v1",
+														"puz"
+													]
+												}
+											},
+											"response": []
+										}
 									],
-									"port": "3000",
-									"path": [
-										"api",
-										"v1",
-										"puzzles",
-										""
-									]
+									"id": "fe5204a3-6ab3-4f77-ad94-dd073c711626"
 								}
-							},
-							"response": []
+							],
+							"id": "0f84c556-7ce0-4fd4-a326-ab92d96102dc",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "1dd8374d-c036-420a-a61c-de7f747f7b19",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "ab1dd68f-c3b8-41f8-a429-cc236614627a",
+										"type": "text/javascript",
+										"exec": [
+											"// Test to see if Status Code is 400",
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"pm.test(\"Error response is correct\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.Error_Message).to.eql(\"Invalid Request\");",
+											"    pm.expect(jsonData.Status).to.eql(400);",
+											"});"
+										]
+									}
+								}
+							]
 						}
 					],
 					"id": "f07cab2c-84e7-422b-8578-cbd6f7b0291f"
@@ -1242,7 +2500,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "0b996ad9-171b-4443-b931-2cb5135b7bfc",
+				"id": "57fc3dbb-685c-4e08-aab2-90507f2f49e6",
 				"type": "text/javascript",
 				"exec": [
 					"// Script that deletes everything before request",
@@ -1251,14 +2509,21 @@
 					"    method: 'DELETE',",
 					"}, function (err, res) {",
 					"    console.log(res);",
-					"});"
+					"});",
+					"",
+					"backendTools = {",
+					"    deleteResponseChecker: function(jsonData, acknowledged, deletedCount) {",
+					"        pm.expect(jsonData.acknowledged).to.eql(acknowledged);",
+					"        pm.expect(jsonData.deletedCount).to.eql(deletedCount);",
+					"    },",
+					"};"
 				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
-				"id": "3175b80a-f3a2-4252-9717-36a5ea3a7c6b",
+				"id": "8b6a7467-85e1-4891-9417-82dca556f494",
 				"type": "text/javascript",
 				"exec": [
 					""
