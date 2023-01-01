@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "1.1.2 POST_ONE_FULL_PUZZLE_RETURN_500",
+			"name": "1.1.2 POST_ONE_FULL_PUZZLE",
 			"event": [
 				{
 					"listen": "test",

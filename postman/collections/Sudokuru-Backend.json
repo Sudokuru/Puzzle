@@ -8,10 +8,10 @@
 	},
 	"item": [
 		{
-			"name": "Global Invalid Paths",
+			"name": "Global Invalid Paths Return 400",
 			"item": [
 				{
-					"name": "POST_INVALID_PATH_2_RETURN_400",
+					"name": "POST_INVALID_PATH_2",
 					"event": [
 						{
 							"listen": "test",
@@ -67,7 +67,7 @@
 					"response": []
 				},
 				{
-					"name": "POST_INVALID_PATH_4_RETURN_400",
+					"name": "POST_INVALID_PATH_4",
 					"event": [
 						{
 							"listen": "test",
@@ -122,7 +122,7 @@
 					"response": []
 				},
 				{
-					"name": "POST_INVALID_PATH_5_RETURN_400",
+					"name": "POST_INVALID_PATH_5",
 					"event": [
 						{
 							"listen": "test",
@@ -176,7 +176,7 @@
 					"response": []
 				},
 				{
-					"name": "POST_INVALID_PATH_6_RETURN_400",
+					"name": "POST_INVALID_PATH_6",
 					"event": [
 						{
 							"listen": "test",
@@ -230,7 +230,7 @@
 					"response": []
 				},
 				{
-					"name": "POST_INVALID_PATH_7_RETURN_400",
+					"name": "POST_INVALID_PATH_7",
 					"event": [
 						{
 							"listen": "test",
@@ -281,7 +281,7 @@
 					"response": []
 				},
 				{
-					"name": "GET_INVALID_PATH_2_RETURN_400",
+					"name": "GET_INVALID_PATH_2",
 					"event": [
 						{
 							"listen": "test",
@@ -337,7 +337,7 @@
 					"response": []
 				},
 				{
-					"name": "GET_INVALID_PATH_4_RETURN_400",
+					"name": "GET_INVALID_PATH_4",
 					"event": [
 						{
 							"listen": "test",
@@ -392,7 +392,7 @@
 					"response": []
 				},
 				{
-					"name": "GET_INVALID_PATH_5_RETURN_400",
+					"name": "GET_INVALID_PATH_5",
 					"event": [
 						{
 							"listen": "test",
@@ -446,7 +446,7 @@
 					"response": []
 				},
 				{
-					"name": "GET_INVALID_PATH_6_RETURN_400",
+					"name": "GET_INVALID_PATH_6",
 					"event": [
 						{
 							"listen": "test",
@@ -500,7 +500,7 @@
 					"response": []
 				},
 				{
-					"name": "GET_INVALID_PATH_7_RETURN_400",
+					"name": "GET_INVALID_PATH_7",
 					"event": [
 						{
 							"listen": "test",
@@ -551,7 +551,7 @@
 					"response": []
 				},
 				{
-					"name": "DELETE_INVALID_PATH_2_RETURN_400",
+					"name": "DELETE_INVALID_PATH_2",
 					"event": [
 						{
 							"listen": "test",
@@ -607,7 +607,7 @@
 					"response": []
 				},
 				{
-					"name": "DELETE_INVALID_PATH_4_RETURN_400",
+					"name": "DELETE_INVALID_PATH",
 					"event": [
 						{
 							"listen": "test",
@@ -662,7 +662,7 @@
 					"response": []
 				},
 				{
-					"name": "DELETE_INVALID_PATH_5_RETURN_400",
+					"name": "DELETE_INVALID_PATH_5",
 					"event": [
 						{
 							"listen": "test",
@@ -716,7 +716,7 @@
 					"response": []
 				},
 				{
-					"name": "DELETE_INVALID_PATH_6_RETURN_400",
+					"name": "DELETE_INVALID_PATH_6",
 					"event": [
 						{
 							"listen": "test",
@@ -770,7 +770,7 @@
 					"response": []
 				},
 				{
-					"name": "DELETE_INVALID_PATH_7_RETURN_400",
+					"name": "DELETE_INVALID_PATH_7",
 					"event": [
 						{
 							"listen": "test",
@@ -863,7 +863,7 @@
 							"name": "Code 201",
 							"item": [
 								{
-									"name": "POST_TWO_FULL_PUZZLES_RETURN_201",
+									"name": "POST_TWO_FULL_PUZZLES",
 									"event": [
 										{
 											"listen": "prerequest",
@@ -925,7 +925,7 @@
 									"response": []
 								},
 								{
-									"name": "POST_ONE_FULL_PUZZLE_RETURN_201",
+									"name": "POST_ONE_FULL_PUZZLE",
 									"event": [
 										{
 											"listen": "test",
@@ -975,7 +975,7 @@
 									"response": []
 								},
 								{
-									"name": "POST_ONE_MINIMAL_PUZZLE_RETURN_201",
+									"name": "POST_ONE_MINIMAL_PUZZLE",
 									"event": [
 										{
 											"listen": "test",
@@ -1025,7 +1025,7 @@
 									"response": []
 								},
 								{
-									"name": "POST_FOUR_MINIMAL_PUZZLES_RETURN_201",
+									"name": "POST_FOUR_MINIMAL_PUZZLES",
 									"event": [
 										{
 											"listen": "test",
@@ -1115,7 +1115,7 @@
 									"name": "Invalid Paths",
 									"item": [
 										{
-											"name": "POST_INVALID_PATH_1_RETURN_400",
+											"name": "POST_INVALID_PATH_1",
 											"event": [
 												{
 													"listen": "test",
@@ -1172,7 +1172,7 @@
 											"response": []
 										},
 										{
-											"name": "POST_INVALID_PATH_3_RETURN_400",
+											"name": "POST_INVALID_PATH_3",
 											"event": [
 												{
 													"listen": "test",
@@ -1231,7 +1231,7 @@
 									"id": "3cfe95e0-3fc5-4af6-93d8-0f80393cbb52"
 								},
 								{
-									"name": "POST_NO_PUZZLE_FIELD_RETURN_400",
+									"name": "POST_NO_PUZZLE_FIELD",
 									"event": [
 										{
 											"listen": "test",
@@ -1288,7 +1288,7 @@
 									"response": []
 								},
 								{
-									"name": "POST_DUPLICATE_PUZZLE_RETURN_400",
+									"name": "POST_DUPLICATE_PUZZLE",
 									"event": [
 										{
 											"listen": "test",
@@ -1343,6 +1343,85 @@
 										"body": {
 											"mode": "raw",
 											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "POST_DUPLICATE_PUZZLE_DIFFERENT_JSON",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+												"exec": [
+													"// Insert Puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [{\r",
+													"                \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r",
+													"                \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r",
+													"                \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r",
+													"                \"fastestSolveTime\": 0, \r",
+													"                \"averageSolveTime\": 0, \r",
+													"                \"numUsersPlayed\": 10, \r",
+													"                \"numTimesPlayed\": 20, \r",
+													"                \"truleyUnique\": false \r",
+													"            }]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "97065679-bc95-473d-985f-03c0219a9f0c",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 50, \r\n    \"averageSolveTime\": 50, \r\n    \"numUsersPlayed\": 100, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": true \r\n}]\r\n",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1431,7 +1510,7 @@
 							"name": "Code 200",
 							"item": [
 								{
-									"name": "GET_ALL_ONE_PUZZLE_RETURN_200",
+									"name": "GET_ALL_ONE_PUZZLE_IN_DB",
 									"event": [
 										{
 											"listen": "test",
@@ -1499,7 +1578,7 @@
 									"response": []
 								},
 								{
-									"name": "GET_ALL_FOUR_PUZZLES_RETURN_200",
+									"name": "GET_ALL_FOUR_PUZZLES_IN_DB",
 									"event": [
 										{
 											"listen": "test",
@@ -1664,7 +1743,7 @@
 									"name": "Invalid Paths",
 									"item": [
 										{
-											"name": "GET_INVALID_PATH_1_RETURN_400",
+											"name": "GET_INVALID_PATH_1",
 											"event": [
 												{
 													"listen": "test",
@@ -1721,7 +1800,7 @@
 											"response": []
 										},
 										{
-											"name": "GET_INVALID_PATH_3_RETURN_400",
+											"name": "GET_INVALID_PATH_3",
 											"event": [
 												{
 													"listen": "test",
@@ -1816,7 +1895,7 @@
 							"name": "Code 404",
 							"item": [
 								{
-									"name": "GET_ALL_PUZZLES_RETURN_404",
+									"name": "GET_ALL_PUZZLES",
 									"event": [
 										{
 											"listen": "test",
@@ -1906,7 +1985,7 @@
 							"name": "Code 200",
 							"item": [
 								{
-									"name": "DELETE_ALL_ZERO_PUZZLES_RETURN_200",
+									"name": "DELETE_ALL_ZERO_PUZZLES",
 									"event": [
 										{
 											"listen": "test",
@@ -1947,7 +2026,7 @@
 									"response": []
 								},
 								{
-									"name": "DELETE_ALL_ONE_PUZZLE_RETURN_200",
+									"name": "DELETE_ALL_ONE_PUZZLE",
 									"event": [
 										{
 											"listen": "test",
@@ -2015,7 +2094,7 @@
 									"response": []
 								},
 								{
-									"name": "DELETE_ALL_FOUR_PUZZLES_200",
+									"name": "DELETE_ALL_FOUR_PUZZLES",
 									"event": [
 										{
 											"listen": "test",
