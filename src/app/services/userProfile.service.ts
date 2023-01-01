@@ -3,11 +3,11 @@ import {CustomError, CustomErrorEnum} from "../models/error.model";
 const userProfileDataBase = require ('./db.service');
 const userInfoModel = require("../models/db.userInfo.model");
 
-async function userProfileCreate(puzzles) {
+async function createUserProfileService(puzzles) {
     return await userProfileDataBase.queryUpload(puzzles, userInfoModel.UserInfo);
 }
 
-async function userProfileSearch(puzzles) {
+async function searchUserProfileService(puzzles) {
     const filterValues = [];
 
     if (Object.keys(puzzles).length === 0){
@@ -21,7 +21,7 @@ async function userProfileSearch(puzzles) {
     return res;
 }
 
-async function userProfileRemove(puzzles) {
+async function removeUserProfileService(puzzles) {
     const filterValues = [];
 
     if (Object.keys(puzzles).length === 0){
@@ -35,4 +35,4 @@ async function userProfileRemove(puzzles) {
     return res;
 }
 
-module.exports = { create: userProfileCreate, search: userProfileSearch, remove: userProfileRemove }
+module.exports = { createUserProfile: createUserProfileService, searchUserProfile: searchUserProfileService, removeUserProfile: removeUserProfileService }

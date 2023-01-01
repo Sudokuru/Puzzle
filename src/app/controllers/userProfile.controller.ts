@@ -1,23 +1,23 @@
 const userProfileService = require('../services/userProfile.service');
 
-async function create(req, res, next) {
+async function createUserProfile(req, res, next) {
     try {
-        res.status(201).json(await userProfileService.create(req.body));
+        res.status(201).json(await userProfileService.createUserProfile(req.body));
 
     } catch(err) {
         next(err);
     }
 }
 
-async function search(req, res, next) {
+async function searchUserProfile(req, res, next) {
     try {
-        res.json(await userProfileService.search(req.query));
+        res.json(await userProfileService.searchUserProfile(req.query));
     } catch(err) {
         next(err);
     }
 }
 
-async function update(req, res, next) {
+async function updateUserProfile(req, res, next) {
     try {
 
     } catch(err) {
@@ -25,12 +25,12 @@ async function update(req, res, next) {
     }
 }
 
-async function remove(req, res, next) {
+async function removeUserProfile(req, res, next) {
     try {
-        res.json(await userProfileService.remove(req.query));
+        res.json(await userProfileService.removeUserProfile(req.query));
     } catch(err) {
         next(err);
     }
 }
 
-module.exports = {create: create, search: search, update: update, remove: remove }
+module.exports = {create: createUserProfile, search: searchUserProfile, update: updateUserProfile, remove: removeUserProfile }

@@ -1,23 +1,23 @@
 const puzzleService = require('../services/puzzle.service');
 
-async function create(req, res, next) {
+async function createPuzzle(req, res, next) {
     try {
-        res.status(201).json(await puzzleService.create(req.body));
+        res.status(201).json(await puzzleService.createPuzzle(req.body));
 
     } catch(err) {
         next(err);
     }
 }
 
-async function search(req, res, next) {
+async function searchPuzzle(req, res, next) {
     try {
-        res.json(await puzzleService.search(req.query));
+        res.json(await puzzleService.searchPuzzle(req.query));
     } catch(err) {
         next(err);
     }
 }
 
-async function update(req, res, next) {
+async function updatePuzzle(req, res, next) {
     try {
 
     } catch(err) {
@@ -25,12 +25,12 @@ async function update(req, res, next) {
     }
 }
 
-async function remove(req, res, next) {
+async function removePuzzle(req, res, next) {
     try {
-        res.json(await puzzleService.remove(req.query));
+        res.json(await puzzleService.removePuzzle(req.query));
     } catch(err) {
         next(err);
     }
 }
 
-module.exports = {create: create, search: search, update: update, remove: remove }
+module.exports = {create: createPuzzle, search: searchPuzzle, update: updatePuzzle, remove: removePuzzle }

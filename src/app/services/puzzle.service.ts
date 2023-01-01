@@ -4,11 +4,11 @@ const dataBase = require ('./db.service');
 
 const PuzzleModel = require("../models/db.puzzle.model");
 
-async function puzzleCreate(puzzles) {
+async function puzzleCreateService(puzzles) {
     return await dataBase.queryUpload(puzzles, PuzzleModel);
 }
 
-async function puzzleSearch(puzzles) {
+async function puzzleSearchService(puzzles) {
     const filterValues = [];
 
     if (Object.keys(puzzles).length === 0){
@@ -22,7 +22,7 @@ async function puzzleSearch(puzzles) {
     return res;
 }
 
-async function puzzleRemove(puzzles) {
+async function puzzleRemoveService(puzzles) {
     const filterValues = [];
 
     if (Object.keys(puzzles).length === 0){
@@ -36,5 +36,5 @@ async function puzzleRemove(puzzles) {
     return res;
 }
 
-module.exports = { create: puzzleCreate, search: puzzleSearch, remove: puzzleRemove };
+module.exports = { createPuzzle: puzzleCreateService, searchPuzzle: puzzleSearchService, removePuzzle: puzzleRemoveService };
 
