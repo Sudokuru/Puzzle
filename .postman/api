@@ -5,7 +5,7 @@ id = e02394ad-79f7-4997-9226-b530d7c8343d
 
 [relations.collections]
 rootDirectory = postman/collections
-files[] = {"id":"23651156-4bc70130-1d36-43ab-86a5-01cd64dba57a","path":"Backend-Functonal-Tests.json","metaData":{}}
+files[] = {"id":"23651156-4bc70130-1d36-43ab-86a5-01cd64dba57a","path":"Backend-Functional-Tests(1).json","metaData":{}}
 
 [relations.collections.metaData]
 
@@ -15,4 +15,3 @@ files[] = {"path":"index.yaml","metaData":{}}
 
 [relations.apiDefinition.metaData]
 type = openapi:3
-rootFiles[] = index.yaml
