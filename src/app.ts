@@ -1,4 +1,5 @@
 import errorHandler from "./app/errorHandler/error.handler";
+import {CustomError, CustomErrorEnum} from "./app/models/error.model";
 
 const serverless = require('serverless-http');
 const expressApp = require('express');
@@ -20,6 +21,12 @@ const baseRoute: string = "/api/v1";
 
 const globalRouter = require('./app/routes/routes');
 app.use(baseRoute, globalRouter);
+
+// Catch-all for invalid path syntax.
+app.use(function (req, res, next) {
+    let err = new CustomError(CustomErrorEnum.INVALID_PATH, 400);
+    next(err);
+});
 
 app.use(errorHandler);
 
