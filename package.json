@@ -6,8 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:unit": "jest --testPathPattern=src/tests/unit",
-    "test:integration": "jest --testPathPattern=src/tests/integration",
-    "test:functional": "dotenv -- cross-var newman run \"postman/collections/Sudokuru-Backend.json\" --environment \"https://api.getpostman.com/environments/%POSTMAN_ENV_ID%?apikey=%POSTMAN_API_KEY%\"",
+    "test:integration": "newman run \"postman/collections/Sudokuru-Backend.json\"",
     "start": "ts-node src/app.ts local",
     "deploy": "tsc && serverless deploy"
   },
@@ -23,8 +22,6 @@
   },
   "homepage": "https://github.com/SudoKuru/Backend#readme",
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "^3.231.0",
-    "@aws-sdk/lib-dynamodb": "^3.231.0",
     "@types/mongoose": "^5.11.97",
     "express": "^4.18.2",
     "mongoose": "^6.8.1",
@@ -32,10 +29,10 @@
   },
   "devDependencies": {
     "@types/jest": "^29.2.4",
-    "jest": "^29.3.1",
-    "jest-junit": "^15.0.0",
     "cross-var": "^1.1.0",
     "dotenv-cli": "^6.0.0",
+    "jest": "^29.3.1",
+    "jest-junit": "^15.0.0",
     "newman": "^5.3.2",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
