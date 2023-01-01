@@ -11,57 +11,30 @@ async function connectToDB() {
     if (connectedToDB) {
         return;
     }
-    try {
-        await database.mongoose
-            .connect(database.url, {
-                useNewUrlParser: true,
-                useUnifiedTopology: true
-            }).then(() => {
-                console.log("Connected to the database!");
-                connectedToDB = true;
-            });
-    } catch(err){
-        throw new CustomError(CustomErrorEnum.DATABASE_IS_DOWN, 500);
-    }
+    await database.mongoose
+        .connect(database.url, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        }).then(() => {
+            console.log("Connected to the database!");
+            connectedToDB = true;
+        });
 }
 
-//const PuzzleModel = require("../models/db.puzzle.model");
-
-// Upload puzzles to database
+// Upload objects to database
 async function queryUpload(puzzles, collection) {
     await module.exports.connectToDB();
-    try{
-        return await collection.insertMany(puzzles, { ordered: false });
-    } catch(err){
-        console.log(err)
-        throw new CustomError(CustomErrorEnum.DATABASE_REQUEST_REJECTED, 500);
-    }
+    return await collection.insertMany(puzzles, { ordered: false });
 }
 
 async function querySearchAND(filterValues, collection) {
-    let res;
     await module.exports.connectToDB();
-    try{
-        // await means that this async function won't return until it finishes
-        res = await collection.find({ $and : filterValues });
-    } catch (err){
-        console.log(err);
-        throw new CustomError(CustomErrorEnum.DATABASE_REQUEST_REJECTED, 500);
-    }
-    return res;
+    return await collection.find({ $and : filterValues });
 }
 
 async function queryDeleteAND(filterValues, collection) {
-    let res;
     await module.exports.connectToDB();
-    try{
-        // await means that this async function won't return until it finishes
-        res = await collection.deleteMany({ $and : filterValues });
-    } catch (err){
-        console.log(err);
-        throw new CustomError(CustomErrorEnum.DATABASE_REQUEST_REJECTED, 500);
-    }
-    return res;
+    return await collection.deleteMany({ $and : filterValues });
 }
 
 module.exports = { queryUpload: queryUpload, connectToDB, querySearchAND: querySearchAND, queryDeleteAND: queryDeleteAND };

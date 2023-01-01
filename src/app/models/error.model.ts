@@ -4,12 +4,13 @@
 export enum CustomErrorEnum {
     DATABASE_IS_DOWN = "The service is not able to connect to the database",
     DATABASE_REQUEST_REJECTED = "The database rejected/failed your request",
+    MONGO_BULK_WRITE_ERROR = "There was an error writing to the database",
     PUZZLE_NOT_FOUND = "Puzzle matching search criteria was not found",
     USER_PROFILE_NOT_FOUND = "User profile matching search criteria was not found",
     DEFAULT_400_ERROR = "Invalid Request",
     DEFAULT_404_ERROR = "Resource Not Found",
     DEFAULT_500_ERROR = "Service Unavailable",
-    DEFAULT_ERROR = "Default Error"
+    UNKNOWN_ERROR = "Unknown Error"
 }
 
 export class CustomError {
@@ -21,19 +22,4 @@ export class CustomError {
         this.Error_Message = message;
         this.Status = status;
     }
-}
-
-export function sanitizeErrorMessage(err){
-    if (err instanceof CustomError){
-        if (err.Status == 400){
-            err.Error_Message = CustomErrorEnum.DEFAULT_400_ERROR;
-        }
-        if (err.Status == 404){
-            err.Error_Message = CustomErrorEnum.DEFAULT_404_ERROR;
-        }
-        if (err.Status == 500){
-            err.Error_Message = CustomErrorEnum.DEFAULT_500_ERROR;
-        }
-    }
-    return err;
 }

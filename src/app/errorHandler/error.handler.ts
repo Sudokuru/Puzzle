@@ -9,14 +9,44 @@ function handleError(
     res: Response,
     next: NextFunction
 ) {
-    let customError = err;
 
-    // not really sure what this does
-    res.status((customError as CustomError).Status).send(customError);
+    let customError = null;
 
-    if (!(err instanceof CustomError)) {
-        new CustomError(CustomErrorEnum.DEFAULT_ERROR, 500);
+    // logging the error if is a CustomError
+    if (err instanceof CustomError){
+        console.log(err);
     }
+
+    // If it is not a custom error, log error and convert it to a custom error, then log the custom error.
+    if (!(err instanceof CustomError)) {
+        console.log(err);
+        if (err.name == "MongoBulkWriteError"){
+            err = new CustomError(CustomErrorEnum.MONGO_BULK_WRITE_ERROR, 400);
+        }
+        else {
+            console.log(err.name);
+            console.log(err.message);
+            err = new CustomError(CustomErrorEnum.UNKNOWN_ERROR, 500);
+        }
+        console.log(err);
+    }
+
+    // This sanitizes the error messages to the default error message.
+    if (err instanceof CustomError){
+        if (err.Status == 400){
+            customError = new CustomError(CustomErrorEnum.DEFAULT_400_ERROR, 400);
+        }
+
+        if (err.Status == 404){
+            new CustomError(CustomErrorEnum.DEFAULT_404_ERROR, 404);
+        }
+
+        if (err.Status == 500 && err.Error_Message != CustomErrorEnum.UNKNOWN_ERROR){
+            new CustomError(CustomErrorEnum.DEFAULT_500_ERROR, 500);
+        }
+    }
+
+    res.status((customError as CustomError).Status).send(customError);
 }
 
 export default handleError;
