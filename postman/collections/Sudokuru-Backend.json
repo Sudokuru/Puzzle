@@ -639,10 +639,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseurl}}/api/v1/user/profiles",
+									"raw": "http://localhost:3000/api/v1/user/profiles",
+									"protocol": "http",
 									"host": [
-										"{{baseurl}}"
+										"localhost"
 									],
+									"port": "3000",
 									"path": [
 										"api",
 										"v1",
@@ -669,10 +671,12 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseurl}}/api/v1/user/profiles",
+									"raw": "http://localhost:3000/api/v1/user/profiles",
+									"protocol": "http",
 									"host": [
-										"{{baseurl}}"
+										"localhost"
 									],
+									"port": "3000",
 									"path": [
 										"api",
 										"v1",
@@ -699,10 +703,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseurl}}/api/v1/user/profiles",
+									"raw": "http://localhost:3000/api/v1/user/profiles",
+									"protocol": "http",
 									"host": [
-										"{{baseurl}}"
+										"localhost"
 									],
+									"port": "3000",
 									"path": [
 										"api",
 										"v1",
@@ -744,15 +750,12 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "7203eaa5-951e-4a5a-9a66-0ea7d18363a8",
+				"id": "0b996ad9-171b-4443-b931-2cb5135b7bfc",
 				"type": "text/javascript",
 				"exec": [
-					"// retrieve baseUrl",
-					"var baseUrl = pm.environment.get('baseurl');",
-					"",
 					"// Script that deletes everything before request",
 					"pm.sendRequest({",
-					"    url: baseUrl + \"/api/v1/puzzles/\",",
+					"    url: \"http://localhost:3000/api/v1/puzzles/\",",
 					"    method: 'DELETE',",
 					"}, function (err, res) {",
 					"    console.log(res);",
@@ -763,7 +766,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "bf1c4beb-4a6a-44a1-a413-02ac93b8a458",
+				"id": "3175b80a-f3a2-4252-9717-36a5ea3a7c6b",
 				"type": "text/javascript",
 				"exec": [
 					""
