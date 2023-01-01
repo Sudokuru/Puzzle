@@ -1,5 +1,3 @@
-import { sanitizeErrorMessage } from "../models/error.model";
-
 const puzzleService = require('../services/puzzle.service');
 
 async function create(req, res, next) {

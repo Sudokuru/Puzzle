@@ -2,12 +2,13 @@
 // https://dev.to/qbentil/how-to-write-custom-error-handler-middleware-in-expressjs-using-javascript-29j1
 
 export enum CustomErrorEnum {
-    DATABASE_IS_DOWN = "The service is not able to connect to the database",
+    SERVER_SELECTION_ERROR = "The service is not able to connect to the database",
     DATABASE_REQUEST_REJECTED = "The database rejected/failed your request",
     MONGO_BULK_WRITE_ERROR = "There was an error writing to the database",
     PUZZLE_NOT_FOUND = "Puzzle matching search criteria was not found",
     USER_PROFILE_NOT_FOUND = "User profile matching search criteria was not found",
     DEFAULT_400_ERROR = "Invalid Request",
+    DEFAULT_401_ERROR = "Invalid Permission",
     DEFAULT_404_ERROR = "Resource Not Found",
     DEFAULT_500_ERROR = "Service Unavailable",
     UNKNOWN_ERROR = "Unknown Error"

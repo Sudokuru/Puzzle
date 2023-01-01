@@ -1,5 +1,3 @@
-import { sanitizeErrorMessage } from "../models/error.model";
-
 const userProfileService = require('../services/userProfile.service');
 
 async function create(req, res, next) {
