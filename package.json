@@ -7,7 +7,7 @@
     "test": "jest",
     "test:unit": "jest --testPathPattern=src/tests/unit",
     "test:integration": "jest --testPathPattern=src/tests/integration",
-    "test:functional": "dotenv -- cross-var newman run \"postman/collections/Backend-Functional-Tests.json\" --environment \"https://api.getpostman.com/environments/%POSTMAN_ENV_ID%?apikey=%POSTMAN_API_KEY%\"",
+    "test:functional": "dotenv -- cross-var newman run \"postman/collections/Sudokuru-Backend.json\" --environment \"https://api.getpostman.com/environments/%POSTMAN_ENV_ID%?apikey=%POSTMAN_API_KEY%\"",
     "start": "ts-node src/app.ts local",
     "deploy": "tsc && serverless deploy"
   },
