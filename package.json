@@ -4,7 +4,6 @@
   "description": "This is the backend for the sudokuru service",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
     "test:unit": "jest --testPathPattern=src/tests/unit",
     "test:integration": "newman run \"postman/collections/Sudokuru-Backend.json\"",
     "test:integration500s": "newman run \"postman/collections/Sudokuru-Backend-500s\"",
