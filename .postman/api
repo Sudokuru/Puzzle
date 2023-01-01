@@ -5,6 +5,7 @@ id = e02394ad-79f7-4997-9226-b530d7c8343d
 
 [relations.collections]
 rootDirectory = postman/collections
+files[] = {"id":"23651156-960cd735-4234-46fb-9f51-6a1a6b3d997d","path":"Sudokuru-Backend-500s.json","metaData":{}}
 files[] = {"id":"23651156-4bc70130-1d36-43ab-86a5-01cd64dba57a","path":"Sudokuru-Backend.json","metaData":{}}
 
 [relations.collections.metaData]
@@ -15,3 +16,4 @@ files[] = {"path":"index.yaml","metaData":{}}
 
 [relations.apiDefinition.metaData]
 type = openapi:3
+rootFiles[] = index.yaml

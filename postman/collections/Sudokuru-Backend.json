@@ -62,10 +62,12 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseurl}}/api/v1/puzzles/",
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
 											"host": [
-												"{{baseurl}}"
+												"localhost"
 											],
+											"port": "3000",
 											"path": [
 												"api",
 												"v1",
@@ -110,10 +112,12 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseurl}}/api/v1/puzzles/",
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
 											"host": [
-												"{{baseurl}}"
+												"localhost"
 											],
+											"port": "3000",
 											"path": [
 												"api",
 												"v1",
@@ -158,10 +162,12 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseurl}}/api/v1/puzzles/",
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
 											"host": [
-												"{{baseurl}}"
+												"localhost"
 											],
+											"port": "3000",
 											"path": [
 												"api",
 												"v1",
@@ -212,10 +218,12 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseurl}}/api/v1/puzzles/",
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
 											"host": [
-												"{{baseurl}}"
+												"localhost"
 											],
+											"port": "3000",
 											"path": [
 												"api",
 												"v1",
@@ -232,7 +240,7 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "eb17cf4c-f50a-44e8-9464-27db2e605929",
+										"id": "da9f8d77-c069-40d1-9913-b130b3779f45",
 										"type": "text/javascript",
 										"exec": [
 											""
@@ -242,7 +250,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "54b57d42-44d0-477e-8204-341927c38cfb",
+										"id": "5ab0a224-57f0-4a88-81ed-6f769348526f",
 										"type": "text/javascript",
 										"exec": [
 											"// Test to see if Status Code is 201",
@@ -256,8 +264,84 @@
 						},
 						{
 							"name": "Code 400",
-							"item": [],
-							"id": "743d9b07-c901-4e4d-886e-ae7d96a66002"
+							"item": [
+								{
+									"name": "1.1.2 POST_DUPLICATE_PUZZLE_RETURN_400",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+												"exec": [
+													"pm.test(\"JSON response is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 0, \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", 5, 8, 4, 0, 0, 10, 20, false, 0);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "813efdc0-8591-47eb-ad6d-a0454688a9fa",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "743d9b07-c901-4e4d-886e-ae7d96a66002",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "68c6085d-d345-46dd-bc71-ac648be2ce19",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "f1d30c5a-a631-4366-a414-501759226f5d",
+										"type": "text/javascript",
+										"exec": [
+											"// Test to see if Status Code is 400",
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});"
+										]
+									}
+								}
+							]
 						},
 						{
 							"name": "Code 500",
@@ -320,10 +404,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseurl}}/api/v1/puzzles/",
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
 											"host": [
-												"{{baseurl}}"
+												"localhost"
 											],
+											"port": "3000",
 											"path": [
 												"api",
 												"v1",
@@ -385,10 +471,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseurl}}/api/v1/puzzles/",
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
 											"host": [
-												"{{baseurl}}"
+												"localhost"
 											],
+											"port": "3000",
 											"path": [
 												"api",
 												"v1",
@@ -405,7 +493,7 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "bd4e84db-20c7-4ce7-879a-e53aafa38bd1",
+										"id": "4fe108a7-3067-48a8-a03f-0e81d78a91bd",
 										"type": "text/javascript",
 										"exec": [
 											""
@@ -415,7 +503,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "62ace093-78a0-47ef-ad75-70b1437a3347",
+										"id": "9a76c78e-7c46-48dd-a409-01f03b6d0ed5",
 										"type": "text/javascript",
 										"exec": [
 											"// Test to see if Status Code is 404",
@@ -468,10 +556,12 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseurl}}/api/v1/puzzles/",
+									"raw": "http://localhost:3000/api/v1/puzzles/",
+									"protocol": "http",
 									"host": [
-										"{{baseurl}}"
+										"localhost"
 									],
+									"port": "3000",
 									"path": [
 										"api",
 										"v1",
@@ -654,7 +744,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "2b7a23b3-a81f-4b8a-8bdb-3a91153f111b",
+				"id": "7203eaa5-951e-4a5a-9a66-0ea7d18363a8",
 				"type": "text/javascript",
 				"exec": [
 					"// retrieve baseUrl",
@@ -673,7 +763,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "bdcd3e27-70e3-45c2-8748-a9c86c043a03",
+				"id": "bf1c4beb-4a6a-44a1-a413-02ac93b8a458",
 				"type": "text/javascript",
 				"exec": [
 					""
