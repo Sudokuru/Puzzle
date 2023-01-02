@@ -1,4 +1,4 @@
-import {body} from "express-validator";
+import {body, param} from "express-validator";
 
 exports.validatePuzzleBody = [
     body().isArray(),
@@ -18,5 +18,24 @@ exports.validatePuzzleBody = [
     body('*.calendarDate', '').optional(),
     body('*.imageUrl', '').optional(),
     body('*.description', '').optional(),
+];
 
+exports.validatePuzzleParameters = [
+    param('id').optional(),
+    param('puzzle', 'puzzle did not match whitelist').optional().whitelist("0123456789"),
+    param('puzzle', 'puzzle is not of correct length').optional().isLength({ min: 81, max: 81 }),
+    param('puzzleSolution', 'puzzle solution did not match whitelist').optional().whitelist("123456789"),
+    param('puzzleSolution', 'puzzle solution is not of correct length').optional().isLength( { min: 81, max: 81 }),
+    param('strategyCount.stratOne', 'strategy one is not an integer').optional().isInt(),
+    param('strategyCount.stratTwo', 'strategy two is not an integer').optional().isInt(),
+    param('strategyCount.stratThree', 'strategy three is not an integer').optional().isInt(),
+    param('fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
+    param('averageSolveTime', 'average solve time is not an integer').optional().isInt(),
+    param('numUsersPlayed', 'num users played is not an integer').optional().isInt(),
+    param('numTimesPlayed', 'num times played is not an integer').optional().isInt(),
+    param('trulyUnique', 'truly unique is not a boolean').optional().isBoolean(),
+    param('drillStrategy', 'drill strategy is not a valid string option').optional().isString().isIn(["stratOne", "stratTwo", "stratThree"]),
+    param('calendarDate', '').optional(),
+    param('imageUrl', '').optional(),
+    param('description', '').optional(),
 ];
