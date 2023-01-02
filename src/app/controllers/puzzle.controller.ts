@@ -1,9 +1,12 @@
-import {validationResult} from "express-validator";
+import {matchedData, validationResult} from "express-validator";
 import {CustomError, CustomErrorEnum} from "../models/error.model";
 
 const puzzleService = require('../services/puzzle.service');
 
 async function createPuzzle(req, res, next) {
+
+    const allData = Object.values(matchedData(req, { onlyValidData: true }));
+    allData.pop();
 
     try {
         const errors = validationResult(req);
@@ -11,7 +14,7 @@ async function createPuzzle(req, res, next) {
             console.log(errors);
             throw new CustomError(CustomErrorEnum.INVALID_SYNTAX, 400);
         }
-        res.status(201).json(await puzzleService.createPuzzle(req.body));
+        res.status(201).json(await puzzleService.createPuzzle(allData));
     } catch(err) {
         next(err);
     }
