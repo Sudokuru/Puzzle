@@ -6,6 +6,7 @@ const puzzleService = require('../services/puzzle.service');
 async function createPuzzle(req, res, next) {
 
     const allData = Object.values(matchedData(req, { onlyValidData: true }));
+    // this is needed because the last element in matchedData array is the original request for some reason.
     allData.pop();
 
     try {
