@@ -5,6 +5,7 @@ export enum CustomErrorEnum {
     SERVER_SELECTION_ERROR = "The service is not able to connect to the database",
     DATABASE_REQUEST_REJECTED = "The database rejected/failed your request",
     INVALID_PATH = "The path provided is invalid",
+    INVALID_SYNTAX = "The request has invalid syntax",
     MONGO_BULK_WRITE_ERROR = "There was an error writing to the database",
     PUZZLE_NOT_FOUND = "Puzzle matching search criteria was not found",
     USER_PROFILE_NOT_FOUND = "User profile matching search criteria was not found",

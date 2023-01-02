@@ -3,7 +3,9 @@ const routes = express.Router();
 
 const puzzleController = require('../controllers/puzzle.controller');
 
-routes.post("/puzzles/", puzzleController.create);
+const { validatePuzzleBody } = require("../validationAndSanitation/puzzle.validationAndSanitation");
+
+routes.post("/puzzles/", validatePuzzleBody, puzzleController.create); //todo throw errors before reaching controller
 routes.get("/puzzles/", puzzleController.search);
 routes.put("/puzzles/", puzzleController.update);
 routes.delete("/puzzles/", puzzleController.remove);
