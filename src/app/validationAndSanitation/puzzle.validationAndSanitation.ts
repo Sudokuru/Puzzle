@@ -15,9 +15,9 @@ exports.validatePuzzleBody = [
     body('*.numTimesPlayed', 'num times played is not an integer').optional().isInt(),
     body('*.trulyUnique', 'truly unique is not a boolean').optional().isBoolean(),
     body('*.drillStrategy', 'drill strategy is not a valid string option').optional().isString().isIn(["stratOne", "stratTwo", "stratThree"]),
-    body('*.calendarDate', '').optional(),
-    body('*.imageUrl', '').optional(),
-    body('*.description', '').optional(),
+    body('*.calendarDate', 'calendar date is not a date').optional().isDate({ strictMode: true, format: "YYYY-MM-DD" }),
+    body('*.imageUrl', 'imageUrl is not a string').optional().isString(),
+    body('*.description', 'description is not a string').optional().isString(),
 ];
 
 exports.validatePuzzleParameters = [
@@ -35,7 +35,7 @@ exports.validatePuzzleParameters = [
     param('numTimesPlayed', 'num times played is not an integer').optional().isInt(),
     param('trulyUnique', 'truly unique is not a boolean').optional().isBoolean(),
     param('drillStrategy', 'drill strategy is not a valid string option').optional().isString().isIn(["stratOne", "stratTwo", "stratThree"]),
-    param('calendarDate', '').optional(),
-    param('imageUrl', '').optional(),
-    param('description', '').optional(),
+    param('calendarDate', 'calendar date is not a date').optional().isDate({ strictMode: true }),
+    param('imageUrl', 'imageUrl is not a string').optional().isString(),
+    param('description', 'description is not a string').optional().isString(),
 ];
