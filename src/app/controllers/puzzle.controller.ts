@@ -5,16 +5,10 @@ const puzzleService = require('../services/puzzle.service');
 
 async function createPuzzle(req, res, next) {
 
-    const allData = Object.values(matchedData(req, { onlyValidData: true }));
+    const allData = Object.values(matchedData(req, { locations: ['body'] }));
     // this is needed because the last element in matchedData array is the original request for some reason.
     allData.pop();
-
     try {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            console.log(errors);
-            throw new CustomError(CustomErrorEnum.INVALID_SYNTAX, 400);
-        }
         res.status(201).json(await puzzleService.createPuzzle(allData));
     } catch(err) {
         next(err);

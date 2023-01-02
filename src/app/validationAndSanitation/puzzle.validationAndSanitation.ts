@@ -1,5 +1,4 @@
-import {body, validationResult} from "express-validator";
-import {CustomError, CustomErrorEnum} from "../models/error.model";
+import {body} from "express-validator";
 
 exports.validatePuzzleBody = [
     body().isArray(),
@@ -20,15 +19,4 @@ exports.validatePuzzleBody = [
     body('*.imageUrl', '').optional(),
     body('*.description', '').optional(),
 
-    // (req, res, next) => {
-    //     const errors = validationResult(req);
-    //     if (!errors.isEmpty()) {
-    //         console.log(errors);
-    //         try{
-    //             throw new CustomError(CustomErrorEnum.INVALID_SYNTAX, 400);
-    //         } catch (err) {
-    //             next(err);
-    //         }
-    //     }
-    // }
 ];
