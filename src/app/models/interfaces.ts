@@ -69,7 +69,7 @@ export interface Puzzle {
     numUsersPlayed: number,
     numTimesPlayed: number,
     trulyUnique: boolean,
-    drillStrategies?: strategyTypes,
+    drillStrategies: strategyTypes,
     calendarDate?: Date,
     imageUrl?: string,
     description?: string
