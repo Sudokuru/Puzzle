@@ -1,6 +1,3 @@
-// connect to database
-import {CustomError, CustomErrorEnum} from "../models/error.model";
-
 const database = require("../models/index");
 
 console.log(database.url);
