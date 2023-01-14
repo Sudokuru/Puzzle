@@ -31,6 +31,7 @@ const UserGameStatisticsSchema = new Schema<UserGameStatistics>({
         numWrongCellsPlayed: { type: Number, required: true, defualt: 0 },
         numCorrectCellsPlayed: { type: Number, required: true, defualt: 0 },
         numGamesPlayed: { type: Number, required: true, defualt: 0 },
+        //numGamesFailed
         numWrongCellsPlayedPerStrategy: {
             stratOne: { type: Number, required: true, defualt: 0 },
             stratTwo: { type: Number, required: true, defualt: 0 },

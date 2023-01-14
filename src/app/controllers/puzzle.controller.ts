@@ -1,5 +1,4 @@
-import {matchedData, validationResult} from "express-validator";
-import {CustomError, CustomErrorEnum} from "../models/error.model";
+import {matchedData} from "express-validator";
 
 const puzzleService = require('../services/puzzle.service');
 
@@ -9,6 +8,7 @@ async function createPuzzle(req, res, next) {
     // this is needed because the last element in matchedData array is the original request for some reason.
     allData.pop();
     try {
+        // override successful completion code of 200 to 201 for successful object creation
         res.status(201).json(await puzzleService.createPuzzle(allData));
     } catch(err) {
         next(err);

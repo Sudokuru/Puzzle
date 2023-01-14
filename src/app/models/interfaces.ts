@@ -1,9 +1,27 @@
 
 // Helper Interfaces
 interface numWrongCellsPlayedPerStrategy {
-    stratOne: number,
-    stratTwo: number,
-    stratThree: number
+    NAKED_SINGLE: number,
+    HIDDEN_SINGLE: number,
+    NAKED_PAIR: number,
+    NAKED_TRIPLET: number,
+    NAKED_QUADRUPLET: number,
+    NAKED_QUINTUPLET: number,
+    NAKED_SEXTUPLET: number,
+    NAKED_SEPTUPLET: number,
+    NAKED_OCTUPLET: number
+}
+
+interface strategyTypes {
+    NAKED_SINGLE: boolean,
+    HIDDEN_SINGLE: boolean,
+    NAKED_PAIR: boolean,
+    NAKED_TRIPLET: boolean,
+    NAKED_QUADRUPLET: boolean,
+    NAKED_QUINTUPLET: boolean,
+    NAKED_SEXTUPLET: boolean,
+    NAKED_SEPTUPLET: boolean,
+    NAKED_OCTUPLET: boolean
 }
 
 interface moves {
@@ -18,17 +36,14 @@ interface moves {
 export interface Puzzle {
     puzzle: string,
     puzzleSolution: string,
-    strategyCount: {
-        stratOne: number,
-        stratTwo: number,
-        stratThree: number
-    },
+    strategyTypes: strategyTypes,
+    difficulty: number,
     fastestSolveTime: number,
     averageSolveTime: number,
     numUsersPlayed: number,
     numTimesPlayed: number,
     trulyUnique: boolean,
-    drillStrategy?: string,
+    drillStrategies?: strategyTypes,
     calendarDate?: Date,
     imageUrl?: string,
     description?: string
@@ -74,11 +89,7 @@ export interface UserGameSearchFilters {
             low: number,
             high: number
         },
-        strategyTypes: {
-            stratOne: boolean,
-            stratTwo: boolean,
-            stratThree: boolean
-        }
+        strategyTypes: strategyTypes
     }
 }
 
