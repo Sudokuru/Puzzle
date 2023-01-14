@@ -9,7 +9,20 @@ interface numWrongCellsPlayedPerStrategy {
     NAKED_QUINTUPLET: number,
     NAKED_SEXTUPLET: number,
     NAKED_SEPTUPLET: number,
-    NAKED_OCTUPLET: number
+    NAKED_OCTUPLET: number,
+    HIDDEN_PAIR: number,
+    HIDDEN_TRIPLET: number,
+    HIDDEN_QUADRUPLET: number,
+    HIDDEN_QUINTUPLET: number,
+    HIDDEN_SEXTUPLET: number,
+    HIDDEN_SEPTUPLET: number,
+    HIDDEN_OCTUPLET: number,
+    POINTING_PAIRS: number,
+    POINTING_TRIPLETS: number,
+    BOX_LINE_REDUCTION: number,
+    X_WING: number,
+    SWORDFISH: number,
+    SINGLES_CHAINING: number
 }
 
 interface strategyTypes {
@@ -21,7 +34,20 @@ interface strategyTypes {
     NAKED_QUINTUPLET: boolean,
     NAKED_SEXTUPLET: boolean,
     NAKED_SEPTUPLET: boolean,
-    NAKED_OCTUPLET: boolean
+    NAKED_OCTUPLET: boolean,
+    HIDDEN_PAIR: boolean,
+    HIDDEN_TRIPLET: boolean,
+    HIDDEN_QUADRUPLET: boolean,
+    HIDDEN_QUINTUPLET: boolean,
+    HIDDEN_SEXTUPLET: boolean,
+    HIDDEN_SEPTUPLET: boolean,
+    HIDDEN_OCTUPLET: boolean,
+    POINTING_PAIRS: boolean,
+    POINTING_TRIPLETS: boolean,
+    BOX_LINE_REDUCTION: boolean,
+    X_WING: boolean,
+    SWORDFISH: boolean,
+    SINGLES_CHAINING: boolean
 }
 
 interface moves {
