@@ -884,12 +884,12 @@
 													"pm.test(\"JSON response is correct\", function () {\r",
 													"    var jsonData = pm.response.json();\r",
 													"\r",
-													"    var strategyTypes = new Array(22).fill(true);\r",
-													"    var drillStrategies = new Array(6).fill(true);\r",
+													"    var strategyTypes = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"NAKED_TRIPLET\", \"NAKED_QUADRUPLET\", \"NAKED_QUINTUPLET\", \"NAKED_SEXTUPLET\", \"NAKED_SEPTUPLET\", \"NAKED_OCTUPLET\", \"HIDDEN_PAIR\", \"HIDDEN_TRIPLET\", \"HIDDEN_QUADRUPLET\", \"HIDDEN_QUINTUPLET\", \"HIDDEN_SEXTUPLET\", \"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\", \"X_WING\", \"SWORDFISH\", \"SINGLES_CHAINING\"];\r",
+													"\r",
+													"    var drillStrategies = [\"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\"];\r",
+													"\r",
 													"    puzzleTools.puzzleResponseChecker(jsonData, 0, \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", strategyTypes, 5, 0, 0, 10, 20, false, 0, drillStrategies, \"2019-12-12T00:00:00.000Z\", \"image/url\", \"This is the puzzle description!\");\r",
 													"\r",
-													"    var strategyTypes = new Array(14).fill(true);\r",
-													"    var drillStrategies = new Array(7).fill(true);\r",
 													"    puzzleTools.puzzleResponseChecker(jsonData, 1, \"603002001500000020901730006810400090060000000000690040350000004002070005000500108\", \"683942751574816329921735486817453692469287513235691847358169274142378965796524138\", strategyTypes, 5, 0, 0, 10, 20, false, 0, drillStrategies);\r",
 													"});"
 												],
@@ -897,7 +897,7 @@
 											}
 										}
 									],
-									"id": "9808f1b8-76b4-4b30-a09c-3acbb93191fe",
+									"id": "55cab086-dad2-4f7c-bfa7-33e088288660",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
@@ -906,7 +906,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true,\r\n        \"NAKED_QUADRUPLET\": true,\r\n        \"NAKED_QUINTUPLET\": true,\r\n        \"NAKED_SEXTUPLET\": true,\r\n        \"NAKED_SEPTUPLET\": true,\r\n        \"NAKED_OCTUPLET\": true,\r\n        \"HIDDEN_PAIR\": true,\r\n        \"HIDDEN_TRIPLET\": true,\r\n        \"HIDDEN_QUADRUPLET\": true,\r\n        \"HIDDEN_QUINTUPLET\": true,\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIR\": true,\r\n        \"POINTING_TRIPLET\": true,\r\n        \"BOX_LINE_REDUCTION\": true,\r\n        \"X_WING\": true,\r\n        \"SWORDFISH\": true,\r\n        \"SINGLES_CHAINING\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"trulyUnique\": false,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIR\": true,\r\n        \"POINTING_TRIPLET\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    },\r\n    \"calendarDate\": \"2019-12-12\",\r\n    \"imageUrl\": \"image/url\",\r\n    \"description\": \"This is the puzzle description!\"\r\n\r\n}, {\r\n    \"puzzle\": \"603002001500000020901730006810400090060000000000690040350000004002070005000500108\", \r\n    \"puzzleSolution\": \"683942751574816329921735486817453692469287513235691847358169274142378965796524138\", \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true,\r\n        \"NAKED_SEXTUPLET\": true,\r\n        \"HIDDEN_PAIR\": true,\r\n        \"HIDDEN_QUADRUPLET\": true,\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"BOX_LINE_REDUCTION\": true,\r\n        \"X_WING\": true,\r\n        \"SWORDFISH\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"trulyUnique\": false,\r\n    \"drillStrategies\": {\r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true,\r\n        \"NAKED_QUADRUPLET\": true,\r\n        \"NAKED_QUINTUPLET\": true,\r\n        \"NAKED_SEXTUPLET\": true\r\n    }\r\n}]\r\n",
+											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"NAKED_TRIPLET\", \"NAKED_QUADRUPLET\", \"NAKED_QUINTUPLET\", \"NAKED_SEXTUPLET\", \"NAKED_SEPTUPLET\", \"NAKED_OCTUPLET\", \"HIDDEN_PAIR\", \"HIDDEN_TRIPLET\", \"HIDDEN_QUADRUPLET\", \"HIDDEN_QUINTUPLET\", \"HIDDEN_SEXTUPLET\", \"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\", \"X_WING\", \"SWORDFISH\", \"SINGLES_CHAINING\"],\r\n    \"difficulty\": 5,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"trulyUnique\": false,\r\n    \"drillStrategies\": [\"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\"],\r\n    \"calendarDate\": \"2019-12-12\",\r\n    \"imageUrl\": \"image/url\",\r\n    \"description\": \"This is the puzzle description!\"\r\n}, {\r\n    \"puzzle\": \"603002001500000020901730006810400090060000000000690040350000004002070005000500108\", \r\n    \"puzzleSolution\": \"683942751574816329921735486817453692469287513235691847358169274142378965796524138\", \r\n    \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"NAKED_TRIPLET\", \"NAKED_QUADRUPLET\", \"NAKED_QUINTUPLET\", \"NAKED_SEXTUPLET\", \"NAKED_SEPTUPLET\", \"NAKED_OCTUPLET\", \"HIDDEN_PAIR\", \"HIDDEN_TRIPLET\", \"HIDDEN_QUADRUPLET\", \"HIDDEN_QUINTUPLET\", \"HIDDEN_SEXTUPLET\", \"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\", \"X_WING\", \"SWORDFISH\", \"SINGLES_CHAINING\"],\r\n    \"difficulty\": 5,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"trulyUnique\": false,\r\n    \"drillStrategies\": [\"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\"]\r\n}\r\n]\r\n\r\n",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -941,9 +941,11 @@
 													"pm.test(\"JSON response is correct\", function () {\r",
 													"    var jsonData = pm.response.json();\r",
 													"\r",
-													"    var strategyTypes = new Array(22).fill(true);\r",
-													"    var drillStrategies = new Array(6).fill(true);\r",
-													"    puzzleTools.puzzleResponseChecker(jsonData, 0, \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", strategyTypes, 5, 0, 0, 10, 20, false, 0, drillStrategies);\r",
+													"    var strategyTypes = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"NAKED_TRIPLET\", \"NAKED_QUADRUPLET\", \"NAKED_QUINTUPLET\", \"NAKED_SEXTUPLET\", \"NAKED_SEPTUPLET\", \"NAKED_OCTUPLET\", \"HIDDEN_PAIR\", \"HIDDEN_TRIPLET\", \"HIDDEN_QUADRUPLET\", \"HIDDEN_QUINTUPLET\", \"HIDDEN_SEXTUPLET\", \"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\", \"X_WING\", \"SWORDFISH\", \"SINGLES_CHAINING\"];\r",
+													"\r",
+													"    var drillStrategies = [\"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\"];\r",
+													"\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 0, \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", strategyTypes, 5, 0, 0, 10, 20, false, 0, drillStrategies, \"2019-12-12T00:00:00.000Z\", \"image/url\", \"This is the puzzle description!\");\r",
 													"});"
 												],
 												"type": "text/javascript"
@@ -959,7 +961,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true,\r\n        \"NAKED_QUADRUPLET\": true,\r\n        \"NAKED_QUINTUPLET\": true,\r\n        \"NAKED_SEXTUPLET\": true,\r\n        \"NAKED_SEPTUPLET\": true,\r\n        \"NAKED_OCTUPLET\": true,\r\n        \"HIDDEN_PAIR\": true,\r\n        \"HIDDEN_TRIPLET\": true,\r\n        \"HIDDEN_QUADRUPLET\": true,\r\n        \"HIDDEN_QUINTUPLET\": true,\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIR\": true,\r\n        \"POINTING_TRIPLET\": true,\r\n        \"BOX_LINE_REDUCTION\": true,\r\n        \"X_WING\": true,\r\n        \"SWORDFISH\": true,\r\n        \"SINGLES_CHAINING\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"trulyUnique\": false,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n}]\r\n",
+											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"NAKED_TRIPLET\", \"NAKED_QUADRUPLET\", \"NAKED_QUINTUPLET\", \"NAKED_SEXTUPLET\", \"NAKED_SEPTUPLET\", \"NAKED_OCTUPLET\", \"HIDDEN_PAIR\", \"HIDDEN_TRIPLET\", \"HIDDEN_QUADRUPLET\", \"HIDDEN_QUINTUPLET\", \"HIDDEN_SEXTUPLET\", \"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\", \"X_WING\", \"SWORDFISH\", \"SINGLES_CHAINING\"],\r\n    \"difficulty\": 5,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"trulyUnique\": false,\r\n    \"drillStrategies\": [\"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\"],\r\n    \"calendarDate\": \"2019-12-12\",\r\n    \"imageUrl\": \"image/url\",\r\n    \"description\": \"This is the puzzle description!\"\r\n}]\r\n",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -994,9 +996,11 @@
 													"pm.test(\"JSON response is correct\", function () {\r",
 													"    var jsonData = pm.response.json();\r",
 													"\r",
-													"    var strategyTypes = new Array(22).fill(true);\r",
-													"    var drillStrategies = new Array(6).fill(true);\r",
-													"    puzzleTools.puzzleResponseChecker(jsonData, 0, \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
+													"    var strategyTypes = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"];\r",
+													"\r",
+													"    var drillStrategies = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"];\r",
+													"\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 0, \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", strategyTypes, 5, 0, 0, 10, 20, false, 0, drillStrategies, \"2019-12-12T00:00:00.000Z\", \"image/url\", \"This is the puzzle description!\");\r",
 													"});"
 												],
 												"type": "text/javascript"
@@ -1022,7 +1026,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true,\r\n        \"NAKED_QUADRUPLET\": true,\r\n        \"NAKED_QUINTUPLET\": true,\r\n        \"NAKED_SEXTUPLET\": true,\r\n        \"NAKED_SEPTUPLET\": true,\r\n        \"NAKED_OCTUPLET\": true,\r\n        \"HIDDEN_PAIR\": true,\r\n        \"HIDDEN_TRIPLET\": true,\r\n        \"HIDDEN_QUADRUPLET\": true,\r\n        \"HIDDEN_QUINTUPLET\": true,\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIR\": true,\r\n        \"POINTING_TRIPLET\": true,\r\n        \"BOX_LINE_REDUCTION\": true,\r\n        \"X_WING\": true,\r\n        \"SWORDFISH\": true,\r\n        \"SINGLES_CHAINING\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n}]\r\n",
+											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"],\r\n    \"difficulty\": 5,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"trulyUnique\": false,\r\n    \"drillStrategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"],\r\n    \"calendarDate\": \"2019-12-12\",\r\n    \"imageUrl\": \"image/url\",\r\n    \"description\": \"This is the puzzle description!\"\r\n}]\r\n",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1638,6 +1642,286 @@
 									"response": []
 								},
 								{
+									"name": "GET_PUZZLE_BY_PUZZLE",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "1fa9982f-909c-4fb6-9b33-b617498393c9",
+												"exec": [
+													"pm.test(\"JSON response is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"\r",
+													"    var strategyTypes = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"];\r",
+													"\r",
+													"    var drillStrategies = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"];\r",
+													"    \r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 0, \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
+													"\r",
+													"    pm.expect(jsonData[1]).to.eql(undefined);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "e0a0b1c8-e2fd-4c34-801b-7ebb14021ce1",
+												"exec": [
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [\r",
+													"            {\r",
+													"                \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r",
+													"                \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r",
+													"                \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"],\r",
+													"                \"difficulty\": 5,\r",
+													"                \"drillStrategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"]\r",
+													"            },\r",
+													"            {\r",
+													"                \"puzzle\": \"008645019010009700009702000040023870803097200100000093000004106000000930700306402\", \r",
+													"                \"puzzleSolution\": \"278645319614839725539712648946523871853197264127468593382974156465281937791356482\", \r",
+													"                \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"],\r",
+													"                \"difficulty\": 4,\r",
+													"                \"drillStrategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"]\r",
+													"            }\r",
+													"            ]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "3b327584-2ff8-439a-b614-3ecbc014231e",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/?puzzle=\"310084002200150006570003010423708095760030000009562030050006070007000900000001500\"",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											],
+											"query": [
+												{
+													"key": "puzzle",
+													"value": "\"310084002200150006570003010423708095760030000009562030050006070007000900000001500\""
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET_ALL_DIFFICULTY_5_PUZZLES",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "1fa9982f-909c-4fb6-9b33-b617498393c9",
+												"exec": [
+													"pm.test(\"JSON response is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"\r",
+													"    var strategyTypes = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"];\r",
+													"\r",
+													"    var drillStrategies = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"];\r",
+													"    \r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 0, \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
+													"\r",
+													"    pm.expect(jsonData[1]).to.eql(undefined);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "e0a0b1c8-e2fd-4c34-801b-7ebb14021ce1",
+												"exec": [
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [\r",
+													"            {\r",
+													"                \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r",
+													"                \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r",
+													"                \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"],\r",
+													"                \"difficulty\": 5,\r",
+													"                \"drillStrategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"]\r",
+													"            },\r",
+													"            {\r",
+													"                \"puzzle\": \"008645019010009700009702000040023870803097200100000093000004106000000930700306402\", \r",
+													"                \"puzzleSolution\": \"278645319614839725539712648946523871853197264127468593382974156465281937791356482\", \r",
+													"                \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"],\r",
+													"                \"difficulty\": 4,\r",
+													"                \"drillStrategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"]\r",
+													"            }\r",
+													"            ]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "5865422e-af77-4b53-a6b8-1c794d60573b",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/?difficulty=5",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											],
+											"query": [
+												{
+													"key": "difficulty",
+													"value": "5"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET_ALL_NAKED_SINGLES",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "1fa9982f-909c-4fb6-9b33-b617498393c9",
+												"exec": [
+													"pm.test(\"JSON response is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"\r",
+													"    var strategyTypes = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\"];\r",
+													"\r",
+													"    var drillStrategies = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\"];\r",
+													"\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 0, \"008645019010009700009702000040023870803097200100000093000004106000000930700306402\", \"278645319614839725539712648946523871853197264127468593382974156465281937791356482\", strategyTypes, 4, 0, 0, 0, 0, false, 0, drillStrategies);\r",
+													"\r",
+													"    pm.expect(jsonData[1]).to.eql(undefined);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "e0a0b1c8-e2fd-4c34-801b-7ebb14021ce1",
+												"exec": [
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [\r",
+													"            {\r",
+													"                \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r",
+													"                \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r",
+													"                \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"],\r",
+													"                \"difficulty\": 5,\r",
+													"                \"drillStrategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"]\r",
+													"            },\r",
+													"            {\r",
+													"                \"puzzle\": \"008645019010009700009702000040023870803097200100000093000004106000000930700306402\", \r",
+													"                \"puzzleSolution\": \"278645319614839725539712648946523871853197264127468593382974156465281937791356482\", \r",
+													"                \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\"],\r",
+													"                \"difficulty\": 4,\r",
+													"                \"drillStrategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\"]\r",
+													"            }\r",
+													"            ]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "1c941991-7a18-4db2-acf6-6c4cf4b118c8",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/?strategies[]=NAKED_SINGLE&strategies[]=HIDDEN_SINGLE",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											],
+											"query": [
+												{
+													"key": "strategies[]",
+													"value": "NAKED_SINGLE"
+												},
+												{
+													"key": "strategies[]",
+													"value": "HIDDEN_SINGLE"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
 									"name": "GET_ALL_FOUR_PUZZLES_IN_DB",
 									"event": [
 										{
@@ -1649,15 +1933,31 @@
 													"// response order changes each time so this test will fail most of the time. \r",
 													"pm.test(\"JSON response is correct\", function () {\r",
 													"    var jsonData = pm.response.json();\r",
+													"\r",
+													"    puzzleOne = \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\";\r",
+													"    puzzleTwo = \"008645019010009700009702000040023870803097200100000093000004106000000930700306402\";\r",
+													"    puzzleThree = \"000080009832709015049520370175600040000005080090007006080170090000350020200006500\";\r",
+													"    puzzleFour = \"060004029400900006900160570610000082040000000302007600100050068009641700050302091\";\r",
+													"\r",
+													"    var returnOrder = new Array(4);\r",
+													"    var puzzles = [puzzleOne, puzzleTwo, puzzleThree, puzzleFour];\r",
+													"    for (let j = 0; j < 4; j++){\r",
+													"        for (let i = 0; i < 4; i++){\r",
+													"            if (puzzles[j] == jsonData[i].puzzle){\r",
+													"                returnOrder[j] = i;\r",
+													"            }\r",
+													"        }\r",
+													"    }\r",
+													"\r",
 													"    var strategyTypes = new Array(4).fill(true);\r",
 													"    var drillStrategies = new Array(6).fill(true);\r",
-													"    puzzleTools.puzzleResponseChecker(jsonData, 0, \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, returnOrder[0], puzzleOne, \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
 													"\r",
-													"    puzzleTools.puzzleResponseChecker(jsonData, 3, \"008645019010009700009702000040023870803097200100000093000004106000000930700306402\", \"278645319614839725539712648946523871853197264127468593382974156465281937791356482\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, returnOrder[1], puzzleTwo, \"278645319614839725539712648946523871853197264127468593382974156465281937791356482\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
 													"\r",
-													"    puzzleTools.puzzleResponseChecker(jsonData, 2, \"000080009832709015049520370175600040000005080090007006080170090000350020200006500\", \"751483269832769415649521378175638942426915783398247156583172694967354821214896537\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, returnOrder[2], puzzleThree, \"751483269832769415649521378175638942426915783398247156583172694967354821214896537\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
 													"\r",
-													"    puzzleTools.puzzleResponseChecker(jsonData, 1, \"060004029400900006900160570610000082040000000302007600100050068009641700050302091\", \"861574329475923816923168574617435982548296137392817645134759268289641753756382491\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, returnOrder[3], puzzleFour, \"861574329475923816923168574617435982548296137392817645134759268289641753756382491\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
 													"});"
 												],
 												"type": "text/javascript"
@@ -2600,18 +2900,17 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "ca5cf4ec-bffc-43dc-8c86-9458cb47348f",
+						"id": "2b8f13aa-b977-43d1-91bf-e04ca00b34f2",
 						"type": "text/javascript",
 						"exec": [
 							"puzzleTools = {",
 							"    puzzleResponseChecker: function(jsonData, vNum, vPuz, vSol, vStrat, vDif, vfast, vAver, vNumUsers, vNumTimes, vUnique, v__v, vDrill, vCDate, vImageUrl, vDesc) {",
 							"        pm.expect(jsonData[vNum].puzzle).to.eql(vPuz);",
 							"        pm.expect(jsonData[vNum].puzzleSolution).to.eql(vSol);",
-							"        let i = 0;",
-							"        while (jsonData[vNum].strategyTypes[i] != undefined){",
-							"            pm.expect(jsonData[vNum].strategyTypes[i].to.eql(vStrat[i]));",
-							"            i++;",
+							"        for (let i = 0; i < vStrat.length; i++){",
+							"            pm.expect(jsonData[vNum].strategies[i]).to.eql(vStrat[i]);",
 							"        }",
+							"        pm.expect",
 							"        pm.expect(jsonData[vNum].difficulty).to.eql(vDif);",
 							"        pm.expect(jsonData[vNum].fastestSolveTime).to.eql(vfast);",
 							"        pm.expect(jsonData[vNum].averageSolveTime).to.eql(vAver);",
@@ -2619,10 +2918,8 @@
 							"        pm.expect(jsonData[vNum].numTimesPlayed).to.eql(vNumTimes);",
 							"        pm.expect(jsonData[vNum].trulyUnique).to.eql(vUnique);",
 							"        pm.expect(jsonData[vNum].__v).to.eql(v__v);",
-							"        i = 0;",
-							"        while (jsonData[vNum].drillStrategies[i] != undefined){",
-							"            pm.expect(jsonData[vNum].drillStrategies[i].to.eql(vDrill[i]));",
-							"            i++;",
+							"        for (let i = 0; i < vDrill.length; i++){",
+							"            pm.expect(jsonData[vNum].drillStrategies[i]).to.eql(vDrill[i]);",
 							"        }",
 							"        if (vCDate != null){",
 							"            pm.expect(jsonData[vNum].calendarDate).to.eql(vCDate);",
@@ -2641,7 +2938,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "999b1bc7-8758-49a1-8c81-1bda37007ff0",
+						"id": "445732a4-82e8-4d90-8426-49f19bd628c8",
 						"type": "text/javascript",
 						"exec": [
 							""
