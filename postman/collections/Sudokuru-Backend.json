@@ -906,7 +906,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true,\r\n        \"NAKED_QUADRUPLET\": true,\r\n        \"NAKED_QUINTUPLET\": true,\r\n        \"NAKED_SEXTUPLET\": true,\r\n        \"NAKED_SEPTUPLET\": true,\r\n        \"NAKED_OCTUPLET\": true,\r\n        \"HIDDEN_PAIR\": true,\r\n        \"HIDDEN_TRIPLET\": true,\r\n        \"HIDDEN_QUADRUPLET\": true,\r\n        \"HIDDEN_QUINTUPLET\": true,\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true,\r\n        \"X_WING\": true,\r\n        \"SWORDFISH\": true,\r\n        \"SINGLES_CHAINING\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"trulyUnique\": false,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    },\r\n    \"calendarDate\": \"2019-12-12\",\r\n    \"imageUrl\": \"image/url\",\r\n    \"description\": \"This is the puzzle description!\"\r\n\r\n}, {\r\n    \"puzzle\": \"603002001500000020901730006810400090060000000000690040350000004002070005000500108\", \r\n    \"puzzleSolution\": \"683942751574816329921735486817453692469287513235691847358169274142378965796524138\", \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true,\r\n        \"NAKED_SEXTUPLET\": true,\r\n        \"HIDDEN_PAIR\": true,\r\n        \"HIDDEN_QUADRUPLET\": true,\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"BOX_LINE_REDUCTION\": true,\r\n        \"X_WING\": true,\r\n        \"SWORDFISH\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"trulyUnique\": false,\r\n    \"drillStrategies\": {\r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true,\r\n        \"NAKED_QUADRUPLET\": true,\r\n        \"NAKED_QUINTUPLET\": true,\r\n        \"NAKED_SEXTUPLET\": true\r\n    }\r\n}]\r\n",
+											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true,\r\n        \"NAKED_QUADRUPLET\": true,\r\n        \"NAKED_QUINTUPLET\": true,\r\n        \"NAKED_SEXTUPLET\": true,\r\n        \"NAKED_SEPTUPLET\": true,\r\n        \"NAKED_OCTUPLET\": true,\r\n        \"HIDDEN_PAIR\": true,\r\n        \"HIDDEN_TRIPLET\": true,\r\n        \"HIDDEN_QUADRUPLET\": true,\r\n        \"HIDDEN_QUINTUPLET\": true,\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIR\": true,\r\n        \"POINTING_TRIPLET\": true,\r\n        \"BOX_LINE_REDUCTION\": true,\r\n        \"X_WING\": true,\r\n        \"SWORDFISH\": true,\r\n        \"SINGLES_CHAINING\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"trulyUnique\": false,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIR\": true,\r\n        \"POINTING_TRIPLET\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    },\r\n    \"calendarDate\": \"2019-12-12\",\r\n    \"imageUrl\": \"image/url\",\r\n    \"description\": \"This is the puzzle description!\"\r\n\r\n}, {\r\n    \"puzzle\": \"603002001500000020901730006810400090060000000000690040350000004002070005000500108\", \r\n    \"puzzleSolution\": \"683942751574816329921735486817453692469287513235691847358169274142378965796524138\", \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true,\r\n        \"NAKED_SEXTUPLET\": true,\r\n        \"HIDDEN_PAIR\": true,\r\n        \"HIDDEN_QUADRUPLET\": true,\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"BOX_LINE_REDUCTION\": true,\r\n        \"X_WING\": true,\r\n        \"SWORDFISH\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"trulyUnique\": false,\r\n    \"drillStrategies\": {\r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true,\r\n        \"NAKED_QUADRUPLET\": true,\r\n        \"NAKED_QUINTUPLET\": true,\r\n        \"NAKED_SEXTUPLET\": true\r\n    }\r\n}]\r\n",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -959,7 +959,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true,\r\n        \"NAKED_QUADRUPLET\": true,\r\n        \"NAKED_QUINTUPLET\": true,\r\n        \"NAKED_SEXTUPLET\": true,\r\n        \"NAKED_SEPTUPLET\": true,\r\n        \"NAKED_OCTUPLET\": true,\r\n        \"HIDDEN_PAIR\": true,\r\n        \"HIDDEN_TRIPLET\": true,\r\n        \"HIDDEN_QUADRUPLET\": true,\r\n        \"HIDDEN_QUINTUPLET\": true,\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true,\r\n        \"X_WING\": true,\r\n        \"SWORDFISH\": true,\r\n        \"SINGLES_CHAINING\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"trulyUnique\": false,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n}]\r\n",
+											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true,\r\n        \"NAKED_QUADRUPLET\": true,\r\n        \"NAKED_QUINTUPLET\": true,\r\n        \"NAKED_SEXTUPLET\": true,\r\n        \"NAKED_SEPTUPLET\": true,\r\n        \"NAKED_OCTUPLET\": true,\r\n        \"HIDDEN_PAIR\": true,\r\n        \"HIDDEN_TRIPLET\": true,\r\n        \"HIDDEN_QUADRUPLET\": true,\r\n        \"HIDDEN_QUINTUPLET\": true,\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIR\": true,\r\n        \"POINTING_TRIPLET\": true,\r\n        \"BOX_LINE_REDUCTION\": true,\r\n        \"X_WING\": true,\r\n        \"SWORDFISH\": true,\r\n        \"SINGLES_CHAINING\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"trulyUnique\": false,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n}]\r\n",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1022,7 +1022,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true,\r\n        \"NAKED_QUADRUPLET\": true,\r\n        \"NAKED_QUINTUPLET\": true,\r\n        \"NAKED_SEXTUPLET\": true,\r\n        \"NAKED_SEPTUPLET\": true,\r\n        \"NAKED_OCTUPLET\": true,\r\n        \"HIDDEN_PAIR\": true,\r\n        \"HIDDEN_TRIPLET\": true,\r\n        \"HIDDEN_QUADRUPLET\": true,\r\n        \"HIDDEN_QUINTUPLET\": true,\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true,\r\n        \"X_WING\": true,\r\n        \"SWORDFISH\": true,\r\n        \"SINGLES_CHAINING\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n}]\r\n",
+											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true,\r\n        \"NAKED_QUADRUPLET\": true,\r\n        \"NAKED_QUINTUPLET\": true,\r\n        \"NAKED_SEXTUPLET\": true,\r\n        \"NAKED_SEPTUPLET\": true,\r\n        \"NAKED_OCTUPLET\": true,\r\n        \"HIDDEN_PAIR\": true,\r\n        \"HIDDEN_TRIPLET\": true,\r\n        \"HIDDEN_QUADRUPLET\": true,\r\n        \"HIDDEN_QUINTUPLET\": true,\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIR\": true,\r\n        \"POINTING_TRIPLET\": true,\r\n        \"BOX_LINE_REDUCTION\": true,\r\n        \"X_WING\": true,\r\n        \"SWORDFISH\": true,\r\n        \"SINGLES_CHAINING\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n}]\r\n",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1056,7 +1056,7 @@
 												"exec": [
 													"pm.test(\"JSON response is correct\", function () {\r",
 													"    var jsonData = pm.response.json();\r",
-													"    var strategyTypes = new Array(22).fill(true);\r",
+													"    var strategyTypes = new Array(4).fill(true);\r",
 													"    var drillStrategies = new Array(6).fill(true);\r",
 													"    puzzleTools.puzzleResponseChecker(jsonData, 0, \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
 													"\r",
@@ -1080,7 +1080,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\",  \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n},{\r\n    \"puzzle\": \"008645019010009700009702000040023870803097200100000093000004106000000930700306402\",\r\n    \"puzzleSolution\": \"278645319614839725539712648946523871853197264127468593382974156465281937791356482\",  \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n},{\r\n    \"puzzle\": \"000080009832709015049520370175600040000005080090007006080170090000350020200006500\", \r\n    \"puzzleSolution\": \"751483269832769415649521378175638942426915783398247156583172694967354821214896537\",  \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n},{\r\n    \"puzzle\": \"060004029400900006900160570610000082040000000302007600100050068009641700050302091\", \r\n    \"puzzleSolution\": \"861574329475923816923168574617435982548296137392817645134759268289641753756382491\",  \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n}]\r\n",
+											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\",  \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIR\": true,\r\n        \"POINTING_TRIPLET\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n},{\r\n    \"puzzle\": \"008645019010009700009702000040023870803097200100000093000004106000000930700306402\",\r\n    \"puzzleSolution\": \"278645319614839725539712648946523871853197264127468593382974156465281937791356482\",  \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n},{\r\n    \"puzzle\": \"000080009832709015049520370175600040000005080090007006080170090000350020200006500\", \r\n    \"puzzleSolution\": \"751483269832769415649521378175638942426915783398247156583172694967354821214896537\",  \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n},{\r\n    \"puzzle\": \"060004029400900006900160570610000082040000000302007600100050068009641700050302091\", \r\n    \"puzzleSolution\": \"861574329475923816923168574617435982548296137392817645134759268289641753756382491\",  \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n}]\r\n",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1171,7 +1171,7 @@
 												"header": [],
 												"body": {
 													"mode": "raw",
-													"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\",  \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n}]\r\n",
+													"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\",  \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIR\": true,\r\n        \"POINTING_TRIPLET\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n}]\r\n",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -1228,7 +1228,7 @@
 												"header": [],
 												"body": {
 													"mode": "raw",
-													"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\",  \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n}]\r\n",
+													"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\",  \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIR\": true,\r\n        \"POINTING_TRIPLET\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n}]\r\n",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -1287,7 +1287,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "[{\r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\",  \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n}]\r\n",
+											"raw": "[{\r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\",  \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIR\": true,\r\n        \"POINTING_TRIPLET\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n}]\r\n",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1351,8 +1351,8 @@
 													"                    \"HIDDEN_SEXTUPLET\": true,\r",
 													"                    \"HIDDEN_SEPTUPLET\": true,\r",
 													"                    \"HIDDEN_OCTUPLET\": true,\r",
-													"                    \"POINTING_PAIRS\": true,\r",
-													"                    \"POINTING_TRIPLETS\": true,\r",
+													"                    \"POINTING_PAIR\": true,\r",
+													"                    \"POINTING_TRIPLET\": true,\r",
 													"                    \"BOX_LINE_REDUCTION\": true\r",
 													"                }\r",
 													"            }]\r",
@@ -1437,7 +1437,7 @@
 													"                    \"HIDDEN_SEXTUPLET\": true,\r",
 													"                    \"HIDDEN_SEPTUPLET\": true,\r",
 													"                    \"HIDDEN_OCTUPLET\": true,\r",
-													"                    \"POINTING_PAIRS\": true,\r",
+													"                    \"POINTING_PAIR\": true,\r",
 													"                },\r",
 													"                \"fastestSolveTime\": 0, \r",
 													"                \"averageSolveTime\": 0, \r",
@@ -1598,8 +1598,8 @@
 													"                    \"HIDDEN_SEXTUPLET\": true,\r",
 													"                    \"HIDDEN_SEPTUPLET\": true,\r",
 													"                    \"HIDDEN_OCTUPLET\": true,\r",
-													"                    \"POINTING_PAIRS\": true,\r",
-													"                    \"POINTING_TRIPLETS\": true,\r",
+													"                    \"POINTING_PAIR\": true,\r",
+													"                    \"POINTING_TRIPLET\": true,\r",
 													"                    \"BOX_LINE_REDUCTION\": true\r",
 													"                }\r",
 													"            }]\r",
@@ -1690,8 +1690,8 @@
 													"                    \"HIDDEN_SEXTUPLET\": true,\r",
 													"                    \"HIDDEN_SEPTUPLET\": true,\r",
 													"                    \"HIDDEN_OCTUPLET\": true,\r",
-													"                    \"POINTING_PAIRS\": true,\r",
-													"                    \"POINTING_TRIPLETS\": true,\r",
+													"                    \"POINTING_PAIR\": true,\r",
+													"                    \"POINTING_TRIPLET\": true,\r",
 													"                    \"BOX_LINE_REDUCTION\": true\r",
 													"                }\r",
 													"            }]\r",
@@ -2188,8 +2188,8 @@
 													"                    \"HIDDEN_SEXTUPLET\": true,\r",
 													"                    \"HIDDEN_SEPTUPLET\": true,\r",
 													"                    \"HIDDEN_OCTUPLET\": true,\r",
-													"                    \"POINTING_PAIRS\": true,\r",
-													"                    \"POINTING_TRIPLETS\": true,\r",
+													"                    \"POINTING_PAIR\": true,\r",
+													"                    \"POINTING_TRIPLET\": true,\r",
 													"                    \"BOX_LINE_REDUCTION\": true\r",
 													"                }\r",
 													"            }]\r",
@@ -2369,8 +2369,8 @@
 													"                    \"HIDDEN_SEXTUPLET\": true,\r",
 													"                    \"HIDDEN_SEPTUPLET\": true,\r",
 													"                    \"HIDDEN_OCTUPLET\": true,\r",
-													"                    \"POINTING_PAIRS\": true,\r",
-													"                    \"POINTING_TRIPLETS\": true,\r",
+													"                    \"POINTING_PAIR\": true,\r",
+													"                    \"POINTING_TRIPLET\": true,\r",
 													"                    \"BOX_LINE_REDUCTION\": true\r",
 													"                }\r",
 													"            }]\r",
@@ -2600,7 +2600,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "60d02137-5481-46d4-85a0-bff5eb0dd93e",
+						"id": "ca5cf4ec-bffc-43dc-8c86-9458cb47348f",
 						"type": "text/javascript",
 						"exec": [
 							"puzzleTools = {",
@@ -2641,7 +2641,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9bfca0b7-f6c2-4c8f-ab03-6eb064b00efa",
+						"id": "999b1bc7-8758-49a1-8c81-1bda37007ff0",
 						"type": "text/javascript",
 						"exec": [
 							""
