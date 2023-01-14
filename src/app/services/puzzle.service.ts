@@ -14,14 +14,22 @@ async function puzzleSearchService(puzzles) {
     if (Object.keys(puzzles).length === 0){
         filterValues.push({});
     }
+    else{
+        filterValues.push(puzzles);
+    }
     console.log("PARAMS: " + JSON.stringify(puzzles));
-    filterValues.push(puzzles);
     let res = await dataBase.querySearchAND(filterValues, PuzzleModel);
+
+    console.log("RESULT: " + res);
 
     if (res.length == 0){
         throw new CustomError(CustomErrorEnum.PUZZLE_NOT_FOUND, 404);
     }
     return res;
+}
+
+async function puzzleUpdateService(puzzles) {
+    return await dataBase.queryUpdate(puzzles, PuzzleModel);
 }
 
 async function puzzleRemoveService(puzzles) {
@@ -30,7 +38,6 @@ async function puzzleRemoveService(puzzles) {
     if (Object.keys(puzzles).length === 0){
         filterValues.push({});
     }
-    console.log("PARAMS: " + puzzles);
     filterValues.push(puzzles);
     let res = await dataBase.queryDeleteAND(filterValues, PuzzleModel);
 
@@ -40,5 +47,5 @@ async function puzzleRemoveService(puzzles) {
     return res;
 }
 
-module.exports = { createPuzzle: puzzleCreateService, searchPuzzle: puzzleSearchService, removePuzzle: puzzleRemoveService };
+module.exports = { createPuzzle: puzzleCreateService, searchPuzzle: puzzleSearchService, updatePuzzle: puzzleUpdateService, removePuzzle: puzzleRemoveService };
 
