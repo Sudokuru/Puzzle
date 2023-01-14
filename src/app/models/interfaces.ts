@@ -62,7 +62,7 @@ interface moves {
 export interface Puzzle {
     puzzle: string,
     puzzleSolution: string,
-    strategyTypes: strategyTypes,
+    strategies: strategyTypes,
     difficulty: number,
     fastestSolveTime: number,
     averageSolveTime: number,
