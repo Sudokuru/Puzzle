@@ -8,7 +8,7 @@ const PuzzleModelSchema = new Schema<Puzzle>({
     puzzle: { type: String, required: true, unique: true },
     puzzleSolution: { type: String, required: true },
     strategyTypes: {
-        NAKED_SINGLE: { type: Boolean, required: false },
+        NAKED_SINGLE: { type: Boolean, required: true },
         HIDDEN_SINGLE: { type: Boolean, required: false },
         NAKED_PAIR: { type: Boolean, required: false },
         NAKED_TRIPLET: { type: Boolean, required: false },
@@ -38,7 +38,7 @@ const PuzzleModelSchema = new Schema<Puzzle>({
     numTimesPlayed: { type: Number, required: true, default: 0 },
     trulyUnique: { type: Boolean, required: true, default: false },
     drillStrategies: {
-        NAKED_SINGLE: {type: Boolean, required: false},
+        NAKED_SINGLE: {type: Boolean, required: true},
         HIDDEN_SINGLE: {type: Boolean, required: false},
         NAKED_PAIR: {type: Boolean, required: false},
         NAKED_TRIPLET: {type: Boolean, required: false},
