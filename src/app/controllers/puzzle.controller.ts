@@ -1,4 +1,4 @@
-import {matchedData} from "express-validator";
+import {matchedData, query} from "express-validator";
 
 const puzzleService = require('../services/puzzle.service');
 
@@ -16,8 +16,13 @@ async function createPuzzle(req, res, next) {
 }
 
 async function searchPuzzle(req, res, next) {
+
+    console.log("RAW: " + JSON.stringify(req.query));
+    const allData = matchedData(req, { locations: ['query'] });
+    console.log("DATA: " + JSON.stringify(allData));
+
     try {
-        res.json(await puzzleService.searchPuzzle(req.query));
+        res.json(await puzzleService.searchPuzzle(allData));
     } catch(err) {
         next(err);
     }

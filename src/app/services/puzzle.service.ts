@@ -14,6 +14,8 @@ async function puzzleSearchService(puzzles) {
     if (Object.keys(puzzles).length === 0){
         filterValues.push({});
     }
+    console.log("PARAMS: " + JSON.stringify(puzzles));
+    filterValues.push(puzzles);
     let res = await dataBase.querySearchAND(filterValues, PuzzleModel);
 
     if (res.length == 0){
@@ -28,6 +30,8 @@ async function puzzleRemoveService(puzzles) {
     if (Object.keys(puzzles).length === 0){
         filterValues.push({});
     }
+    console.log("PARAMS: " + puzzles);
+    filterValues.push(puzzles);
     let res = await dataBase.queryDeleteAND(filterValues, PuzzleModel);
 
     if (res.length == 0){
