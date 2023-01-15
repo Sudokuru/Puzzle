@@ -1862,13 +1862,7 @@
 													"        mode: 'raw',\r",
 													"        raw: JSON.stringify(\r",
 													"            [\r",
-													"            {\r",
-													"                \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r",
-													"                \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r",
-													"                \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"],\r",
-													"                \"difficulty\": 5,\r",
-													"                \"drillStrategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"]\r",
-													"            },\r",
+													"            puzzleTools.puzzleJSON(1),\r",
 													"            {\r",
 													"                \"puzzle\": \"008645019010009700009702000040023870803097200100000093000004106000000930700306402\", \r",
 													"                \"puzzleSolution\": \"278645319614839725539712648946523871853197264127468593382974156465281937791356482\", \r",
@@ -2901,7 +2895,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "2b8f13aa-b977-43d1-91bf-e04ca00b34f2",
+						"id": "4e850e13-c237-48ed-bea1-12659d7d2191",
 						"type": "text/javascript",
 						"exec": [
 							"puzzleTools = {",
@@ -2911,7 +2905,6 @@
 							"        for (let i = 0; i < vStrat.length; i++){",
 							"            pm.expect(jsonData[vNum].strategies[i]).to.eql(vStrat[i]);",
 							"        }",
-							"        pm.expect",
 							"        pm.expect(jsonData[vNum].difficulty).to.eql(vDif);",
 							"        pm.expect(jsonData[vNum].fastestSolveTime).to.eql(vfast);",
 							"        pm.expect(jsonData[vNum].averageSolveTime).to.eql(vAver);",
@@ -2932,6 +2925,28 @@
 							"            pm.expect(jsonData[vNum].description).to.eql(vDesc);",
 							"        }",
 							"    },",
+							"    puzzleObject: function(puzzle){",
+							"        if (puzzle == 1){",
+							"            return {",
+							"                puzzle: \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\",",
+							"                puzzleSolution: \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", ",
+							"                strategies: [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"],",
+							"                difficulty: 5,",
+							"                drillStrategies: [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"]",
+							"            }",
+							"        }",
+							"    },",
+							"    puzzleJSON: function(puzzle) {",
+							"        if (puzzle == 1){",
+							"          return {",
+							"            \"puzzle\": puzzleTools.puzzleObject(1).puzzle, ",
+							"            \"puzzleSolution\": puzzleTools.puzzleObject(1).puzzleSolution, ",
+							"            \"strategies\": puzzleTools.puzzleObject(1).strategies,",
+							"            \"difficulty\": puzzleTools.puzzleObject(1).difficulty,",
+							"            \"drillStrategies\": puzzleTools.puzzleObject(1).drillStrategies",
+							"          }  ",
+							"        }",
+							"    }",
 							"};"
 						]
 					}
@@ -2939,7 +2954,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "445732a4-82e8-4d90-8426-49f19bd628c8",
+						"id": "ca310992-9b4e-42c2-b47b-6842e4203e7b",
 						"type": "text/javascript",
 						"exec": [
 							""
