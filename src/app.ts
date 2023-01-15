@@ -1,6 +1,13 @@
 import errorHandler from "./app/errorHandler/error.handler";
 import {CustomError, CustomErrorEnum} from "./app/models/error.model";
 
+/**
+ * Entry file for our backend app service
+ * Runs on local port if run using 'npm run start' command
+ * Runs with serverless functions when using 'npm run deploy' command when express dependency is installed
+ * DO NOT run 'npm run deploy' locally. The pipeline will do this automatically after a Pull Request!
+ */
+
 const serverless = require('serverless-http');
 const expressApp = require('express');
 const app = expressApp();
