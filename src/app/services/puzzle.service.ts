@@ -9,18 +9,7 @@ async function puzzleCreateService(puzzles) {
 }
 
 async function puzzleSearchService(puzzles) {
-    const filterValues = [];
-
-    if (Object.keys(puzzles).length === 0){
-        filterValues.push({});
-    }
-    else{
-        filterValues.push(puzzles);
-    }
-    console.log("PARAMS: " + JSON.stringify(puzzles));
-    let res = await dataBase.querySearchAND(filterValues, PuzzleModel);
-
-    console.log("RESULT: " + res);
+    let res = await dataBase.querySearchAND(filterInputQuery(puzzles), PuzzleModel);
 
     if (res.length == 0){
         throw new CustomError(CustomErrorEnum.PUZZLE_NOT_FOUND, 404);
@@ -33,18 +22,36 @@ async function puzzleUpdateService(puzzles) {
 }
 
 async function puzzleRemoveService(puzzles) {
-    const filterValues = [];
 
-    if (Object.keys(puzzles).length === 0){
-        filterValues.push({});
-    }
-    filterValues.push(puzzles);
-    let res = await dataBase.queryDeleteAND(filterValues, PuzzleModel);
+    let res = await dataBase.queryDeleteAND(filterInputQuery(puzzles), PuzzleModel);
 
     if (res.length == 0){
         throw new CustomError(CustomErrorEnum.PUZZLE_NOT_FOUND, 404);
     }
     return res;
+}
+
+function filterInputQuery(puzzles){
+    const filterValues = [];
+    if (Object.keys(puzzles).length === 0){
+        filterValues.push({});
+    }
+    else{
+        if ('strategies' in puzzles){
+            filterValues.push({ 'strategies': { $in : puzzles['strategies'] } });
+            delete puzzles.strategies;
+        }
+        if ('drillStrategies' in puzzles){
+            filterValues.push({ 'drillStrategies': { $in : puzzles['drillStrategies'] } });
+            delete puzzles.drillStrategies;
+        }
+        if (Object.keys(puzzles).length !== 0){
+            filterValues.push(puzzles);
+        }
+    }
+
+    filterValues.push(puzzles);
+    return filterValues;
 }
 
 module.exports = { createPuzzle: puzzleCreateService, searchPuzzle: puzzleSearchService, updatePuzzle: puzzleUpdateService, removePuzzle: puzzleRemoveService };
