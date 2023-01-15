@@ -23,10 +23,10 @@
 
 1. Install Docker on your machine. Tutorial is linked below:<br>
    [![Docker Tutorial](https://img.youtube.com/vi/2ezNqqaSjq8/0.jpg)](https://www.youtube.com/watch?v=2ezNqqaSjq8)<br>
-2. Once docker is installed, the Mongo image can be run by navigating to the backend folder and 
+2. Once docker is installed, the Mongo image can be run with this command:<br>
 running the command<br>
 ```console
-npm run database
+npm run docker
 ```
 3. The app can then be run with the command:<br>
 ```console
