@@ -10,8 +10,6 @@
 
 const database = require("../models/index");
 
-console.log(database.url);
-
 let connectedToDB = false;
 
 /**
