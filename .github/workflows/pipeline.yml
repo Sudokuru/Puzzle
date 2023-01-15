@@ -45,6 +45,12 @@ jobs:
       - name: Run Docker image
         run: npm run app
 
+      - name: Sleep for 20 seconds
+        run: sleep 30s
+        shell: bash
+
+      - run: npm run test:integration
+
 #      - name: Run 500 API tests
 #        run: |
 #          postman collection run "${{ github.workspace }}/postman/collections/Sudokuru-Backend-500s.json"
