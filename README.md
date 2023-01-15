@@ -1,3 +1,5 @@
+# [Typedoc Documentation Website](https://sudokuru.github.io/Backend/)<br>
+
 # Todo
 
 - [ ] Add license file and distribute to all repos using GitHub Action (Thomas)
@@ -32,8 +34,6 @@ npm run start
 ```console
 npm run test:integration
 ```
-5. Typedoc is being used for our code documentation. It is hosted on GitHub Pages here:<br>
-Link: https://sudokuru.github.io/Backend/
 
 # Postman
 
