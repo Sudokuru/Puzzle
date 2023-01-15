@@ -1,14 +1,11 @@
-import {matchedData, query} from "express-validator";
+import {matchedData} from "express-validator";
 
 const puzzleService = require('../services/puzzle.service');
 
 async function createPuzzle(req, res, next) {
 
-    console.log("RAW: " + JSON.stringify(req.body, null, 2));
     const allData = Object.values(matchedData(req, { locations: ['body'] }));
     // this is needed because the last element in matchedData array is the original request for some reason.
-
-    console.log("DATA: " + JSON.stringify(allData, null, 2));
     allData.pop();
 
     console.log("FINAL DATA: " + JSON.stringify(allData, null, 2));
@@ -22,10 +19,7 @@ async function createPuzzle(req, res, next) {
 
 async function searchPuzzle(req, res, next) {
 
-    console.log("RAW: " + JSON.stringify(req.query));
     const allData = matchedData(req, { locations: ['query'] });
-
-    console.log("DATA: " + JSON.stringify(allData));
 
     try {
         res.json(await puzzleService.searchPuzzle(allData));
@@ -36,14 +30,10 @@ async function searchPuzzle(req, res, next) {
 
 async function updatePuzzle(req, res, next) {
 
-    console.log("RAW: " + JSON.stringify(req.body, null, 2));
-    const allData = Object.values(matchedData(req, { locations: ['body'] }));
-    // this is needed because the last element in matchedData array is the original request for some reason.
-
-    console.log("DATA: " + JSON.stringify(allData, null, 2));
-    allData.pop();
+    const queryData = matchedData(req, { locations: ['query'] });
+    const bodyData = matchedData(req, { locations: ['body'] });
     try {
-        res.json(await puzzleService.updatePuzzle(allData));
+        res.json(await puzzleService.updatePuzzle(bodyData, queryData));
     } catch(err) {
         next(err);
     }

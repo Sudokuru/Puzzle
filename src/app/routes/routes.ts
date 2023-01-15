@@ -3,12 +3,12 @@ const routes = express.Router();
 
 const puzzleController = require('../controllers/puzzle.controller');
 
-const { validatePuzzleBodyPOST, validatePuzzleParameters, validatePuzzleParametersPATCH } = require("../validationAndSanitation/puzzle.validationAndSanitation");
+const { validatePuzzleBodyPOST, validatePuzzleParameters, validatePuzzleBodyPATCH } = require("../validationAndSanitation/puzzle.validationAndSanitation");
 const { validate } = require('../validationAndSanitation/errorValidation');
 
-routes.post("/puzzles/", validatePuzzleBodyPOST, validate, puzzleController.create); //todo throw errors before reaching controller
+routes.post("/puzzles/", validatePuzzleBodyPOST, validate, puzzleController.create);
 routes.get("/puzzles/", validatePuzzleParameters, validate, puzzleController.search);
-routes.patch("/puzzles/", validatePuzzleParametersPATCH, validate, puzzleController.update);
+routes.patch("/puzzles/", validatePuzzleParameters, validatePuzzleBodyPATCH, validate, puzzleController.update);
 routes.delete("/puzzles/", validatePuzzleParameters, validate, puzzleController.remove);
 
 const userProfileController = require ('../controllers/userProfile.controller');

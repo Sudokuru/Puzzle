@@ -7,7 +7,7 @@ exports.validatePuzzleBodyPOST = [
     body('*.puzzleSolution', 'puzzle solution did not match whitelist').whitelist("123456789"),
     body('*.puzzleSolution', 'puzzle solution is not of correct length').isLength( { min: 81, max: 81 }),
 
-    body('*.strategies.*', 'Strategy array is not valid').isArray().isIn(
+    body('*.strategies', 'Strategy array is not valid').isArray().isIn(
         ["NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",
             "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
             "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
@@ -62,28 +62,27 @@ exports.validatePuzzleParameters = [
     query('description', 'description is not a string').optional().isString(),
 ];
 
-exports.validatePuzzleBodyPOST = [
-    body().isArray(),
-    body('*.strategies.*', 'Strategy array is not valid').optional().isArray().isIn(
+exports.validatePuzzleBodyPATCH = [
+    body('strategies', 'Strategy array is not valid').optional().isArray().isIn(
         ["NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",
             "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
             "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
             "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
 
-    body('*.difficulty', "difficulty is not an integer or is not in correct range").optional().isInt({ min: 1, max: 10}),
-    body('*.fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
-    body('*.averageSolveTime', 'average solve time is not an integer').optional().isInt(),
-    body('*.numUsersPlayed', 'num users played is not an integer').optional().isInt(),
-    body('*.numTimesPlayed', 'num times played is not an integer').optional().isInt(),
-    body('*.trulyUnique', 'truly unique is not a boolean').optional().isBoolean(),
+    body('difficulty', "difficulty is not an integer or is not in correct range").optional().isInt({ min: 1, max: 10}),
+    body('fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
+    body('averageSolveTime', 'average solve time is not an integer').optional().isInt(),
+    body('numUsersPlayed', 'num users played is not an integer').optional().isInt(),
+    body('numTimesPlayed', 'num times played is not an integer').optional().isInt(),
+    body('trulyUnique', 'truly unique is not a boolean').optional().isBoolean(),
 
-    body('*.drillStrategies', 'drillStrategy array is not valid').optional().isArray().isIn(
+    body('drillStrategies', 'drillStrategy array is not valid').optional().isArray().isIn(
         ["NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",
             "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
             "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
             "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
 
-    body('*.calendarDate', 'calendar date is not a date').optional().isDate({ strictMode: true, format: "YYYY-MM-DD" }),
-    body('*.imageUrl', 'imageUrl is not a string').optional().isString(),
-    body('*.description', 'description is not a string').optional().isString(),
+    body('calendarDate', 'calendar date is not a date').optional().isDate({ strictMode: true, format: "YYYY-MM-DD" }),
+    body('imageUrl', 'imageUrl is not a string').optional().isString(),
+    body('description', 'description is not a string').optional().isString(),
 ];

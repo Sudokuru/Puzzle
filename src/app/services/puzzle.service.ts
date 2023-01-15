@@ -17,12 +17,11 @@ async function puzzleSearchService(puzzles) {
     return res;
 }
 
-async function puzzleUpdateService(puzzles) {
-    return await dataBase.queryUpdate(puzzles, PuzzleModel);
+async function puzzleUpdateService(bodyData, queryData) {
+    return await dataBase.queryUpdate(filterInputQuery(queryData), bodyData, PuzzleModel);
 }
 
 async function puzzleRemoveService(puzzles) {
-
     let res = await dataBase.queryDeleteAND(filterInputQuery(puzzles), PuzzleModel);
 
     if (res.length == 0){
