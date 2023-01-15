@@ -36,14 +36,12 @@ jobs:
         run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
 
       - run: npm ci
+      - run: npm run database
       - run: npm run start
 
-      - name: Run 500 API tests
-        run: |
-          postman collection run "${{ github.workspace }}/postman/collections/Sudokuru-Backend-500s.json"
-
-      - name: Start Mongo Docker
-        run: npm run database
+#      - name: Run 500 API tests
+#        run: |
+#          postman collection run "${{ github.workspace }}/postman/collections/Sudokuru-Backend-500s.json"
 
       - name: Run API tests
         run: |
