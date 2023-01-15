@@ -1,9 +1,22 @@
+/**
+ * This is the mongoose schemas for the puzzle collection
+ * The schema currently in the collection is {@link PuzzleModelSchema}
+ * //todo at some point would like to remove these schemas as we already handle input validation with express-validator
+ * //todo and the error throwing with mongoose is inconsistent and hard to work with
+ */
+
 import { Schema } from 'mongoose';
 import * as mongoose from "mongoose";
 import { Puzzle } from "./interfaces";
 
 mongoose.set({ debug: true, autoCreate: true})
 
+/**
+ * This stores a generated puzzle
+ * We had some debate on what the strategies field should store
+ * Whether it should store array of all required strategies or just mostDifficultStrategy and how that would work
+ * Have set schema to throw error upon violation but this is inconsistent
+ */
 const PuzzleModelSchema = new Schema<Puzzle>({
     puzzle: { type: String, required: true, unique: true },
     puzzleSolution: { type: String, required: true },

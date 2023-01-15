@@ -1,9 +1,23 @@
+/**
+ * These are the mongoose schemas for the user_game_results collection
+ * The two schemas currently in this collection are {@link userPausedGamesSchema} and {@link userGameHistory}
+ * //todo at some point would like to remove these schemas as we already handle input validation with express-validator
+ * //todo and the error throwing with mongoose is inconsistent and hard to work with
+ */
+
 import { Schema } from 'mongoose';
 import * as mongoose from "mongoose";
 import { userPausedGames, userGameHistory } from "./interfaces";
 
+// turns on debug mode so we can see results of successful requests
 mongoose.set({ debug: true, autoCreate: true})
 
+/**
+ * This stores a user's paused game
+ * This is a separate document so that we can easily delete paused games
+ * Minimum needs to store game status and stats so that
+ * the game can be resumed and the stats can be transferred at the end of the game
+ */
 const userPausedGamesSchema = new Schema<userPausedGames>({
     userId: { type: String, required: true, unique: true },
     inProgressGames: [{
@@ -27,6 +41,11 @@ const userPausedGamesSchema = new Schema<userPausedGames>({
     }]
 });
 
+/**
+ * This stores a user's game history
+ * This is in the same collection as it will likely be updated immediately after a game ends
+ * There could be a toggle in user preferences to disable/enable saving of games
+ */
 const userGameHistorySchema = new Schema<userGameHistory>({
     userId: { type: String, required: true, unique: true },
     gamesPlayed: [{

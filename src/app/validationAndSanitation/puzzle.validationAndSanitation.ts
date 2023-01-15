@@ -1,5 +1,19 @@
+/**
+ * This file contains several sets of settings for validating request queries and bodies
+ * This file is for the puzzle endpoint
+ * We have three exports here that are used in the routing file
+ * The purpose of this file is to sanitize and validate our input to make sure
+ * there is no foul play about
+ */
+
 import {body, query} from "express-validator";
 
+/**
+ * This array stores the validation for our POST puzzle requests
+ * This validation only applies for the body field
+ * //todo add more validation and sanitization
+ * The astricks are required because we are accessing values from an array
+ */
 exports.validatePuzzleBodyPOST = [
     body().isArray(),
     body('*.puzzle', 'puzzle did not match whitelist').whitelist("0123456789"),
@@ -31,6 +45,11 @@ exports.validatePuzzleBodyPOST = [
     body('*.description', 'description is not a string').optional().isString(),
 ];
 
+/**
+ * This array stores the validation for our PATCH, GET, and DELETE requests
+ * This validation only applies for the query fields
+ * //todo add more validation and sanitization
+ */
 exports.validatePuzzleParameters = [
     query('id').optional(),
     query('puzzle', 'puzzle did not match whitelist').optional().whitelist("0123456789"),
@@ -62,6 +81,13 @@ exports.validatePuzzleParameters = [
     query('description', 'description is not a string').optional().isString(),
 ];
 
+/**
+ * This array stores the validation for our PATCH requests
+ * This validation only applies for the body field
+ * //todo add more validation and sanitization
+ * the Astricks are not needed here because in this instance we are not storing our values in an array
+ * We also leave out the puzzle and puzzleSolution fields because we do not want to replace those during a PATCH operation
+ */
 exports.validatePuzzleBodyPATCH = [
     body('strategies', 'Strategy array is not valid').optional().isArray().isIn(
         ["NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",

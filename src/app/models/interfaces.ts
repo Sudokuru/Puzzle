@@ -1,5 +1,17 @@
+/**
+ * This is the typescript interfaces for our JSON data
+ * //todo add typings to sanitized data
+ * There are several 'helper' interfaces that break out some duplicate code
+ * The remaining interfaces correlate to the mongoose schemas
+ */
 
-// Helper Interfaces
+/**
+ * Below are the helper interfaces
+ * They include: {@link numWrongCellsPlayedPerStrategy}
+ * {@link strategyTypes} and {@link moves}
+ * // todo refactor strategyTypes to strategies
+ *
+ */
 interface numWrongCellsPlayedPerStrategy {
     NAKED_SINGLE: number,
     HIDDEN_SINGLE: number,
@@ -58,7 +70,13 @@ interface moves {
     moveTime: number
 }
 
-// mongodb json object interfaces
+/**
+ * Below are the interfaces for the Mongo schemas
+ * They include: {@link Puzzle}, {@link UserProfile}, {@link UserGameStatistics}
+ * {@link UserGameSearchFilters}, {@link userPausedGames}, and {@link userGameHistory}
+ * //todo make casing of types consistant
+ *
+ */
 export interface Puzzle {
     puzzle: string,
     puzzleSolution: string,
