@@ -43,12 +43,7 @@ jobs:
           postman collection run "${{ github.workspace }}/postman/collections/Sudokuru-Backend-500s.json"
 
       - name: Start Mongo Docker
-        uses: isbang/compose-action@v1.3.2
-        with:
-          compose-file: "docker-compose.yml"
-          down-flags: "--volumes"
-          services: |
-            mongodb
+        run: npm run database
 
       - name: Run API tests
         run: |
