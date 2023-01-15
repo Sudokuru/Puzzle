@@ -35,8 +35,16 @@ jobs:
       - name: Login to Postman CLI
         run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
 
-      - run: npm i
-      - run: npm run database
+      - run: npm ci
+
+      - name: Start Mongo Docker
+        uses: isbang/compose-action@v1.3.2
+        with:
+          compose-file: "docker-compose.yml"
+          down-flags: "--volumes"
+          services: |
+            mongodb
+
       - run: npm run start
 
 #      - name: Run 500 API tests
