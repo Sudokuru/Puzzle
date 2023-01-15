@@ -42,7 +42,8 @@ jobs:
         env:
           MONGO_URL: mongodb://mongo:27017/
 
-      - run: npm run docker
+      - name: Run Docker image
+        run: npm run app
 
 #      - name: Run 500 API tests
 #        run: |

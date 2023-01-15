@@ -31,6 +31,10 @@ npm run database
 ```console
 npm run start
 ```
+OR can be run with docker with the following command:<br>
+```console
+npm run app
+```
 4. Integration tests can be run when the app is running with this command:<br>
 ```console
 npm run test:integration
