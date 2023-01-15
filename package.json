@@ -8,6 +8,7 @@
     "test:integration": "newman run \"postman/collections/Sudokuru-Backend.json\"",
     "test:integration500s": "newman run \"postman/collections/Sudokuru-Backend-500s\"",
     "update-docs": "npx typedoc src/*.ts --name BackendDocs",
+    "database": "docker-compose up -d",
     "start": "ts-node src/app.ts local",
     "deploy": "tsc && serverless deploy"
   },
