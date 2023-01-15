@@ -1,0 +1,16 @@
+# Todo
+
+- [ ] Add license file and distribute to all repos using GitHub Action (Thomas)
+- [ ] Finish writing integration tests for puzzle endpoint (Thomas)
+- [ ] Write GitHub hook to run all tests before Push to repo (Thomas)
+- [ ] Set up Dev and Prod Lambda environments (Thomas/Gregory)
+- [ ] Add Mermaid documentation and distribute to all repos using GitHub Action (Thomas)
+- [ ] Decide on initial JSON structure for remaining endpoints (Team)
+- [ ] Write logic for remaining endpoints (Daniel)
+- [ ] Write sanitation and validation for remaining endpoints (Daniel)
+- [ ] Write Postman integration tests for remaining endpoints (Daniel)
+- [ ] Set up Auth0 token authentication (Thomas/Daniel)
+- [ ] Write up OpenAPI specifications for endpoints (Thomas/Daniel)
+- [ ] Resolve remaining ```//todo``` items (Thomas/Daniel)
+- [ ] Determine how to set Prod environment to use versioning control (Thomas/Gregory)
+- [ ] Implement unit tests if needed (Thomas/Daniel)
