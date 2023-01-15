@@ -15,4 +15,4 @@ services:
     image: mongo:5.0.2
     restart: unless-stopped
     ports:
-      - "27017:27017"
+      - "27018:27018"
