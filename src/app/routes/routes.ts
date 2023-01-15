@@ -3,19 +3,19 @@ const routes = express.Router();
 
 const puzzleController = require('../controllers/puzzle.controller');
 
-const { validatePuzzleBody, validatePuzzleParameters } = require("../validationAndSanitation/puzzle.validationAndSanitation");
+const { validatePuzzleBodyPOST, validatePuzzleParameters, validatePuzzleParametersPATCH } = require("../validationAndSanitation/puzzle.validationAndSanitation");
 const { validate } = require('../validationAndSanitation/errorValidation');
 
-routes.post("/puzzles/", validatePuzzleBody, validate, puzzleController.create); //todo throw errors before reaching controller
+routes.post("/puzzles/", validatePuzzleBodyPOST, validate, puzzleController.create); //todo throw errors before reaching controller
 routes.get("/puzzles/", validatePuzzleParameters, validate, puzzleController.search);
-routes.put("/puzzles/", puzzleController.update);
+routes.patch("/puzzles/", validatePuzzleParametersPATCH, validate, puzzleController.update);
 routes.delete("/puzzles/", validatePuzzleParameters, validate, puzzleController.remove);
 
 const userProfileController = require ('../controllers/userProfile.controller');
 
 routes.post("/user/profiles", userProfileController.create);
 routes.get("/user/profiles", userProfileController.search);
-routes.put("/user/profiles", userProfileController.update);
+routes.patch("/user/profiles", userProfileController.update);
 routes.delete("/user/profiles", userProfileController.remove);
 
 // const userGameStatisticsController = require ('../controllers/userGameStatistics.controller');

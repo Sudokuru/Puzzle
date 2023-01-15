@@ -29,9 +29,14 @@ async function querySearchAND(filterValues, collection) {
     return await collection.find({ $and : filterValues });
 }
 
+async function queryUpdate(puzzles, collection){
+    await module.exports.connectToDB();
+    return await collection.updateMany(puzzles, { ordered: false });
+}
+
 async function queryDeleteAND(filterValues, collection) {
     await module.exports.connectToDB();
     return await collection.deleteMany({ $and : filterValues });
 }
 
-module.exports = { queryUpload: queryUpload, connectToDB, querySearchAND: querySearchAND, queryDeleteAND: queryDeleteAND };
+module.exports = { queryUpload: queryUpload, connectToDB, querySearchAND: querySearchAND, queryUpdate: queryUpdate, queryDeleteAND: queryDeleteAND };

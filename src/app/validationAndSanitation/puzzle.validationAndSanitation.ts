@@ -1,13 +1,13 @@
-import {body, param, query} from "express-validator";
+import {body, query} from "express-validator";
 
-exports.validatePuzzleBody = [
+exports.validatePuzzleBodyPOST = [
     body().isArray(),
     body('*.puzzle', 'puzzle did not match whitelist').whitelist("0123456789"),
     body('*.puzzle', 'puzzle is not of correct length').isLength({ min: 81, max: 81 }),
     body('*.puzzleSolution', 'puzzle solution did not match whitelist').whitelist("123456789"),
     body('*.puzzleSolution', 'puzzle solution is not of correct length').isLength( { min: 81, max: 81 }),
 
-    body('*.strategies.*', 'Strategy array is not valid').isIn(
+    body('*.strategies.*', 'Strategy array is not valid').isArray().isIn(
         ["NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",
             "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
             "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
@@ -20,7 +20,7 @@ exports.validatePuzzleBody = [
     body('*.numTimesPlayed', 'num times played is not an integer').optional().isInt(),
     body('*.trulyUnique', 'truly unique is not a boolean').optional().isBoolean(),
 
-    body('*.drillStrategies', 'drillStrategy array is not valid').isIn(
+    body('*.drillStrategies', 'drillStrategy array is not valid').isArray().isIn(
             ["NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",
             "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
             "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
@@ -43,27 +43,6 @@ exports.validatePuzzleParameters = [
             "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
             "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
             "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
-    query('strategyTypes.HIDDEN_SINGLE', 'HiddenSingle strategy is not a boolean').optional().isBoolean(),
-    query('strategyTypes.NAKED_PAIR', 'NakedPair strategy is not a boolean').optional().isBoolean(),
-    query('strategyTypes.NAKED_TRIPLET', 'NakedTriplet strategy is not a boolean').optional().isBoolean(),
-    query('NAKED_QUADRUPLET', 'NakedQuadruplet strategy is not a boolean').optional().isBoolean(),
-    query('NAKED_QUINTUPLET', 'NakedQuintuplet strategy is not a boolean').optional().isBoolean(),
-    query('NAKED_SEXTUPLET', 'NakedSextuplet strategy is not a boolean').optional().isBoolean(),
-    query('NAKED_SEPTUPLET', 'NakedSeptuplet strategy is not a boolean').optional().isBoolean(),
-    query('NAKED_OCTUPLET', 'NakedOctuplet strategy is not a boolean').optional().isBoolean(),
-    query('HIDDEN_PAIR', 'HiddenPair strategy is not a boolean').optional().isBoolean(),
-    query('HIDDEN_TRIPLET', 'HiddenTriplet strategy is not a boolean').optional().isBoolean(),
-    query('HIDDEN_QUADRUPLET', 'HiddenQuadruplet strategy is not a boolean').optional().isBoolean(),
-    query('HIDDEN_QUINTUPLET', 'HiddenQuintuplet strategy is not a boolean').optional().isBoolean(),
-    query('HIDDEN_SEXTUPLET', 'HiddenSextuplet strategy is not a boolean').optional().isBoolean(),
-    query('HIDDEN_SEPTUPLET', 'HiddenSeptuplet strategy is not a boolean').optional().isBoolean(),
-    query('HIDDEN_OCTUPLET', 'HiddenOctuplet strategy is not a boolean').optional().isBoolean(),
-    query('POINTING_PAIR', 'PointingPair strategy is not a boolean').optional().isBoolean(),
-    query('POINTING_TRIPLET', 'PointingTriplet strategy is not a boolean').optional().isBoolean(),
-    query('BOX_LINE_REDUCTION', 'BoxLineReduction strategy is not a boolean').optional().isBoolean(),
-    query('X_WING', 'XWing strategy is not a boolean').optional().isBoolean(),
-    query('SWORDFISH', 'Swordfish strategy is not a boolean').optional().isBoolean(),
-    query('SINGLES_CHAINING', 'SinglesChaining strategy is not a boolean').optional().isBoolean(),
 
     query('difficulty', "difficulty is not an integer or is not in correct range").optional().isInt({ min: 1, max: 10 }),
     query('fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
@@ -72,30 +51,39 @@ exports.validatePuzzleParameters = [
     query('numTimesPlayed', 'num times played is not an integer').optional().isInt(),
     query('trulyUnique', 'truly unique is not a boolean').optional().isBoolean(),
 
-    query('DRILL_NAKED_SINGLE', 'NakedSingle strategy is not a boolean').optional().isBoolean(),
-    query('DRILL_HIDDEN_SINGLE', 'HiddenSingle strategy is not a boolean').optional().isBoolean(),
-    query('DRILL_NAKED_PAIR', 'NakedPair strategy is not a boolean').optional().isBoolean(),
-    query('DRILL_NAKED_TRIPLET', 'NakedTriplet strategy is not a boolean').optional().isBoolean(),
-    query('DRILL_NAKED_QUADRUPLET', 'NakedQuadruplet strategy is not a boolean').optional().isBoolean(),
-    query('DRILL_NAKED_QUINTUPLET', 'NakedQuintuplet strategy is not a boolean').optional().isBoolean(),
-    query('DRILL_NAKED_SEXTUPLET', 'NakedSextuplet strategy is not a boolean').optional().isBoolean(),
-    query('DRILL_NAKED_SEPTUPLET', 'NakedSeptuplet strategy is not a boolean').optional().isBoolean(),
-    query('DRILL_NAKED_OCTUPLET', 'NakedOctuplet strategy is not a boolean').optional().isBoolean(),
-    query('DRILL_HIDDEN_PAIR', 'HiddenPair strategy is not a boolean').optional().isBoolean(),
-    query('DRILL_HIDDEN_TRIPLET', 'HiddenTriplet strategy is not a boolean').optional().isBoolean(),
-    query('DRILL_HIDDEN_QUADRUPLET', 'HiddenQuadruplet strategy is not a boolean').optional().isBoolean(),
-    query('DRILL_HIDDEN_QUINTUPLET', 'HiddenQuintuplet strategy is not a boolean').optional().isBoolean(),
-    query('DRILL_HIDDEN_SEXTUPLET', 'HiddenSextuplet strategy is not a boolean').optional().isBoolean(),
-    query('DRILL_HIDDEN_SEPTUPLET', 'HiddenSeptuplet strategy is not a boolean').optional().isBoolean(),
-    query('DRILL_HIDDEN_OCTUPLET', 'HiddenOctuplet strategy is not a boolean').optional().isBoolean(),
-    query('DRILL_POINTING_PAIR', 'PointingPair strategy is not a boolean').optional().isBoolean(),
-    query('DRILL_POINTING_TRIPLET', 'PointingTriplet strategy is not a boolean').optional().isBoolean(),
-    query('DRILL_BOX_LINE_REDUCTION', 'BoxLineReduction strategy is not a boolean').optional().isBoolean(),
-    query('DRILL_X_WING', 'XWing strategy is not a boolean').optional().isBoolean(),
-    query('DRILL_SWORDFISH', 'Swordfish strategy is not a boolean').optional().isBoolean(),
-    query('DRILL_SINGLES_CHAINING', 'SinglesChaining strategy is not a boolean').optional().isBoolean(),
+    query('drillStrategies', 'drillStrategy array is not valid').optional().isArray().isIn(
+        ["NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",
+            "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
+            "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
+            "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
 
     query('calendarDate', 'calendar date is not a date').optional().isDate({ strictMode: true }),
     query('imageUrl', 'imageUrl is not a string').optional().isString(),
     query('description', 'description is not a string').optional().isString(),
+];
+
+exports.validatePuzzleBodyPOST = [
+    body().isArray(),
+    body('*.strategies.*', 'Strategy array is not valid').optional().isArray().isIn(
+        ["NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",
+            "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
+            "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
+            "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
+
+    body('*.difficulty', "difficulty is not an integer or is not in correct range").optional().isInt({ min: 1, max: 10}),
+    body('*.fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
+    body('*.averageSolveTime', 'average solve time is not an integer').optional().isInt(),
+    body('*.numUsersPlayed', 'num users played is not an integer').optional().isInt(),
+    body('*.numTimesPlayed', 'num times played is not an integer').optional().isInt(),
+    body('*.trulyUnique', 'truly unique is not a boolean').optional().isBoolean(),
+
+    body('*.drillStrategies', 'drillStrategy array is not valid').optional().isArray().isIn(
+        ["NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",
+            "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
+            "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
+            "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
+
+    body('*.calendarDate', 'calendar date is not a date').optional().isDate({ strictMode: true, format: "YYYY-MM-DD" }),
+    body('*.imageUrl', 'imageUrl is not a string').optional().isString(),
+    body('*.description', 'description is not a string').optional().isString(),
 ];
