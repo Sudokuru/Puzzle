@@ -7,6 +7,7 @@
 - [ ] Write GitHub hook to run all tests before Push to repo (Thomas)
 - [x] Set up Dev and Prod Lambda environments (Thomas/Gregory)
 - [ ] Add Mermaid documentation and distribute to all repos using GitHub Action (Thomas)
+- [ ] Clean up docker implementation (auto-rebuild) (Thomas)
 - [ ] Decide on initial JSON structure for remaining endpoints (Team)
 - [ ] Write logic for remaining endpoints (Daniel)
 - [ ] Write sanitation and validation for remaining endpoints (Daniel)
