@@ -17,7 +17,7 @@
 
 # Developer Setup
 
-1. Install Docker on your machine. Tutorial is linked below:
+1. Install Docker on your machine. Tutorial is linked below:<br>
    [![Docker Tutorial](https://img.youtube.com/vi/2ezNqqaSjq8/0.jpg)](https://www.youtube.com/watch?v=2ezNqqaSjq8)<br>
 2. Once docker is installed, the Mongo image can be run by navigating to the backend folder and 
 running the command<br>
@@ -54,12 +54,11 @@ We also have a function that can be used for all DELETE requests to validate the
 
 ![backend_pre_request_scripts.png](Docs/images/Backend-Pre-Request-Scripts.png)<br>
 
-Inside the Puzzle endpoint folder we have shared functions to validate a puzzle response 
-and to generate shared puzzle JSON for Pre-Request scripts for other tests.<br>
+#### Inside the Puzzle endpoint folder we have shared functions to validate a puzzle response and to generate shared puzzle JSON for Pre-Request scripts for other tests.<br>
 
 ![puzzle_response_checker.png](Docs/images/puzzle_response_checker.png)<br>
-The below functions take in an integer and return either valid JSON or an object for reference.<br>
+#### The below functions take in an integer and return either valid JSON or an object for reference.<br>
 ![shared_puzzles_for_tests.png](Docs/images/shared_puzzles_for_tests.png)<br>
 
-Inside of the "Code 201" folder we have a test case that will be run for all tests inside of the folder.<br>
+#### Inside the "Code 201" folder we have a test case that will be run for all tests inside of the folder.<br>
 ![shared_response_code_test.png](Docs/images/shared_response_code_test.png)<br>
