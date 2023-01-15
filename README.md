@@ -33,7 +33,7 @@ npm run start
 npm run test:integration
 ```
 5. Typedoc is being used for our code documentation. It is hosted on GitHub Pages here:<br>
-Link: 
+Link: https://sudokuru.github.io/Backend/
 
 # Postman
 
