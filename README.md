@@ -3,7 +3,7 @@
 - [ ] Add license file and distribute to all repos using GitHub Action (Thomas)
 - [ ] Finish writing integration tests for puzzle endpoint (Thomas)
 - [ ] Write GitHub hook to run all tests before Push to repo (Thomas)
-- [ ] Set up Dev and Prod Lambda environments (Thomas/Gregory)
+- [x] Set up Dev and Prod Lambda environments (Thomas/Gregory)
 - [ ] Add Mermaid documentation and distribute to all repos using GitHub Action (Thomas)
 - [ ] Decide on initial JSON structure for remaining endpoints (Team)
 - [ ] Write logic for remaining endpoints (Daniel)
