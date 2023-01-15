@@ -101,5 +101,5 @@ jobs:
       - run: npm ci
       - run: npm i serverless
 
-      - name: ${{ matrix.environment}} Deployment
-        run: npm run deploy
+      - name: ${{ matrix.environment }} Deployment
+        run: npm run deploy-${{ matrix.environment }}

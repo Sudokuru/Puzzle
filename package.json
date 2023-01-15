@@ -10,7 +10,8 @@
     "update-docs": "npx typedoc src/*.ts --name BackendDocs",
     "database": "docker-compose up -d",
     "start": "ts-node src/app.ts local",
-    "deploy": "tsc && serverless deploy"
+    "deploy-dev": "tsc && serverless deploy -c serverless-dev.yml",
+    "deploy-prod": "tsc && serverless deploy -c serverless-prod.yml"
   },
   "repository": {
     "type": "git",
