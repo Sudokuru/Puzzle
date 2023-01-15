@@ -16,7 +16,7 @@ permissions:
   id-token: write
 
 jobs:
-  test:
+  run_app:
     name: Test
     runs-on: ubuntu-latest
     steps:
@@ -35,9 +35,14 @@ jobs:
       - name: Login to Postman CLI
         run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
 
-      - run: npm ci
-      - run: npm run database
-      - run: npm run start & npx wait-on http://localhost:3000
+      - name: Replace localhost Mongo Url
+        uses: microsoft/variable-substitution@v1
+        with:
+          files: 'Variables.json'
+        env:
+          MONGO_URL: mongodb://mongo:27017/
+
+      - run: npm run docker
 
 #      - name: Run 500 API tests
 #        run: |
