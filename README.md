@@ -32,7 +32,10 @@ npm run docker
 ```console
 npm run start
 ```
-OR can be run with docker with the following command:<br>
+OR can be run with docker with the following command: (Not advised, in progress)<br>
+WARNING: this method may have issues with updating based on changes.
+Also in Variables.json, change URL to "mongodb://mongo:27917" and delete previous build.<br>
+
 ```console
 npm run app
 ```
