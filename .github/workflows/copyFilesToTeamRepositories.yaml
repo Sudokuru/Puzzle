@@ -17,36 +17,36 @@ on:
 jobs:
   # This replicates all Licenses to repos with the production topic
   replicate_license:
-      name: Replicate License in all repositories
-      runs-on: ubuntu-latest
-      environment: copyFiles
-      steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Replicating file
-        uses: derberg/copy-files-to-other-repositories@v1.0.0
-        with:
-          github_token: ${{ secrets.GH_TOKEN }}
-          patterns_to_include: License.md
-          committer_username: asyncapi-bot
-          committer_email: info@asyncapi.io
-          commit_message: "chore: update License.md"
-          topics_to_include: gnu-v2
+    name: Replicate License in all repositories
+    runs-on: ubuntu-latest
+    environment: copyFiles
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Replicating file
+      uses: derberg/copy-files-to-other-repositories@v1.0.0
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
+        patterns_to_include: License.md
+        committer_username: asyncapi-bot
+        committer_email: info@asyncapi.io
+        commit_message: "chore: update License.md"
+        topics_to_include: gnu-v2
 
   # This replicates all openAPIs to repos with the openapi3 topic
   replicate_openAPIs:
-      name: Replicate openAPIs to all repositories
-      runs-on: ubuntu-latest
-      environment: copyFiles
-      steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Replicating file
-        uses: derberg/copy-files-to-other-repositories@v1.0.0
-        with:
-          github_token: ${{ secrets.GH_TOKEN }}
-          patterns_to_include: openAPIs/**
-          committer_username: asyncapi-bot
-          committer_email: info@asyncapi.io
-          commit_message: "chore: update openAPIs"
-          topics_to_include: openapi3
+    name: Replicate openAPIs to all repositories
+    runs-on: ubuntu-latest
+    environment: copyFiles
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Replicating file
+      uses: derberg/copy-files-to-other-repositories@v1.0.0
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
+        patterns_to_include: openAPIs/**
+        committer_username: asyncapi-bot
+        committer_email: info@asyncapi.io
+        commit_message: "chore: update openAPIs"
+        topics_to_include: openapi3

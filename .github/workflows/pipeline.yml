@@ -56,6 +56,7 @@ jobs:
 
   deploy_documentation:
     name: Deploy Documentation
+    if: ${{ github.ref == 'refs/heads/main' }}
     needs: [ test ]
     runs-on: ubuntu-latest
     steps:
@@ -81,6 +82,7 @@ jobs:
 
   build_and_deploy:
     name: Build and Deploy
+    if: ${{ github.ref == 'refs/heads/main' }}
     needs: [ deploy_documentation ]
     runs-on: ubuntu-latest
     strategy:
