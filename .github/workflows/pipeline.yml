@@ -1,0 +1,109 @@
+name: "Pipeline"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+concurrency: main_workflow
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - name: Install Postman CLI
+        run: |
+          curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+
+      - name: Login to Postman CLI
+        run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
+
+      - name: Replace localhost Mongo Url
+        uses: microsoft/variable-substitution@v1
+        with:
+          files: 'Variables.json'
+        env:
+          MONGO_URL: mongodb://mongo:27017/
+
+      - name: Run Docker image
+        run: npm run app
+
+#      - name: Run 500 API tests
+#        run: |
+#          postman collection run "${{ github.workspace }}/postman/collections/Sudokuru-Backend-500s.json"
+
+      - name: Run API tests
+        run: |
+          postman collection run "${{ github.workspace }}/postman/collections/Sudokuru-Backend.json"
+
+  deploy_documentation:
+    name: Deploy Documentation
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs: [ test ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - run: npm ci
+      - run: npm run update-docs
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: 'docs/'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+
+  build_and_deploy:
+    name: Build and Deploy
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs: [ deploy_documentation ]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: [ dev, prod ]
+    environment: ${{ matrix.environment }}
+    env:
+      AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
+      AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Replace ${{ matrix.environment }} Mongo Url
+        uses: microsoft/variable-substitution@v1
+        with:
+          files: 'Variables.json'
+        env:
+          MONGO_URL: ${{secrets.DATABASE_URL}}
+
+      - run: npm ci
+      - run: npm i serverless
+
+      - name: ${{ matrix.environment }} Deployment
+        run: npm run deploy-${{ matrix.environment }}
