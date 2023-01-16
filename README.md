@@ -32,13 +32,6 @@ npm run docker
 ```console
 npm run start
 ```
-OR can be run with docker with the following command: (Not advised, in progress)<br>
-WARNING: this method may have issues with updating based on changes.
-Also in Variables.json, change URL to "mongodb://mongo:27918" and delete previous build.<br>
-
-```console
-npm run app
-```
 4. Integration tests can be run when the app is running with this command:<br>
 ```console
 npm run test:integration
