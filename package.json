@@ -1,0 +1,47 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "This is the backend for the sudokuru service",
+  "main": "index.js",
+  "scripts": {
+    "test:unit": "jest --testPathPattern=src/tests/unit",
+    "test:integration": "newman run \"postman/collections/Sudokuru-Backend.json\"",
+    "test:integration500s": "newman run \"postman/collections/Sudokuru-Backend-500s\"",
+    "update-docs": "npx typedoc src/*.ts --name BackendDocs",
+    "docker": "docker-compose up -d",
+    "app": "docker-compose -f docker-compose-app.yml up -d",
+    "start": "ts-node src/app.ts local",
+    "deploy-dev": "tsc && serverless deploy -c serverless-dev.yml",
+    "deploy-prod": "tsc && serverless deploy -c serverless-prod.yml"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SudoKuru/Backend.git"
+  },
+  "keywords": [],
+  "author": "Sudokuru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SudoKuru/Backend/issues"
+  },
+  "homepage": "https://github.com/SudoKuru/Backend#readme",
+  "dependencies": {
+    "@types/mongoose": "^5.11.97",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "mongoose": "^6.8.1",
+    "serverless-http": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.2.4",
+    "cross-var": "^1.1.0",
+    "dotenv-cli": "^6.0.0",
+    "jest": "^29.3.1",
+    "jest-junit": "^15.0.0",
+    "newman": "^5.3.2",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
+    "typedoc": "^0.23.24",
+    "typescript": "^4.9.4"
+  }
+}

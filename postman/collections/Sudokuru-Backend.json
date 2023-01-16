@@ -1,0 +1,3116 @@
+{
+	"info": {
+		"_postman_id": "4bc70130-1d36-43ab-86a5-01cd64dba57a",
+		"name": "Sudokuru-Backend",
+		"description": "These tests will be used as functional tests and will be run againts localhost and in the pipeline. Tests will likely not be run in Production.\n\n**NOTE: These tests will automatically clear the database before each test.**",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "23651156-4bc70130-1d36-43ab-86a5-01cd64dba57a"
+	},
+	"item": [
+		{
+			"name": "Global Invalid Paths Return 400",
+			"item": [
+				{
+					"name": "POST_INVALID_PATH_2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "374858ef-2211-4162-b6a3-8903b12ef1ac",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true,\r\n        \"NAKED_QUADRUPLET\": true,\r\n        \"NAKED_QUINTUPLET\": true,\r\n        \"NAKED_SEXTUPLET\": true,\r\n        \"NAKED_SEPTUPLET\": true,\r\n        \"NAKED_OCTUPLET\": true,\r\n        \"HIDDEN_PAIR\": true,\r\n        \"HIDDEN_TRIPLET\": true,\r\n        \"HIDDEN_QUADRUPLET\": true,\r\n        \"HIDDEN_QUINTUPLET\": true,\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true,\r\n        \"X_WING\": true,\r\n        \"SWORDFISH\": true,\r\n        \"SINGLES_CHAINING\": true\r\n    },\r\n    \"difficulty\": 0,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_INVALID_PATH_4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "8fd4615f-c6e3-4c84-baae-a38a6ddc053e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true,\r\n        \"NAKED_QUADRUPLET\": true,\r\n        \"NAKED_QUINTUPLET\": true,\r\n        \"NAKED_SEXTUPLET\": true,\r\n        \"NAKED_SEPTUPLET\": true,\r\n        \"NAKED_OCTUPLET\": true,\r\n        \"HIDDEN_PAIR\": true,\r\n        \"HIDDEN_TRIPLET\": true,\r\n        \"HIDDEN_QUADRUPLET\": true,\r\n        \"HIDDEN_QUINTUPLET\": true,\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true,\r\n        \"X_WING\": true,\r\n        \"SWORDFISH\": true,\r\n        \"SINGLES_CHAINING\": true\r\n    },\r\n    \"difficulty\": 0,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_INVALID_PATH_5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "6c8d6890-4644-4746-9508-d577eebdbcdd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true,\r\n        \"NAKED_QUADRUPLET\": true,\r\n        \"NAKED_QUINTUPLET\": true,\r\n        \"NAKED_SEXTUPLET\": true,\r\n        \"NAKED_SEPTUPLET\": true,\r\n        \"NAKED_OCTUPLET\": true,\r\n        \"HIDDEN_PAIR\": true,\r\n        \"HIDDEN_TRIPLET\": true,\r\n        \"HIDDEN_QUADRUPLET\": true,\r\n        \"HIDDEN_QUINTUPLET\": true,\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true,\r\n        \"X_WING\": true,\r\n        \"SWORDFISH\": true,\r\n        \"SINGLES_CHAINING\": true\r\n    },\r\n    \"difficulty\": 0,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_INVALID_PATH_6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "42c46419-2500-4ee0-83c0-09159aafd6d8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true,\r\n        \"NAKED_QUADRUPLET\": true,\r\n        \"NAKED_QUINTUPLET\": true,\r\n        \"NAKED_SEXTUPLET\": true,\r\n        \"NAKED_SEPTUPLET\": true,\r\n        \"NAKED_OCTUPLET\": true,\r\n        \"HIDDEN_PAIR\": true,\r\n        \"HIDDEN_TRIPLET\": true,\r\n        \"HIDDEN_QUADRUPLET\": true,\r\n        \"HIDDEN_QUINTUPLET\": true,\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true,\r\n        \"X_WING\": true,\r\n        \"SWORDFISH\": true,\r\n        \"SINGLES_CHAINING\": true\r\n    },\r\n    \"difficulty\": 0,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_INVALID_PATH_7",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "b3d573fc-5629-440a-9cc2-bd80b0525037",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true,\r\n        \"NAKED_QUADRUPLET\": true,\r\n        \"NAKED_QUINTUPLET\": true,\r\n        \"NAKED_SEXTUPLET\": true,\r\n        \"NAKED_SEPTUPLET\": true,\r\n        \"NAKED_OCTUPLET\": true,\r\n        \"HIDDEN_PAIR\": true,\r\n        \"HIDDEN_TRIPLET\": true,\r\n        \"HIDDEN_QUADRUPLET\": true,\r\n        \"HIDDEN_QUINTUPLET\": true,\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true,\r\n        \"X_WING\": true,\r\n        \"SWORDFISH\": true,\r\n        \"SINGLES_CHAINING\": true\r\n    },\r\n    \"difficulty\": 0,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_INVALID_PATH_2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "700b41d8-f83e-4202-a62f-bdc6c9981e1b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_INVALID_PATH_4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "eab80064-5b6b-49ce-86f3-51535396495c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_INVALID_PATH_5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "66f8cceb-9b4a-4118-a1c9-9aba923e9bcc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_INVALID_PATH_6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "9d6a5b5e-b9ed-48f4-9a2c-eca97141cf85",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_INVALID_PATH_7",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "20f9598d-68db-4286-8a86-03e5264e04b6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_INVALID_PATH_2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "936302f0-c523-4fa4-9a3d-cd07743e8ab8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_INVALID_PATH_4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "98261276-569f-4d82-b015-3b470d4a1c56",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_INVALID_PATH_5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "e0092838-5ad4-444b-93ea-f15e3997ec5d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_INVALID_PATH_6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "4e7ae287-21aa-4287-a8c4-80fa9d448fdd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_INVALID_PATH_7",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "27d41bd1-4e40-414e-92ed-03c1b0fc330e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "0846ce5b-27dc-4bbb-8165-9ff8ac7a5387",
+			"description": "These tests hold Invalid Path tests that are not dependent on any particular endpoint.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "27f3c8f9-0398-429e-9a18-8a744b14fbe9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e2d6418b-3d2c-4406-8553-f3c4bdf45c9a",
+						"type": "text/javascript",
+						"exec": [
+							"// Test to see if Status Code is 400",
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"pm.test(\"Error response is correct\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.Error_Message).to.eql(\"Invalid Request\");",
+							"    pm.expect(jsonData.Status).to.eql(400);",
+							"});"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Puzzle",
+			"item": [
+				{
+					"name": "Post Requests",
+					"item": [
+						{
+							"name": "Code 201",
+							"item": [
+								{
+									"name": "POST_TWO_FULL_PUZZLES",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "d6e897b5-f31e-4c7f-804f-868a4c3c0953",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "d36b5ff6-4e08-4901-80ca-15e91f2b0aa8",
+												"exec": [
+													"pm.test(\"JSON response is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"\r",
+													"    var strategyTypes = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"NAKED_TRIPLET\", \"NAKED_QUADRUPLET\", \"NAKED_QUINTUPLET\", \"NAKED_SEXTUPLET\", \"NAKED_SEPTUPLET\", \"NAKED_OCTUPLET\", \"HIDDEN_PAIR\", \"HIDDEN_TRIPLET\", \"HIDDEN_QUADRUPLET\", \"HIDDEN_QUINTUPLET\", \"HIDDEN_SEXTUPLET\", \"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\", \"X_WING\", \"SWORDFISH\", \"SINGLES_CHAINING\"];\r",
+													"\r",
+													"    var drillStrategies = [\"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\"];\r",
+													"\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 0, \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", strategyTypes, 5, 0, 0, 10, 20, false, 0, drillStrategies, \"2019-12-12T00:00:00.000Z\", \"image/url\", \"This is the puzzle description!\");\r",
+													"\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 1, \"603002001500000020901730006810400090060000000000690040350000004002070005000500108\", \"683942751574816329921735486817453692469287513235691847358169274142378965796524138\", strategyTypes, 5, 0, 0, 10, 20, false, 0, drillStrategies);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "55cab086-dad2-4f7c-bfa7-33e088288660",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"NAKED_TRIPLET\", \"NAKED_QUADRUPLET\", \"NAKED_QUINTUPLET\", \"NAKED_SEXTUPLET\", \"NAKED_SEPTUPLET\", \"NAKED_OCTUPLET\", \"HIDDEN_PAIR\", \"HIDDEN_TRIPLET\", \"HIDDEN_QUADRUPLET\", \"HIDDEN_QUINTUPLET\", \"HIDDEN_SEXTUPLET\", \"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\", \"X_WING\", \"SWORDFISH\", \"SINGLES_CHAINING\"],\r\n    \"difficulty\": 5,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"trulyUnique\": false,\r\n    \"drillStrategies\": [\"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\"],\r\n    \"calendarDate\": \"2019-12-12\",\r\n    \"imageUrl\": \"image/url\",\r\n    \"description\": \"This is the puzzle description!\"\r\n}, {\r\n    \"puzzle\": \"603002001500000020901730006810400090060000000000690040350000004002070005000500108\", \r\n    \"puzzleSolution\": \"683942751574816329921735486817453692469287513235691847358169274142378965796524138\", \r\n    \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"NAKED_TRIPLET\", \"NAKED_QUADRUPLET\", \"NAKED_QUINTUPLET\", \"NAKED_SEXTUPLET\", \"NAKED_SEPTUPLET\", \"NAKED_OCTUPLET\", \"HIDDEN_PAIR\", \"HIDDEN_TRIPLET\", \"HIDDEN_QUADRUPLET\", \"HIDDEN_QUINTUPLET\", \"HIDDEN_SEXTUPLET\", \"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\", \"X_WING\", \"SWORDFISH\", \"SINGLES_CHAINING\"],\r\n    \"difficulty\": 5,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"trulyUnique\": false,\r\n    \"drillStrategies\": [\"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\"]\r\n}\r\n]\r\n\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "POST_ONE_FULL_PUZZLE",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+												"exec": [
+													"pm.test(\"JSON response is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"\r",
+													"    var strategyTypes = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"NAKED_TRIPLET\", \"NAKED_QUADRUPLET\", \"NAKED_QUINTUPLET\", \"NAKED_SEXTUPLET\", \"NAKED_SEPTUPLET\", \"NAKED_OCTUPLET\", \"HIDDEN_PAIR\", \"HIDDEN_TRIPLET\", \"HIDDEN_QUADRUPLET\", \"HIDDEN_QUINTUPLET\", \"HIDDEN_SEXTUPLET\", \"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\", \"X_WING\", \"SWORDFISH\", \"SINGLES_CHAINING\"];\r",
+													"\r",
+													"    var drillStrategies = [\"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\"];\r",
+													"\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 0, \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", strategyTypes, 5, 0, 0, 10, 20, false, 0, drillStrategies, \"2019-12-12T00:00:00.000Z\", \"image/url\", \"This is the puzzle description!\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "0d957abc-4252-443e-a61c-83dc2d1b3bda",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"NAKED_TRIPLET\", \"NAKED_QUADRUPLET\", \"NAKED_QUINTUPLET\", \"NAKED_SEXTUPLET\", \"NAKED_SEPTUPLET\", \"NAKED_OCTUPLET\", \"HIDDEN_PAIR\", \"HIDDEN_TRIPLET\", \"HIDDEN_QUADRUPLET\", \"HIDDEN_QUINTUPLET\", \"HIDDEN_SEXTUPLET\", \"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\", \"X_WING\", \"SWORDFISH\", \"SINGLES_CHAINING\"],\r\n    \"difficulty\": 5,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"trulyUnique\": false,\r\n    \"drillStrategies\": [\"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\"],\r\n    \"calendarDate\": \"2019-12-12\",\r\n    \"imageUrl\": \"image/url\",\r\n    \"description\": \"This is the puzzle description!\"\r\n}]\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "POST_ONE_MINIMAL_PUZZLE",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "bcbc066b-52e1-4310-8a57-1d8eb7b0b527",
+												"exec": [
+													"pm.test(\"JSON response is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"\r",
+													"    var strategyTypes = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"];\r",
+													"\r",
+													"    var drillStrategies = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"];\r",
+													"\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 0, \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", strategyTypes, 5, 0, 0, 10, 20, false, 0, drillStrategies, \"2019-12-12T00:00:00.000Z\", \"image/url\", \"This is the puzzle description!\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "a6ac7ed5-bb7c-42cf-a2a6-04122c4f6d0f",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "oauth2",
+											"oauth2": [
+												{
+													"key": "addTokenTo",
+													"value": "header",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"],\r\n    \"difficulty\": 5,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"trulyUnique\": false,\r\n    \"drillStrategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"],\r\n    \"calendarDate\": \"2019-12-12\",\r\n    \"imageUrl\": \"image/url\",\r\n    \"description\": \"This is the puzzle description!\"\r\n}]\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "POST_FOUR_MINIMAL_PUZZLES",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "28803204-3096-4387-9438-6b6a2baaa803",
+												"exec": [
+													"pm.test(\"JSON response is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"\r",
+													"    var strategyTypes = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\"];\r",
+													"    var drillStrategies = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\"];\r",
+													"\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 0, \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
+													"\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 1, \"008645019010009700009702000040023870803097200100000093000004106000000930700306402\", \"278645319614839725539712648946523871853197264127468593382974156465281937791356482\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
+													"\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 2, \"000080009832709015049520370175600040000005080090007006080170090000350020200006500\", \"751483269832769415649521378175638942426915783398247156583172694967354821214896537\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
+													"\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 3, \"060004029400900006900160570610000082040000000302007600100050068009641700050302091\", \"861574329475923816923168574617435982548296137392817645134759268289641753756382491\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "d2ae68f4-0a93-4934-8718-6a33efb5594e",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\"],\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\"]\r\n},{\r\n    \"puzzle\": \"008645019010009700009702000040023870803097200100000093000004106000000930700306402\",\r\n    \"puzzleSolution\": \"278645319614839725539712648946523871853197264127468593382974156465281937791356482\",  \r\n    \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\"],\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\"]\r\n},{\r\n    \"puzzle\": \"000080009832709015049520370175600040000005080090007006080170090000350020200006500\", \r\n    \"puzzleSolution\": \"751483269832769415649521378175638942426915783398247156583172694967354821214896537\",  \r\n    \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\"],\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\"]\r\n},{\r\n    \"puzzle\": \"060004029400900006900160570610000082040000000302007600100050068009641700050302091\", \r\n    \"puzzleSolution\": \"861574329475923816923168574617435982548296137392817645134759268289641753756382491\",  \r\n    \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\"],\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\"]\r\n}]\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "8da06f93-f02e-49d8-8fa0-34b96d22181d",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "da9f8d77-c069-40d1-9913-b130b3779f45",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "5ab0a224-57f0-4a88-81ed-6f769348526f",
+										"type": "text/javascript",
+										"exec": [
+											"// Test to see if Status Code is 201",
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});"
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "Code 400",
+							"item": [
+								{
+									"name": "Invalid Paths",
+									"item": [
+										{
+											"name": "POST_INVALID_PATH_1",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"id": "45df6f00-8eb4-459d-9d5d-62b62f2c1618",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\",  \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIR\": true,\r\n        \"POINTING_TRIPLET\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n}]\r\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:3000/api/v1/puzzles/INVALID_PATH",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "3000",
+													"path": [
+														"api",
+														"v1",
+														"puzzles",
+														"INVALID_PATH"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "POST_INVALID_PATH_3",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"id": "928d475d-8b54-44fd-ad1c-7a6f701ab8ca",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\",  \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIR\": true,\r\n        \"POINTING_TRIPLET\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n}]\r\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:3000/api/v1/puz",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "3000",
+													"path": [
+														"api",
+														"v1",
+														"puz"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"id": "3cfe95e0-3fc5-4af6-93d8-0f80393cbb52"
+								},
+								{
+									"name": "POST_NO_PUZZLE_FIELD",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "813efdc0-8591-47eb-ad6d-a0454688a9fa",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[{\r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\",  \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIR\": true,\r\n        \"POINTING_TRIPLET\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n}]\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "POST_DUPLICATE_PUZZLE",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+												"exec": [
+													"// Insert Puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [{\r",
+													"                \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r",
+													"                \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r",
+													"                \"strategyTypes\": { \r",
+													"                    \"NAKED_SINGLE\": true,\r",
+													"                    \"HIDDEN_SINGLE\": true,\r",
+													"                    \"NAKED_PAIR\": true,\r",
+													"                    \"NAKED_TRIPLET\": true\r",
+													"                },\r",
+													"                \"difficulty\": 5,\r",
+													"                \"drillStrategies\": {\r",
+													"                    \"HIDDEN_SEXTUPLET\": true,\r",
+													"                    \"HIDDEN_SEPTUPLET\": true,\r",
+													"                    \"HIDDEN_OCTUPLET\": true,\r",
+													"                    \"POINTING_PAIR\": true,\r",
+													"                    \"POINTING_TRIPLET\": true,\r",
+													"                    \"BOX_LINE_REDUCTION\": true\r",
+													"                }\r",
+													"            }]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "11168429-923a-4982-a52e-3efadc7c0ee1",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\",  \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    }\r\n}]\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "POST_DUPLICATE_PUZZLE_DIFFERENT_JSON",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+												"exec": [
+													"// Insert Puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [{\r",
+													"                \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r",
+													"                \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r",
+													"                \"strategyTypes\": { \r",
+													"                    \"NAKED_SINGLE\": true,\r",
+													"                    \"HIDDEN_SINGLE\": true,\r",
+													"                },\r",
+													"                \"difficulty\": 5,\r",
+													"                \"drillStrategies\": {\r",
+													"                    \"HIDDEN_SEXTUPLET\": true,\r",
+													"                    \"HIDDEN_SEPTUPLET\": true,\r",
+													"                    \"HIDDEN_OCTUPLET\": true,\r",
+													"                    \"POINTING_PAIR\": true,\r",
+													"                },\r",
+													"                \"fastestSolveTime\": 0, \r",
+													"                \"averageSolveTime\": 0, \r",
+													"                \"numUsersPlayed\": 10, \r",
+													"                \"numTimesPlayed\": 20, \r",
+													"                \"truleyUnique\": false \r",
+													"            }]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "97065679-bc95-473d-985f-03c0219a9f0c",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true\r\n    },\r\n    \"difficulty\": 5,\r\n    \"drillStrategies\": {\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true\r\n    },\r\n    \"fastestSolveTime\": 50, \r\n    \"averageSolveTime\": 50, \r\n    \"numUsersPlayed\": 100, \r\n    \"numTimesPlayed\": 20, \r\n    \"trulyUnique\": true \r\n}]\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "743d9b07-c901-4e4d-886e-ae7d96a66002",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "26e024b6-b184-4801-bf35-54ca475f04e0",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "f618cb1a-45a7-49dc-aa86-3257e71931b3",
+										"type": "text/javascript",
+										"exec": [
+											"// Test to see if Status Code is 400",
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"pm.test(\"Error response is correct\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.Error_Message).to.eql(\"Invalid Request\");",
+											"    pm.expect(jsonData.Status).to.eql(400);",
+											"});"
+										]
+									}
+								}
+							]
+						}
+					],
+					"id": "de35ee88-768b-4ce7-930d-f05fc8ec85f7",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a7112bbf-ac17-4b7e-9a5c-11088ff7ccef",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "c4fd4fbe-dbc6-4052-866a-8e750f9039d6",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Get Requests",
+					"item": [
+						{
+							"name": "Code 200",
+							"item": [
+								{
+									"name": "GET_ALL_ONE_PUZZLE_IN_DB",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "1fa9982f-909c-4fb6-9b33-b617498393c9",
+												"exec": [
+													"pm.test(\"JSON response is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"\r",
+													"    var strategyTypes = puzzleTools.puzzleObject(1).strategies\r",
+													"    var drillStrategies = puzzleTools.puzzleObject(1).drillStrategies\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 0, puzzleTools.puzzleObject(1).puzzle, puzzleTools.puzzleObject(1).puzzleSolution, strategyTypes, puzzleTools.puzzleObject(1).difficulty, 0, 0, 0, 0, false, 0, drillStrategies);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "e0a0b1c8-e2fd-4c34-801b-7ebb14021ce1",
+												"exec": [
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [\r",
+													"                puzzleTools.puzzleJSON(1)\r",
+													"            ]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "fb30e610-3585-4a63-a639-ce8eec953db5",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET_PUZZLE_BY_PUZZLE",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "1fa9982f-909c-4fb6-9b33-b617498393c9",
+												"exec": [
+													"pm.test(\"JSON response is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"\r",
+													"    var strategyTypes = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"];\r",
+													"\r",
+													"    var drillStrategies = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"];\r",
+													"    \r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 0, \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
+													"\r",
+													"    pm.expect(jsonData[1]).to.eql(undefined);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "e0a0b1c8-e2fd-4c34-801b-7ebb14021ce1",
+												"exec": [
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [\r",
+													"            {\r",
+													"                \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r",
+													"                \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r",
+													"                \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"],\r",
+													"                \"difficulty\": 5,\r",
+													"                \"drillStrategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"]\r",
+													"            },\r",
+													"            {\r",
+													"                \"puzzle\": \"008645019010009700009702000040023870803097200100000093000004106000000930700306402\", \r",
+													"                \"puzzleSolution\": \"278645319614839725539712648946523871853197264127468593382974156465281937791356482\", \r",
+													"                \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"],\r",
+													"                \"difficulty\": 4,\r",
+													"                \"drillStrategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"]\r",
+													"            }\r",
+													"            ]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "3b327584-2ff8-439a-b614-3ecbc014231e",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/?puzzle=\"310084002200150006570003010423708095760030000009562030050006070007000900000001500\"",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											],
+											"query": [
+												{
+													"key": "puzzle",
+													"value": "\"310084002200150006570003010423708095760030000009562030050006070007000900000001500\""
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET_ALL_DIFFICULTY_5_PUZZLES",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "1fa9982f-909c-4fb6-9b33-b617498393c9",
+												"exec": [
+													"pm.test(\"JSON response is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"\r",
+													"    var strategyTypes = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"];\r",
+													"\r",
+													"    var drillStrategies = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"];\r",
+													"    \r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 0, \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
+													"\r",
+													"    pm.expect(jsonData[1]).to.eql(undefined);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "e0a0b1c8-e2fd-4c34-801b-7ebb14021ce1",
+												"exec": [
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [\r",
+													"            {\r",
+													"                \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r",
+													"                \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r",
+													"                \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"],\r",
+													"                \"difficulty\": 5,\r",
+													"                \"drillStrategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"]\r",
+													"            },\r",
+													"            {\r",
+													"                \"puzzle\": \"008645019010009700009702000040023870803097200100000093000004106000000930700306402\", \r",
+													"                \"puzzleSolution\": \"278645319614839725539712648946523871853197264127468593382974156465281937791356482\", \r",
+													"                \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"],\r",
+													"                \"difficulty\": 4,\r",
+													"                \"drillStrategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"]\r",
+													"            }\r",
+													"            ]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "5865422e-af77-4b53-a6b8-1c794d60573b",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/?difficulty=5",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											],
+											"query": [
+												{
+													"key": "difficulty",
+													"value": "5"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET_ALL_POINTING_TRIPLETS",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "1fa9982f-909c-4fb6-9b33-b617498393c9",
+												"exec": [
+													"pm.test(\"JSON response is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"\r",
+													"    var strategyTypes = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"];\r",
+													"\r",
+													"    var drillStrategies = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"];\r",
+													"\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, 0, \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
+													"\r",
+													"    pm.expect(jsonData[1]).to.eql(undefined);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "e0a0b1c8-e2fd-4c34-801b-7ebb14021ce1",
+												"exec": [
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [\r",
+													"            puzzleTools.puzzleJSON(1),\r",
+													"            {\r",
+													"                \"puzzle\": \"008645019010009700009702000040023870803097200100000093000004106000000930700306402\", \r",
+													"                \"puzzleSolution\": \"278645319614839725539712648946523871853197264127468593382974156465281937791356482\", \r",
+													"                \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\"],\r",
+													"                \"difficulty\": 4,\r",
+													"                \"drillStrategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\"]\r",
+													"            }\r",
+													"            ]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "1c941991-7a18-4db2-acf6-6c4cf4b118c8",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/?strategies[]=POINTING_TRIPLET",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											],
+											"query": [
+												{
+													"key": "strategies[]",
+													"value": "POINTING_TRIPLET"
+												},
+												{
+													"key": "strategies[]",
+													"value": "HIDDEN_SINGLE",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET_ALL_FOUR_PUZZLES_IN_DB",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "1fa9982f-909c-4fb6-9b33-b617498393c9",
+												"exec": [
+													"// need some way to set the order to be the same as input order. Currently I think return order is based on generated _id.\r",
+													"// response order changes each time so this test will fail most of the time. \r",
+													"pm.test(\"JSON response is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"\r",
+													"    puzzleOne = \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\";\r",
+													"    puzzleTwo = \"008645019010009700009702000040023870803097200100000093000004106000000930700306402\";\r",
+													"    puzzleThree = \"000080009832709015049520370175600040000005080090007006080170090000350020200006500\";\r",
+													"    puzzleFour = \"060004029400900006900160570610000082040000000302007600100050068009641700050302091\";\r",
+													"\r",
+													"    var returnOrder = new Array(4);\r",
+													"    var puzzles = [puzzleOne, puzzleTwo, puzzleThree, puzzleFour];\r",
+													"    for (let j = 0; j < 4; j++){\r",
+													"        for (let i = 0; i < 4; i++){\r",
+													"            if (puzzles[j] == jsonData[i].puzzle){\r",
+													"                returnOrder[j] = i;\r",
+													"            }\r",
+													"        }\r",
+													"    }\r",
+													"\r",
+													"    var strategyTypes = puzzleTools.puzzleObject(1).strategies\r",
+													"    var drillStrategies = puzzleTools.puzzleObject(1).drillStrategies\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, returnOrder[0], puzzleOne, \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
+													"\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, returnOrder[1], puzzleTwo, \"278645319614839725539712648946523871853197264127468593382974156465281937791356482\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
+													"\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, returnOrder[2], puzzleThree, \"751483269832769415649521378175638942426915783398247156583172694967354821214896537\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
+													"\r",
+													"    puzzleTools.puzzleResponseChecker(jsonData, returnOrder[3], puzzleFour, \"861574329475923816923168574617435982548296137392817645134759268289641753756382491\", strategyTypes, 5, 0, 0, 0, 0, false, 0, drillStrategies);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "3073f901-2b9a-462a-92e9-460dc66fead6",
+												"exec": [
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [\r",
+													"                puzzleTools.puzzleJSON(1)\r",
+													"            ]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});\r",
+													"\r",
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [{\r",
+													"                \"puzzle\": \"008645019010009700009702000040023870803097200100000093000004106000000930700306402\", \r",
+													"                \"puzzleSolution\": \"278645319614839725539712648946523871853197264127468593382974156465281937791356482\", \r",
+													"                \"strategies\": puzzleTools.puzzleObject(1).strategies,\r",
+													"                \"difficulty\": puzzleTools.puzzleObject(1).difficulty,\r",
+													"                \"drillStrategies\": puzzleTools.puzzleObject(1).drillStrategies\r",
+													"            }]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});\r",
+													"\r",
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [{\r",
+													"                \"puzzle\": \"000080009832709015049520370175600040000005080090007006080170090000350020200006500\", \r",
+													"                \"puzzleSolution\": \"751483269832769415649521378175638942426915783398247156583172694967354821214896537\", \r",
+													"                \"strategies\": puzzleTools.puzzleObject(1).strategies,\r",
+													"                \"difficulty\": puzzleTools.puzzleObject(1).difficulty,\r",
+													"                \"drillStrategies\": puzzleTools.puzzleObject(1).drillStrategies\r",
+													"            }]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});\r",
+													"\r",
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [{\r",
+													"                \"puzzle\": \"060004029400900006900160570610000082040000000302007600100050068009641700050302091\", \r",
+													"                \"puzzleSolution\": \"861574329475923816923168574617435982548296137392817645134759268289641753756382491\", \r",
+													"                \"strategies\": puzzleTools.puzzleObject(1).strategies,\r",
+													"                \"difficulty\": puzzleTools.puzzleObject(1).difficulty,\r",
+													"                \"drillStrategies\": puzzleTools.puzzleObject(1).drillStrategies\r",
+													"            }]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "8ae02e30-c90f-4903-9ba1-3aa2fcfc9e21",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "5daf0ed7-4e7b-4aaa-8ecb-a588c2e078e8",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "9f5c6a5a-e14c-4052-afb5-f004c83853e9",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "3226efd3-0cb4-40e5-945b-06bf4fb67bef",
+										"type": "text/javascript",
+										"exec": [
+											"// Test to see if Status Code is 200",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "Code 400",
+							"item": [
+								{
+									"name": "Invalid Paths",
+									"item": [
+										{
+											"name": "GET_INVALID_PATH_1",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"id": "285048fb-4e3c-455c-af10-a8b0cbca852a",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:3000/api/v1/puzzles/INVALID_PATH",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "3000",
+													"path": [
+														"api",
+														"v1",
+														"puzzles",
+														"INVALID_PATH"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "GET_INVALID_PATH_3",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"id": "51c57780-d7ec-4aee-a845-8a67124ac23c",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:3000/api/v1/puz",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "3000",
+													"path": [
+														"api",
+														"v1",
+														"puz"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"id": "39090383-752a-4b3f-9005-c0f5bb9fb2b1"
+								}
+							],
+							"id": "227feb3b-7875-4d52-8af1-d43c4f088b9a",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "ab559a93-b3b1-4a11-bca3-ce9175b4fa37",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "aae389ff-df09-40b1-ad33-df75330ecbf8",
+										"type": "text/javascript",
+										"exec": [
+											"// Test to see if Status Code is 400",
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"pm.test(\"Error response is correct\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.Error_Message).to.eql(\"Invalid Request\");",
+											"    pm.expect(jsonData.Status).to.eql(400);",
+											"});"
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "Code 404",
+							"item": [
+								{
+									"name": "GET_ALL_PUZZLES",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "d32d88e0-9d38-4cf4-bf66-47510c31eb1c",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "b2b67828-52dc-41fc-aa4f-b95d1977ab5e",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "d91ea180-2980-4406-9cb0-c7c943fd8598",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "3123d837-5500-4113-afc1-aa73b04f6ecb",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "4fe108a7-3067-48a8-a03f-0e81d78a91bd",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "9a76c78e-7c46-48dd-a409-01f03b6d0ed5",
+										"type": "text/javascript",
+										"exec": [
+											"// Test to see if Status Code is 404",
+											"pm.test(\"Status code is 404\", function () {",
+											"    pm.response.to.have.status(404);",
+											"});",
+											"pm.test(\"Error response is correct\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.Error_Message).to.eql(\"Resource Not Found\");",
+											"    pm.expect(jsonData.Status).to.eql(404);",
+											"});"
+										]
+									}
+								}
+							]
+						}
+					],
+					"id": "2b75ad6b-ceb0-4513-9d28-0ae9959f9255"
+				},
+				{
+					"name": "Delete Requests",
+					"item": [
+						{
+							"name": "Code 200",
+							"item": [
+								{
+									"name": "DELETE_ALL_ZERO_PUZZLES",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "1fa9982f-909c-4fb6-9b33-b617498393c9",
+												"exec": [
+													"pm.test(\"JSON response is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    backendTools.deleteResponseChecker(jsonData, true, 0);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "5db25ad9-e652-4fe3-83ff-895984c23efe",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "DELETE_ALL_ONE_PUZZLE",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "1fa9982f-909c-4fb6-9b33-b617498393c9",
+												"exec": [
+													"pm.test(\"JSON response is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    backendTools.deleteResponseChecker(jsonData, true, 1);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "e0a0b1c8-e2fd-4c34-801b-7ebb14021ce1",
+												"exec": [
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [\r",
+													"                puzzleTools.puzzleJSON(1)\r",
+													"            ]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "45105ba9-4b55-4629-87b9-7515b30e3fe6",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "DELETE_ALL_FOUR_PUZZLES",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "1fa9982f-909c-4fb6-9b33-b617498393c9",
+												"exec": [
+													"pm.test(\"JSON response is correct\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    backendTools.deleteResponseChecker(jsonData, true, 4);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "3073f901-2b9a-462a-92e9-460dc66fead6",
+												"exec": [
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [\r",
+													"                puzzleTools.puzzleJSON(1)\r",
+													"            ]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});\r",
+													"\r",
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [{\r",
+													"                \"puzzle\": \"008645019010009700009702000040023870803097200100000093000004106000000930700306402\", \r",
+													"                \"puzzleSolution\": \"278645319614839725539712648946523871853197264127468593382974156465281937791356482\", \r",
+													"                \"strategies\": puzzleTools.puzzleObject(1).strategies,\r",
+													"                \"difficulty\": puzzleTools.puzzleObject(1).difficulty,\r",
+													"                \"drillStrategies\": puzzleTools.puzzleObject(1).drillStrategies\r",
+													"            }]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});\r",
+													"\r",
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [{\r",
+													"                \"puzzle\": \"000080009832709015049520370175600040000005080090007006080170090000350020200006500\", \r",
+													"                \"puzzleSolution\": \"751483269832769415649521378175638942426915783398247156583172694967354821214896537\", \r",
+													"                \"strategies\": puzzleTools.puzzleObject(1).strategies,\r",
+													"                \"difficulty\": puzzleTools.puzzleObject(1).difficulty,\r",
+													"                \"drillStrategies\": puzzleTools.puzzleObject(1).drillStrategies\r",
+													"            }]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});\r",
+													"\r",
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [{\r",
+													"                \"puzzle\": \"060004029400900006900160570610000082040000000302007600100050068009641700050302091\", \r",
+													"                \"puzzleSolution\": \"861574329475923816923168574617435982548296137392817645134759268289641753756382491\", \r",
+													"                \"strategies\": puzzleTools.puzzleObject(1).strategies,\r",
+													"                \"difficulty\": puzzleTools.puzzleObject(1).difficulty,\r",
+													"                \"drillStrategies\": puzzleTools.puzzleObject(1).drillStrategies\r",
+													"            }]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "d81bff50-2bd6-4b7c-be23-ab739009b97b",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "c69a658c-e4ff-43b0-8255-ad590a8701b6",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "1d50f982-f8e8-4de1-b081-b66f9239412d",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "8ec76fe4-4f27-4381-903d-a6c8f0cc4980",
+										"type": "text/javascript",
+										"exec": [
+											"// Test to see if Status Code is 200",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "Code 400",
+							"item": [
+								{
+									"name": "Invalid Paths",
+									"item": [
+										{
+											"name": "DELETE_INVALID_PATH_1_RETURN_400",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"id": "781526dd-32f5-4b04-af91-397771c0ea5b",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:3000/api/v1/puzzles/INVALID_PATH",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "3000",
+													"path": [
+														"api",
+														"v1",
+														"puzzles",
+														"INVALID_PATH"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "DELETE_INVALID_PATH_3_RETURN_400",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"id": "b3ff9602-412d-4515-939c-b0befc3216b1",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:3000/api/v1/puz",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "3000",
+													"path": [
+														"api",
+														"v1",
+														"puz"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"id": "fe5204a3-6ab3-4f77-ad94-dd073c711626"
+								}
+							],
+							"id": "0f84c556-7ce0-4fd4-a326-ab92d96102dc",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "1dd8374d-c036-420a-a61c-de7f747f7b19",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "ab1dd68f-c3b8-41f8-a429-cc236614627a",
+										"type": "text/javascript",
+										"exec": [
+											"// Test to see if Status Code is 400",
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"pm.test(\"Error response is correct\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.Error_Message).to.eql(\"Invalid Request\");",
+											"    pm.expect(jsonData.Status).to.eql(400);",
+											"});"
+										]
+									}
+								}
+							]
+						}
+					],
+					"id": "f07cab2c-84e7-422b-8578-cbd6f7b0291f"
+				},
+				{
+					"name": "Patch Requests",
+					"item": [
+						{
+							"name": "Code 200",
+							"item": [
+								{
+									"name": "PATCH_ONE_MINIMAL_PUZZLE",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "aadbd16f-aecc-45dc-8814-35f6ab69d540",
+												"exec": [
+													"// Insert puzzle\r",
+													"pm.sendRequest({\r",
+													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
+													"    method: 'POST',\r",
+													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify(\r",
+													"            [\r",
+													"                puzzleTools.puzzleJSON(1)\r",
+													"            ]\r",
+													"        )\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    console.log(res);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "44543b49-198e-46b5-abe5-2c8cb8cbc068",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\"],\r\n    \"drillStrategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\"]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/v1/puzzles/?puzzle=\"310084002200150006570003010423708095760030000009562030050006070007000900000001500\"",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"puzzles",
+												""
+											],
+											"query": [
+												{
+													"key": "puzzle",
+													"value": "\"310084002200150006570003010423708095760030000009562030050006070007000900000001500\""
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "65576399-affc-481e-a24a-daf7b269eb4f",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "7eddbbc3-6a9b-479f-9d8b-7bac9e937718",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "910e1a7a-efdf-4315-8660-39470227d675",
+										"type": "text/javascript",
+										"exec": [
+											"// Test to see if Status Code is 200",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "Code 400",
+							"item": [
+								{
+									"name": "Invalid Paths",
+									"item": [],
+									"id": "0972cd7f-5b66-436d-bca2-240c72af59b3"
+								}
+							],
+							"id": "8df52860-2e78-421b-8da2-8e615e4d5579"
+						}
+					],
+					"id": "48bdb9cf-7c3c-467c-af0f-65f92a868d95"
+				}
+			],
+			"id": "b3717b0c-aa68-41cb-91e6-289147b33ed5",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4e850e13-c237-48ed-bea1-12659d7d2191",
+						"type": "text/javascript",
+						"exec": [
+							"puzzleTools = {",
+							"    puzzleResponseChecker: function(jsonData, vNum, vPuz, vSol, vStrat, vDif, vfast, vAver, vNumUsers, vNumTimes, vUnique, v__v, vDrill, vCDate, vImageUrl, vDesc) {",
+							"        pm.expect(jsonData[vNum].puzzle).to.eql(vPuz);",
+							"        pm.expect(jsonData[vNum].puzzleSolution).to.eql(vSol);",
+							"        for (let i = 0; i < vStrat.length; i++){",
+							"            pm.expect(jsonData[vNum].strategies[i]).to.eql(vStrat[i]);",
+							"        }",
+							"        pm.expect(jsonData[vNum].difficulty).to.eql(vDif);",
+							"        pm.expect(jsonData[vNum].fastestSolveTime).to.eql(vfast);",
+							"        pm.expect(jsonData[vNum].averageSolveTime).to.eql(vAver);",
+							"        pm.expect(jsonData[vNum].numUsersPlayed).to.eql(vNumUsers);",
+							"        pm.expect(jsonData[vNum].numTimesPlayed).to.eql(vNumTimes);",
+							"        pm.expect(jsonData[vNum].trulyUnique).to.eql(vUnique);",
+							"        pm.expect(jsonData[vNum].__v).to.eql(v__v);",
+							"        for (let i = 0; i < vDrill.length; i++){",
+							"            pm.expect(jsonData[vNum].drillStrategies[i]).to.eql(vDrill[i]);",
+							"        }",
+							"        if (vCDate != null){",
+							"            pm.expect(jsonData[vNum].calendarDate).to.eql(vCDate);",
+							"        }",
+							"        if (vImageUrl != null){",
+							"            pm.expect(jsonData[vNum].imageUrl).to.eql(vImageUrl);",
+							"        }",
+							"        if (vDesc != null){",
+							"            pm.expect(jsonData[vNum].description).to.eql(vDesc);",
+							"        }",
+							"    },",
+							"    puzzleObject: function(puzzle){",
+							"        if (puzzle == 1){",
+							"            return {",
+							"                puzzle: \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\",",
+							"                puzzleSolution: \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", ",
+							"                strategies: [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"],",
+							"                difficulty: 5,",
+							"                drillStrategies: [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"]",
+							"            }",
+							"        }",
+							"    },",
+							"    puzzleJSON: function(puzzle) {",
+							"        if (puzzle == 1){",
+							"          return {",
+							"            \"puzzle\": puzzleTools.puzzleObject(1).puzzle, ",
+							"            \"puzzleSolution\": puzzleTools.puzzleObject(1).puzzleSolution, ",
+							"            \"strategies\": puzzleTools.puzzleObject(1).strategies,",
+							"            \"difficulty\": puzzleTools.puzzleObject(1).difficulty,",
+							"            \"drillStrategies\": puzzleTools.puzzleObject(1).drillStrategies",
+							"          }  ",
+							"        }",
+							"    }",
+							"};"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "ca310992-9b4e-42c2-b47b-6842e4203e7b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "UserProfile",
+			"item": [
+				{
+					"name": "Post Requests",
+					"item": [
+						{
+							"name": "localhost-createProfile",
+							"id": "da1242cd-d7f4-4ed3-8a30-0c14a2596cd9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"Thomas3\",\r\n    \"userEmail\": \"email@email3.com\",\r\n    \"userName\": \"Darth3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/user/profiles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"profiles"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "710815e9-4ac7-48c9-8caa-4f03a0993307"
+				},
+				{
+					"name": "Delete Requests",
+					"item": [
+						{
+							"name": "localhost-deleteAllProfiles",
+							"id": "f59a78de-bd3c-4d88-84e7-52c4b0516fdd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/user/profiles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"profiles"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "73c8c547-e450-4be5-9880-4de44c914daa"
+				},
+				{
+					"name": "Get Requests",
+					"item": [
+						{
+							"name": "localhost-getAllProfiles",
+							"id": "61698200-97a9-41cf-b50e-783a21272ea8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/user/profiles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"profiles"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "19b2a173-8fb0-4f4c-b4a4-5cc27fd4def1"
+				}
+			],
+			"id": "a7e868e8-4ab2-4c9c-b293-ab98c16b4803"
+		},
+		{
+			"name": "UserGameStatistics",
+			"item": [],
+			"id": "9100da66-a062-4674-96ed-46d0ea30993f"
+		},
+		{
+			"name": "UserGameSearchFilters",
+			"item": [],
+			"id": "fb8eb93b-4955-41f3-bfe6-e4cbdcfb5a6f"
+		},
+		{
+			"name": "UserInProgressGames",
+			"item": [],
+			"id": "de2b2023-9db7-4c79-a268-3434b897cbc7"
+		},
+		{
+			"name": "UserGameHistory",
+			"item": [],
+			"id": "55c60a80-01a4-43d7-aecd-901655b2b01c"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "868bdca5-9e3c-4aef-a9c1-a6443b818167",
+				"type": "text/javascript",
+				"exec": [
+					"// Script that deletes everything before request",
+					"pm.sendRequest({",
+					"    url: \"http://localhost:3000/api/v1/puzzles/\",",
+					"    method: 'DELETE',",
+					"}, function (err, res) {",
+					"    console.log(res);",
+					"});",
+					"",
+					"// helpful function for checking if delete response is correct",
+					"backendTools = {",
+					"    deleteResponseChecker: function(jsonData, acknowledged, deletedCount) {",
+					"        pm.expect(jsonData.acknowledged).to.eql(acknowledged);",
+					"        pm.expect(jsonData.deletedCount).to.eql(deletedCount);",
+					"    },",
+					"};"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "71dc88a7-efc7-4157-979b-dc8c99bcccab",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

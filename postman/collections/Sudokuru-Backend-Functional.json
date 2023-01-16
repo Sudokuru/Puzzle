@@ -1,0 +1,10 @@
+{
+	"info": {
+		"_postman_id": "b2764169-623f-4490-b165-835ab832e672",
+		"name": "Sudokuru-Backend-Functional",
+		"description": "This collection will hold functional tests as opposed to integration tests. This will also be the documentation for using the API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "23651156-b2764169-623f-4490-b165-835ab832e672"
+	},
+	"item": []
+}

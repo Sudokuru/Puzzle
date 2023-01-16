@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "960cd735-4234-46fb-9f51-6a1a6b3d997d",
+		"name": "Sudokuru-Backend-500s",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "23651156-960cd735-4234-46fb-9f51-6a1a6b3d997d"
+	},
+	"item": [
+		{
+			"name": "1.1.2 POST_ONE_FULL_PUZZLE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "a2af6f6c-0eb8-4ea2-b36c-5b01037fb0da",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyCount\": { \"stratOne\": 5, \"stratTwo\": 8, \"stratThree\": 4 },\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/api/v1/puzzles/",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"puzzles",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "182038c8-ac53-4a87-9934-52a2fd51f3a2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e4146db8-6d2e-45a5-828a-fb87723b8e5d",
+				"type": "text/javascript",
+				"exec": [
+					"// Test to see if Status Code is 500",
+					"pm.test(\"Status code is 500\", function () {",
+					"    pm.response.to.have.status(500);",
+					"});",
+					"pm.test(\"Error response is correct\", function () {",
+					"    var jsonData = pm.response.json();",
+					"    pm.expect(jsonData.Error_Message).to.eql(\"Service Unavailable\");",
+					"    pm.expect(jsonData.Status).to.eql(500);",
+					"});"
+				]
+			}
+		}
+	]
+}

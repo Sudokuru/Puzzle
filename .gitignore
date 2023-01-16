@@ -1,0 +1,5 @@
+/node_modules/
+/.idea/
+/.serverless/
+junit.xml
+/.env
