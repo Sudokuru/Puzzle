@@ -40,7 +40,7 @@ jobs:
         with:
           files: 'Variables.json'
         env:
-          MONGO_URL: mongodb://mongo:27018/
+          MONGO_URL: mongodb://mongo:27017/
 
       - name: Run Docker image
         run: npm run app
