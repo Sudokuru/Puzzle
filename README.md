@@ -46,7 +46,7 @@ The following video is very helpful for understanding how Postman works with Git
 ### Below is an example structure for tests based on Puzzle endpoint
 The Postman tests are structured based on the endpoint name, the type of request, and the expected response code<br>
 
-![postman_structure.png](Docs/images/postmanStructure.png)<br>
+![postman_structure.png](Documentation/images/postmanStructure.png)<br>
 
 This structure allows us to write test cases for the Code 400 folder which would be run for all tests in that folder.<br>
 <br>
@@ -54,13 +54,13 @@ All tests for the Sudokuru-Backend have access to the Sudokuru-Backend Pre-reque
 We currently have a Pre-request script that deletes the whole database before every test.<br>
 We also have a function that can be used for all DELETE requests to validate the response.<br>
 
-![backend_pre_request_scripts.png](Docs/images/Backend-Pre-Request-Scripts.png)<br>
+![backend_pre_request_scripts.png](Documentation/images/Backend-Pre-Request-Scripts.png)<br>
 
 #### Inside the Puzzle endpoint folder we have shared functions to validate a puzzle response and to generate shared puzzle JSON for Pre-Request scripts for other tests.<br>
 
-![puzzle_response_checker.png](Docs/images/puzzle_response_checker.png)<br>
+![puzzle_response_checker.png](Documentation/images/puzzle_response_checker.png)<br>
 #### The below functions take in an integer and return either valid JSON or an object for reference.<br>
-![shared_puzzles_for_tests.png](Docs/images/shared_puzzles_for_tests.png)<br>
+![shared_puzzles_for_tests.png](Documentation/images/shared_puzzles_for_tests.png)<br>
 
 #### Inside the "Code 201" folder we have a test case that will be run for all tests inside of the folder.<br>
-![shared_response_code_test.png](Docs/images/shared_response_code_test.png)<br>
+![shared_response_code_test.png](Documentation/images/shared_response_code_test.png)<br>

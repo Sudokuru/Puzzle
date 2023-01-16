@@ -3,3 +3,4 @@
 /.serverless/
 junit.xml
 /.env
+/docs/
