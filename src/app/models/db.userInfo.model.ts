@@ -18,6 +18,7 @@ mongoose.set({ debug: true, autoCreate: true})
  * All preferences have default values which allows us to create this
  * for the user without any user input
  * We only need to create this when they open up the preferences menu
+ * @module DbUserInfoModel
  */
 const UserProfileSchema = new Schema<UserProfile>({
     userId: { type: String, required: true, unique: true },
@@ -91,4 +92,4 @@ let UserInfo = mongoose.model("UserInfo", UserProfileSchema, 'user_info');
 let UserGameInfo = mongoose.model("UserGameInfo", UserGameStatisticsSchema, 'user_info');
 let UserGameSearchInfo = mongoose.model("UserGameSearchInfo", UserGameSearchFiltersSchema, 'user_info');
 
-module.exports = { UserInfo, UserGameInfo, UserGameSearchInfo };
+export = { UserInfo, UserGameInfo, UserGameSearchInfo };

@@ -7,7 +7,7 @@
     "test:unit": "jest --testPathPattern=src/tests/unit",
     "test:integration": "newman run \"postman/collections/Sudokuru-Backend.json\"",
     "test:integration500s": "newman run \"postman/collections/Sudokuru-Backend-500s\"",
-    "update-docs": "npx typedoc  --entryPointStrategy expand ./src --name BackendDocs",
+    "update-docs": "typedoc --entryPoints src --entryPointStrategy expand --out docs --plugin typedoc-theme-hierarchy --theme hierarchy",
     "docker": "docker-compose up -d",
     "app": "docker-compose -f docker-compose-app.yml up -d",
     "start": "ts-node src/app.ts local",
@@ -41,7 +41,8 @@
     "newman": "^5.3.2",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
-    "typedoc": "^0.23.24",
+    "typedoc": "^0.23.6",
+    "typedoc-theme-hierarchy": "^3.0.0 -D",
     "typescript": "^4.9.4"
   }
 }

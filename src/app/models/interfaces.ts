@@ -10,6 +10,7 @@
  * They include: {@link numWrongCellsPlayedPerStrategy}
  * {@link strategyTypes} and {@link moves}
  * // todo refactor strategyTypes to strategies
+ * @module Interfaces
  *
  */
 interface numWrongCellsPlayedPerStrategy {

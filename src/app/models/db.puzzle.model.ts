@@ -3,6 +3,7 @@
  * The schema currently in the collection is {@link PuzzleModelSchema}
  * //todo at some point would like to remove these schemas as we already handle input validation with express-validator
  * //todo and the error throwing with mongoose is inconsistent and hard to work with
+ * @module DbPuzzleModel
  */
 
 import { Schema } from 'mongoose';
@@ -33,4 +34,4 @@ const PuzzleModelSchema = new Schema<Puzzle>({
     description: { type: String, required: false }
 }, { _id: false, strict: "throw" });
 
-module.exports = mongoose.model("PuzzleModel", PuzzleModelSchema, 'puzzle', );
+export = mongoose.model("PuzzleModel", PuzzleModelSchema, 'puzzle', );

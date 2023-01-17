@@ -5,6 +5,7 @@
  * {@link puzzleUpdateService}, {@link puzzleRemoveService}, and {@link filterInputQuery}
  * The main purpose of this service file is to perform the 'business' logic
  * Any errors will be caught by our try/catch block in our controller
+ * @module
  */
 
 import {CustomError, CustomErrorEnum} from "../models/error.model";
@@ -90,5 +91,5 @@ function filterInputQuery(puzzles){
     return filterValues;
 }
 
-module.exports = { createPuzzle: puzzleCreateService, searchPuzzle: puzzleSearchService, updatePuzzle: puzzleUpdateService, removePuzzle: puzzleRemoveService };
+export = { createPuzzle: puzzleCreateService, searchPuzzle: puzzleSearchService, updatePuzzle: puzzleUpdateService, removePuzzle: puzzleRemoveService };
 
