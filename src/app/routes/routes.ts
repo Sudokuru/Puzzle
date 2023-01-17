@@ -3,6 +3,7 @@
  * All requests with the valid base path will enter from app.ts to here
  * The requests will then go to the validators, the validation error handler, and then the controller
  * Each endpoint will have a post, get, patch, and delete options
+ * @module Routes
  */
 
 const express = require("express");
@@ -53,5 +54,5 @@ routes.delete("/user/profiles", userProfileController.remove);
 // routes.patch("/user/gameHistory", userGameHistoryController.update);
 // routes.delete("/user/gameHistory", userGameHistoryController.remove);
 
-module.exports = routes;
+export = routes;
 

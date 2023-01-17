@@ -7,6 +7,7 @@
  * The default messages are thrown to the user as well as the unknown message
  * which catches any errors that we have not handled
  * If we have any unknown errors we want to handle those with a custom error message
+ * @module ErrorModel
  */
 
 export enum CustomErrorEnum {

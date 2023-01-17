@@ -1,3 +1,7 @@
+/**
+ * @module UserProfileController
+ */
+
 const userProfileService = require('../services/userProfile.service');
 
 async function createUserProfile(req, res, next) {
@@ -33,4 +37,4 @@ async function removeUserProfile(req, res, next) {
     }
 }
 
-module.exports = {create: createUserProfile, search: searchUserProfile, update: updateUserProfile, remove: removeUserProfile }
+export = {create: createUserProfile, search: searchUserProfile, update: updateUserProfile, remove: removeUserProfile }

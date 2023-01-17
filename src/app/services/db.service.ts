@@ -6,6 +6,7 @@
  * The five functions are {@link connectToDB} {@link queryUpload},
  * {@link querySearchAND}, {@link queryUpdate}, and {@link queryDeleteAND}
  * Any errors will be caught by our try/catch block in our controller
+ * @module DbService
  */
 
 const database = require("../models/index");
@@ -77,4 +78,4 @@ async function queryDeleteAND(filterValues, collection) {
     return await collection.deleteMany({ $and : filterValues });
 }
 
-module.exports = { queryUpload: queryUpload, connectToDB, querySearchAND: querySearchAND, queryUpdate: queryUpdate, queryDeleteAND: queryDeleteAND };
+export = { queryUpload: queryUpload, connectToDB, querySearchAND: querySearchAND, queryUpdate: queryUpdate, queryDeleteAND: queryDeleteAND };

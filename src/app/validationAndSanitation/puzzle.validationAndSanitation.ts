@@ -4,6 +4,7 @@
  * We have three exports here that are used in the routing file
  * The purpose of this file is to sanitize and validate our input to make sure
  * there is no foul play about
+ * @module PuzzleValidationAndSanitation
  */
 
 import {body, query} from "express-validator";

@@ -5,6 +5,7 @@
  * {@link updatePuzzle}, and {@link removePuzzle}
  * The main purpose of the controller is to make sure that only validated and sanitized data
  * moves on to the service function
+ * @module PuzzleController
  */
 
 import {matchedData} from "express-validator";
@@ -87,4 +88,4 @@ async function removePuzzle(req, res, next) {
     }
 }
 
-module.exports = {create: createPuzzle, search: searchPuzzle, update: updatePuzzle, remove: removePuzzle }
+export = {create: createPuzzle, search: searchPuzzle, update: updatePuzzle, remove: removePuzzle }

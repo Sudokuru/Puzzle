@@ -3,6 +3,7 @@
  * This file could be integrated with the db.service file at some later point
  * or stay here as its own seperate file
  * This stores the Mongo database url as well as the mongoose instance for reference in db.service
+ * @module Index
  */
 
 const dbConfig = require("../config/db.config");
@@ -17,4 +18,4 @@ const db = {
 db.mongoose = mongoose;
 db.url = dbConfig.url;
 
-module.exports = db;
+export = db;

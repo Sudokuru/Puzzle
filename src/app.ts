@@ -1,12 +1,13 @@
-import errorHandler from "./app/errorHandler/error.handler";
-import {CustomError, CustomErrorEnum} from "./app/models/error.model";
-
 /**
  * Entry file for our backend app service
  * Runs on local port if run using 'npm run start' command
  * Runs with serverless functions when using 'npm run deploy' command when express dependency is installed
  * DO NOT run 'npm run deploy' locally. The pipeline will do this automatically after a Pull Request!
+ * @module
  */
+
+import errorHandler from "./app/errorHandler/error.handler";
+import {CustomError, CustomErrorEnum} from "./app/models/error.model";
 
 const serverless = require('serverless-http');
 const expressApp = require('express');
@@ -41,5 +42,5 @@ if (local) {
     app.listen(port, () => console.log(`Listening on: ${port}`));
 }
 else {
-    module.exports.handler = serverless(app);
+    exports.handler = serverless(app);
 }

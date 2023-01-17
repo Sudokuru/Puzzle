@@ -1,3 +1,7 @@
+/**
+ * @module UserProfileService
+ */
+
 import {CustomError, CustomErrorEnum} from "../models/error.model";
 
 const userProfileDataBase = require ('./db.service');
@@ -35,4 +39,4 @@ async function removeUserProfileService(puzzles) {
     return res;
 }
 
-module.exports = { createUserProfile: createUserProfileService, searchUserProfile: searchUserProfileService, removeUserProfile: removeUserProfileService }
+export = { createUserProfile: createUserProfileService, searchUserProfile: searchUserProfileService, removeUserProfile: removeUserProfileService }

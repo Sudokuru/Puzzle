@@ -3,6 +3,7 @@
  * The two schemas currently in this collection are {@link userPausedGamesSchema} and {@link userGameHistory}
  * //todo at some point would like to remove these schemas as we already handle input validation with express-validator
  * //todo and the error throwing with mongoose is inconsistent and hard to work with
+ * @module DbGameResultsModel
  */
 
 import { Schema } from 'mongoose';
@@ -76,4 +77,4 @@ const userGameHistorySchema = new Schema<userGameHistory>({
 let UserPausedGames = mongoose.model("UserPausedGames", userPausedGamesSchema, 'user_game_results');
 let UserGameHistory = mongoose.model("UserGameHistory", userGameHistorySchema, 'user_game_results');
 
-module.exports = { UserPausedGames, UserGameHistory };
+export = { UserPausedGames, UserGameHistory };
