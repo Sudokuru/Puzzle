@@ -83,8 +83,8 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v1
 
-  build_and_deploy:
-    name: Build and Deploy
+  deploy:
+    name: Deploy to AWS Lambda
     if: ${{ github.ref == 'refs/heads/main' }}
     needs: [ deploy_documentation ]
     runs-on: ubuntu-latest
