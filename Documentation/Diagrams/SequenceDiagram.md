@@ -1,3 +1,6 @@
+
+### Flow for the frontend to get a puzzle
+
 ```mermaid
 sequenceDiagram
     participant Frontend
@@ -30,6 +33,9 @@ sequenceDiagram
         NPM Library-->>Frontend: Return Puzzle Object
     end
 ```
+
+### Flow for the frontend to save an active puzzle
+
 ```mermaid
 sequenceDiagram
     participant Frontend
