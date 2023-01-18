@@ -60,3 +60,58 @@ sequenceDiagram
         BFF->>NPM Library: 200 Success
         NPM Library->>Frontend: Return Success
 ```
+
+### Flow for frontend to end game
+
+TODO: Combine GameHistory and GameObject into one MongoDB object using Bucket strategy!
+
+```mermaid
+sequenceDiagram
+    participant Frontend
+    participant NPM Library
+    participant BFF
+    participant Backend
+
+    #endGame
+    Frontend->>NPM Library: endGame(URL, Token, Puzzle)
+    NPM Library->>BFF: DELETE endGame endpoint
+
+    critical Get User Active Game
+        BFF->>Backend: GET UserActiveGame
+    option Active Game Not Found
+        Backend-->>BFF: 404 Not Found
+        BFF-->>NPM Library: 404 Not Found
+        NPM Library-->>Frontend: Return Null or Error Game Not Activve
+    option Active Game Found
+        Backend-->>BFF: 200 Found
+        BFF-->>Backend: DELETE User Active Game
+        Backend-->>BFF: 200 Success
+
+        critical Get User Game Histoy
+            BFF-->>Backend: GET User Game History
+        option User Game History Not Found
+            Backend-->>BFF: 404 Not Found
+            BFF-->>Backend: POST User Game History
+            Backend-->>BFF: 200 Success
+        option User Game History Found
+            Backend-->>BFF: 200 Found
+            BFF-->>Backend: PATCH User Game History
+            Backend-->>BFF: 200 Success
+        end
+
+        critical Get User Game Statistics
+            BFF-->>Backend: GET User Game Statistics
+        option User Game Statistics Not Found
+            Backend-->>BFF: 404 Not Found
+            BFF-->>Backend: POST User Game Statistics
+            Backend-->>BFF: 200 Success
+        option User Game Statistics Found
+            Backend-->>BFF: 200 Found
+            BFF-->>Backend: PATCH User Game Statistics
+            Backend-->>BFF: 200 Success
+        end
+
+        BFF-->>NPM Library: 200 Success
+        NPM Library-->>Frontend: Return Success
+    end
+```
