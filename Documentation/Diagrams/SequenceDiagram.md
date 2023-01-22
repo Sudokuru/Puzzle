@@ -87,27 +87,15 @@ sequenceDiagram
         BFF-->>Backend: DELETE User Active Game
         Backend-->>BFF: 200 Success
 
-        critical Get User Game Histoy
-            BFF-->>Backend: GET User Game History
-        option User Game History Not Found
+        critical Get User Game Stats
+            BFF-->>Backend: GET User Game Stats
+        option User Game Stats Not Found
             Backend-->>BFF: 404 Not Found
-            BFF-->>Backend: POST User Game History
+            BFF-->>Backend: POST User Game Stats
             Backend-->>BFF: 200 Success
-        option User Game History Found
+        option User Game Stats Found
             Backend-->>BFF: 200 Found
-            BFF-->>Backend: PATCH User Game History
-            Backend-->>BFF: 200 Success
-        end
-
-        critical Get User Game Statistics
-            BFF-->>Backend: GET User Game Statistics
-        option User Game Statistics Not Found
-            Backend-->>BFF: 404 Not Found
-            BFF-->>Backend: POST User Game Statistics
-            Backend-->>BFF: 200 Success
-        option User Game Statistics Found
-            Backend-->>BFF: 200 Found
-            BFF-->>Backend: PATCH User Game Statistics
+            BFF-->>Backend: PATCH User Game Stats
             Backend-->>BFF: 200 Success
         end
 

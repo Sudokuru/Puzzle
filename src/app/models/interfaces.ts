@@ -65,6 +65,7 @@ interface strategyTypes {
 
 interface moves {
     moveNumber: number,
+    notesState: string,
     row: number,
     column: number,
     value: number,
@@ -74,7 +75,7 @@ interface moves {
 /**
  * Below are the interfaces for the Mongo schemas
  * They include: {@link Puzzle}, {@link UserProfile}, {@link UserGameStatistics}
- * {@link UserGameSearchFilters}, {@link userPausedGames}, and {@link userGameHistory}
+ * {@link UserGameSearchFilters}, {@link userActiveGames}, and {@link userGameStats}
  * //todo make casing of types consistant
  *
  */
@@ -112,20 +113,6 @@ export interface UserProfile {
     }
 }
 
-export interface UserGameStatistics {
-    userId: string,
-    gameStatistics: {
-        averageSolveTime: number,
-        fastestSolveTime: number,
-        averageMoveTime: number,
-        numHintsAskedFor: number,
-        numWrongCellsPlayed: number,
-        numCorrectCellsPlayed: number,
-        numGamesPlayed: number,
-        numWrongCellsPlayedPerStrategy: numWrongCellsPlayedPerStrategy
-    }
-}
-
 export interface UserGameSearchFilters {
     userId: string,
     gameSearchPreferences: {
@@ -138,7 +125,7 @@ export interface UserGameSearchFilters {
     }
 }
 
-export interface userPausedGames {
+export interface userActiveGames {
     userId: string,
     inProgressGames: [{
         puzzle: string,
@@ -151,8 +138,9 @@ export interface userPausedGames {
     }]
 }
 
-export interface userGameHistory {
+export interface userGameStats {
     userId: string,
+    dateRange: string,
     gamesPlayed: [{
         puzzle: string,
         moves: moves[],
@@ -164,5 +152,14 @@ export interface userGameHistory {
         numWrongCellsPlayed: number,
         numCorrectCellsPlayed: number,
         numWrongCellsPlayedPerStrategy: numWrongCellsPlayedPerStrategy
-    }]
+    }],
+    averageSolveTime: number,
+    fastestSolveTime: number,
+    averageMoveTime: number,
+    numHintsAskedFor: number,
+    numWrongCellsPlayed: number,
+    numCorrectCellsPlayed: number,
+    numGamesPlayed: number,
+    numGamedFailed: number,
+    numWrongCellsPlayedPerStrategy: numWrongCellsPlayedPerStrategy
 }

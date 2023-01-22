@@ -1,6 +1,6 @@
 /**
  * These are the mongoose schemas for the user_game_results collection
- * The two schemas currently in this collection are {@link userPausedGamesSchema} and {@link userGameHistory}
+ * The two schemas currently in this collection are {@link userActiveGamesSchema} and {@link userGameStats}
  * //todo at some point would like to remove these schemas as we already handle input validation with express-validator
  * //todo and the error throwing with mongoose is inconsistent and hard to work with
  * @module DbGameResultsModel
@@ -8,7 +8,7 @@
 
 import { Schema } from 'mongoose';
 import * as mongoose from "mongoose";
-import { userPausedGames, userGameHistory } from "./interfaces";
+import { userActiveGames, userGameStats } from "./interfaces";
 
 // turns on debug mode so we can see results of successful requests
 mongoose.set({ debug: true, autoCreate: true})
@@ -19,13 +19,14 @@ mongoose.set({ debug: true, autoCreate: true})
  * Minimum needs to store game status and stats so that
  * the game can be resumed and the stats can be transferred at the end of the game
  */
-const userPausedGamesSchema = new Schema<userPausedGames>({
+const userActiveGamesSchema = new Schema<userActiveGames>({
     userId: { type: String, required: true, unique: true },
     inProgressGames: [{
         puzzle: { type: String, required: true, unique: true },
         currentTime: { type: Number, required: true },
         moves: [{
             moveNumber: {type: Number, required: true },
+            notesState: {type: String, required: true },
             row: { type: Number, required: true },
             column: { type: Number, required: true },
             value: { type: Number, required: true },
@@ -35,9 +36,28 @@ const userPausedGamesSchema = new Schema<userPausedGames>({
         numWrongCellsPlayed: { type: Number, required: true },
         numCorrectCellsPlayed: { type: Number, required: true },
         numWrongCellsPlayedPerStrategy: {
-            stratOne: { type: Number, required: true },
-            stratTwo: { type: Number, required: true },
-            stratThree: { type: Number, required: true }
+            NAKED_SINGLE: { type: Number, required: false },
+            HIDDEN_SINGLE: { type: Number, required: false },
+            NAKED_PAIR: { type: Number, required: false },
+            NAKED_TRIPLET: { type: Number, required: false },
+            NAKED_QUADRUPLET: { type: Number, required: false },
+            NAKED_QUINTUPLET: { type: Number, required: false },
+            NAKED_SEXTUPLET: { type: Number, required: false },
+            NAKED_SEPTUPLET: { type: Number, required: false },
+            NAKED_OCTUPLET: { type: Number, required: false },
+            HIDDEN_PAIR: { type: Number, required: false },
+            HIDDEN_TRIPLET: { type: Number, required: false },
+            HIDDEN_QUADRUPLET: { type: Number, required: false },
+            HIDDEN_QUINTUPLET: { type: Number, required: false },
+            HIDDEN_SEXTUPLET: { type: Number, required: false },
+            HIDDEN_SEPTUPLET: { type: Number, required: false },
+            HIDDEN_OCTUPLET: { type: Number, required: false },
+            POINTING_PAIR: { type: Number, required: false },
+            POINTING_TRIPLET: { type: Number, required: false },
+            BOX_LINE_REDUCTION: { type: Number, required: false },
+            X_WING: { type: Number, required: false },
+            SWORDFISH: { type: Number, required: false },
+            SINGLES_CHAINING: { type: Number, required: false }
         }
     }]
 });
@@ -47,12 +67,14 @@ const userPausedGamesSchema = new Schema<userPausedGames>({
  * This is in the same collection as it will likely be updated immediately after a game ends
  * There could be a toggle in user preferences to disable/enable saving of games
  */
-const userGameHistorySchema = new Schema<userGameHistory>({
+const userGameStatsSchema = new Schema<userGameStats>({
     userId: { type: String, required: true, unique: true },
+    dateRange: { type: String, required: true }, // we will be storing users stats in batches of months.
     gamesPlayed: [{
         puzzle: { type: String, required: true, unique: true },
         moves: [{
             moveNumber: {type: Number, required: true },
+            notesState: {type: String, required: true },
             row: { type: Number, required: true },
             column: { type: Number, required: true },
             value: { type: Number, required: true },
@@ -66,15 +88,65 @@ const userGameHistorySchema = new Schema<userGameHistory>({
         numWrongCellsPlayed: { type: Number, required: true },
         numCorrectCellsPlayed: { type: Number, required: true },
         numWrongCellsPlayedPerStrategy: {
-            stratOne: { type: Number, required: true },
-            stratTwo: { type: Number, required: true },
-            stratThree: { type: Number, required: true }
+            NAKED_SINGLE: { type: Number, required: false },
+            HIDDEN_SINGLE: { type: Number, required: false },
+            NAKED_PAIR: { type: Number, required: false },
+            NAKED_TRIPLET: { type: Number, required: false },
+            NAKED_QUADRUPLET: { type: Number, required: false },
+            NAKED_QUINTUPLET: { type: Number, required: false },
+            NAKED_SEXTUPLET: { type: Number, required: false },
+            NAKED_SEPTUPLET: { type: Number, required: false },
+            NAKED_OCTUPLET: { type: Number, required: false },
+            HIDDEN_PAIR: { type: Number, required: false },
+            HIDDEN_TRIPLET: { type: Number, required: false },
+            HIDDEN_QUADRUPLET: { type: Number, required: false },
+            HIDDEN_QUINTUPLET: { type: Number, required: false },
+            HIDDEN_SEXTUPLET: { type: Number, required: false },
+            HIDDEN_SEPTUPLET: { type: Number, required: false },
+            HIDDEN_OCTUPLET: { type: Number, required: false },
+            POINTING_PAIR: { type: Number, required: false },
+            POINTING_TRIPLET: { type: Number, required: false },
+            BOX_LINE_REDUCTION: { type: Number, required: false },
+            X_WING: { type: Number, required: false },
+            SWORDFISH: { type: Number, required: false },
+            SINGLES_CHAINING: { type: Number, required: false }
         }
-    }]
+    }],
+    averageSolveTime: { type: Number, required: true, default: 0 },
+    fastestSolveTime: { type: Number, required: true, defualt: 0 },
+    numHintsAskedFor: { type: Number, required: true, defualt: 0 },
+    numWrongCellsPlayed: { type: Number, required: true, defualt: 0 },
+    numCorrectCellsPlayed: { type: Number, required: true, defualt: 0 },
+    numGamesPlayed: { type: Number, required: true, defualt: 0 },
+    numGamedFailed: { type: Number, required: true, default: 0 },
+    numWrongCellsPlayedPerStrategy: {
+        NAKED_SINGLE: { type: Number, required: false },
+        HIDDEN_SINGLE: { type: Number, required: false },
+        NAKED_PAIR: { type: Number, required: false },
+        NAKED_TRIPLET: { type: Number, required: false },
+        NAKED_QUADRUPLET: { type: Number, required: false },
+        NAKED_QUINTUPLET: { type: Number, required: false },
+        NAKED_SEXTUPLET: { type: Number, required: false },
+        NAKED_SEPTUPLET: { type: Number, required: false },
+        NAKED_OCTUPLET: { type: Number, required: false },
+        HIDDEN_PAIR: { type: Number, required: false },
+        HIDDEN_TRIPLET: { type: Number, required: false },
+        HIDDEN_QUADRUPLET: { type: Number, required: false },
+        HIDDEN_QUINTUPLET: { type: Number, required: false },
+        HIDDEN_SEXTUPLET: { type: Number, required: false },
+        HIDDEN_SEPTUPLET: { type: Number, required: false },
+        HIDDEN_OCTUPLET: { type: Number, required: false },
+        POINTING_PAIR: { type: Number, required: false },
+        POINTING_TRIPLET: { type: Number, required: false },
+        BOX_LINE_REDUCTION: { type: Number, required: false },
+        X_WING: { type: Number, required: false },
+        SWORDFISH: { type: Number, required: false },
+        SINGLES_CHAINING: { type: Number, required: false }
+    }
 });
 
 
-let UserPausedGames = mongoose.model("UserPausedGames", userPausedGamesSchema, 'user_game_results');
-let UserGameHistory = mongoose.model("UserGameHistory", userGameHistorySchema, 'user_game_results');
+let UserPausedGames = mongoose.model("UserPausedGames", userActiveGamesSchema, 'user_game_results');
+let UserGameHistory = mongoose.model("UserGameHistory", userGameStatsSchema, 'user_game_results');
 
 export = { UserPausedGames, UserGameHistory };
