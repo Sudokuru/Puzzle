@@ -34,7 +34,6 @@ const userActiveGamesSchema = new Schema<userActiveGames>({
         }],
         numHintsAskedFor: { type: Number, required: true },
         numWrongCellsPlayed: { type: Number, required: true },
-        numCorrectCellsPlayed: { type: Number, required: true },
         numWrongCellsPlayedPerStrategy: {
             NAKED_SINGLE: { type: Number, required: false },
             HIDDEN_SINGLE: { type: Number, required: false },
@@ -87,7 +86,6 @@ const userGameStatsSchema = new Schema<userGameStats>({
         averageMoveTime: { type: Number, required: true },
         numHintsAskedFor: { type: Number, required: true },
         numWrongCellsPlayed: { type: Number, required: true },
-        numCorrectCellsPlayed: { type: Number, required: true },
         numWrongCellsPlayedPerStrategy: {
             NAKED_SINGLE: { type: Number, required: false },
             HIDDEN_SINGLE: { type: Number, required: false },
@@ -117,7 +115,6 @@ const userGameStatsSchema = new Schema<userGameStats>({
     fastestSolveTime: { type: Number, required: true, defualt: 0 },
     numHintsAskedFor: { type: Number, required: true, defualt: 0 },
     numWrongCellsPlayed: { type: Number, required: true, defualt: 0 },
-    numCorrectCellsPlayed: { type: Number, required: true, defualt: 0 },
     numGamesPlayed: { type: Number, required: true, defualt: 0 },
     numGamedFailed: { type: Number, required: true, default: 0 },
     numWrongCellsPlayedPerStrategy: {

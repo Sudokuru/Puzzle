@@ -13,6 +13,9 @@
  * @module Interfaces
  *
  */
+
+// This interface records what the 'next' strategy was when a user made an error,
+// so that we can provide recommendations for strategies to do drills on
 interface numWrongCellsPlayedPerStrategy {
     NAKED_SINGLE: number,
     HIDDEN_SINGLE: number,
@@ -133,7 +136,6 @@ export interface userActiveGames {
         moves: moves[],
         numHintsAskedFor: number,
         numWrongCellsPlayed: number,
-        numCorrectCellsPlayed: number,
         numWrongCellsPlayedPerStrategy: numWrongCellsPlayedPerStrategy
     }]
 }
@@ -158,7 +160,6 @@ export interface userGameStats {
     averageMoveTime: number,
     numHintsAskedFor: number,
     numWrongCellsPlayed: number,
-    numCorrectCellsPlayed: number,
     numGamesPlayed: number,
     numGamedFailed: number,
     numWrongCellsPlayedPerStrategy: numWrongCellsPlayedPerStrategy
