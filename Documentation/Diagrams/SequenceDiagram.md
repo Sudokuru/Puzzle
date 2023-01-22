@@ -63,8 +63,6 @@ sequenceDiagram
 
 ### Flow for frontend to end game
 
-TODO: Combine GameHistory and GameObject into one MongoDB object using Bucket strategy!
-
 ```mermaid
 sequenceDiagram
     participant Frontend
