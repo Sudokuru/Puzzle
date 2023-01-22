@@ -8,7 +8,7 @@
 
 import { Schema } from 'mongoose';
 import * as mongoose from "mongoose";
-import { UserProfile, UserGameStatistics, UserGameSearchFilters } from "./interfaces";
+import { UserProfile, UserGameSearchFilters } from "./interfaces";
 
 mongoose.set({ debug: true, autoCreate: true})
 
@@ -39,37 +39,11 @@ const UserProfileSchema = new Schema<UserProfile>({
 });
 
 /**
- * This schema stores the user game statistics
- * This is an aggregation of statistics from all games played by the user
- * We could potentially store gameStatistics as an array for each year
- * and store the totals outside the array
- * All values are set by default so this can be created before games are played
- * although there should not be a need for that, it also allows us to send a smaller POST request
- * //todo we may be able to change numWrongCellsPlayedPerStrategy into a double array for easier storage/retrieval
- */
-const UserGameStatisticsSchema = new Schema<UserGameStatistics>({
-    userId: { type: String, required: true, unique: true },
-    gameStatistics: {
-        averageSolveTime: { type: Number, required: true, default: 0 },
-        fastestSolveTime: { type: Number, required: true, defualt: 0 },
-        numHintsAskedFor: { type: Number, required: true, defualt: 0 },
-        numWrongCellsPlayed: { type: Number, required: true, defualt: 0 },
-        numCorrectCellsPlayed: { type: Number, required: true, defualt: 0 },
-        numGamesPlayed: { type: Number, required: true, defualt: 0 },
-        numGamesFailed: { type: Number, required: true, defualt: 0 },
-        numWrongCellsPlayedPerStrategy: {
-            stratOne: { type: Number, required: true, defualt: 0 },
-            stratTwo: { type: Number, required: true, defualt: 0 },
-            stratThree: { type: Number, required: true, defualt: 0 }
-        }
-    }
-});
-
-/**
  * This schema is saves settings for the user to search for new games with
  * By default the game search will go based on the player's learned strategies
  * Most likely we will force user to learn strategies in a set order, going out of order may be stretch goal
  * //todo change strategyTypes to strategies and change to string array
+ * //todo update so can set strategiesToExclude and strategiesToInclude as well as adding strategiesLearned
  */
 const UserGameSearchFiltersSchema = new Schema<UserGameSearchFilters>({
     userId: { type: String, required: true, unique: true },
@@ -89,7 +63,6 @@ const UserGameSearchFiltersSchema = new Schema<UserGameSearchFilters>({
 });
 
 let UserInfo = mongoose.model("UserInfo", UserProfileSchema, 'user_info');
-let UserGameInfo = mongoose.model("UserGameInfo", UserGameStatisticsSchema, 'user_info');
 let UserGameSearchInfo = mongoose.model("UserGameSearchInfo", UserGameSearchFiltersSchema, 'user_info');
 
-export = { UserInfo, UserGameInfo, UserGameSearchInfo };
+export = { UserInfo, UserGameSearchInfo };
