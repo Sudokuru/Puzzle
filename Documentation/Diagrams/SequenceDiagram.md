@@ -1,4 +1,6 @@
 
+### These diagrams do not consider 400, 401, or 500 errors for simplicity. They only consider 404, 200/201 error codes. 
+
 ### Flow for the frontend to get a puzzle
 
 ```mermaid
