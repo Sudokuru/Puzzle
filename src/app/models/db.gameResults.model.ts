@@ -63,9 +63,10 @@ const userActiveGamesSchema = new Schema<userActiveGames>({
 });
 
 /**
- * This stores a user's game history
+ * This stores a user's game history and stats for each month
  * This is in the same collection as it will likely be updated immediately after a game ends
  * There could be a toggle in user preferences to disable/enable saving of games
+ * User's total stats can be stored in a separate object or retrieved as needed.
  */
 const userGameStatsSchema = new Schema<userGameStats>({
     userId: { type: String, required: true, unique: true },
