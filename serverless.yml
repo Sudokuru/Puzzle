@@ -1,8 +1,8 @@
-service: Backend-Dev
+service: Backend
 provider:
   name: aws
   runtime: nodejs18.x
-  stage: dev
+  stage: ${env:STAGE}
   region: us-east-1
   memorySize: 128
 functions:

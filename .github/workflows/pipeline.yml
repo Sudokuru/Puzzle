@@ -110,4 +110,6 @@ jobs:
       - run: npm i serverless
 
       - name: ${{ matrix.environment }} Deployment
-        run: npm run deploy-${{ matrix.environment }}
+        run: npm run deploy
+        env:
+          STAGE: ${{ matrix.environment }}

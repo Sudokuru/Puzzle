@@ -11,8 +11,7 @@
     "docker": "docker-compose up -d",
     "app": "docker-compose -f docker-compose-app.yml up -d",
     "start": "ts-node src/app.ts local",
-    "deploy-dev": "tsc && serverless deploy -c serverless-dev.yml",
-    "deploy-prod": "tsc && serverless deploy -c serverless-prod.yml"
+    "deploy": "tsc && serverless deploy -c serverless.yml"
   },
   "repository": {
     "type": "git",
