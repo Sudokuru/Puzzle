@@ -106,7 +106,7 @@ jobs:
         env:
           MONGO_URL: ${{secrets.DATABASE_URL}}
 
-      - run: npm ci --production
+      - run: npm ci
       - run: npm i serverless
 
       - name: ${{ matrix.environment }} Deployment
