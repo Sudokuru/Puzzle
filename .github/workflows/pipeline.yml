@@ -83,14 +83,14 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v1
 
-  build_and_deploy:
-    name: Build and Deploy
+  deploy:
+    name: Deploy to AWS Lambda
     if: ${{ github.ref == 'refs/heads/main' }}
     needs: [ deploy_documentation ]
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        environment: [ dev, prod ]
+        environment: [ dev ]
     environment: ${{ matrix.environment }}
     env:
       AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
@@ -110,4 +110,6 @@ jobs:
       - run: npm i serverless
 
       - name: ${{ matrix.environment }} Deployment
-        run: npm run deploy-${{ matrix.environment }}
+        run: npm run deploy
+        env:
+          STAGE: ${{ matrix.environment }}
