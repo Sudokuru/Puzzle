@@ -23,6 +23,7 @@ const userActiveGamesSchema = new Schema<userActiveGames>({
     userId: { type: String, required: true, unique: true },
     inProgressGames: [{
         puzzle: { type: String, required: true, unique: true },
+        puzzleCurrentState: { type: String, required: true },
         currentTime: { type: Number, required: true },
         moves: [{
             moveNumber: {type: Number, required: true },
@@ -80,7 +81,7 @@ const userGameStatsSchema = new Schema<userGameStats>({
             value: { type: Number, required: true },
             moveTime: { type: Number, required: true }
         }],
-        numTimesPlayed: { type: Number, required: true },
+        numTimesPlayed: { type: Number, required: true, default: 1 },
         initialSolveTime: { type: Number, required: true },
         fastestSolveTime: { type: Number, required: true },
         averageMoveTime: { type: Number, required: true },
@@ -111,12 +112,12 @@ const userGameStatsSchema = new Schema<userGameStats>({
             SINGLES_CHAINING: { type: Number, required: false }
         }
     }],
-    averageSolveTime: { type: Number, required: true, default: 0 },
-    fastestSolveTime: { type: Number, required: true, defualt: 0 },
-    numHintsAskedFor: { type: Number, required: true, defualt: 0 },
-    numWrongCellsPlayed: { type: Number, required: true, defualt: 0 },
-    numGamesPlayed: { type: Number, required: true, defualt: 0 },
-    numGamedFailed: { type: Number, required: true, default: 0 },
+    averageSolveTime: { type: Number, required: true },
+    fastestSolveTime: { type: Number, required: true },
+    numHintsAskedFor: { type: Number, required: true },
+    numWrongCellsPlayed: { type: Number, required: true },
+    numGamesPlayed: { type: Number, required: true, defualt: 1 },
+    numGamedFailed: { type: Number, required: true },
     numWrongCellsPlayedPerStrategy: {
         NAKED_SINGLE: { type: Number, required: false },
         HIDDEN_SINGLE: { type: Number, required: false },
@@ -144,7 +145,7 @@ const userGameStatsSchema = new Schema<userGameStats>({
 });
 
 
-let UserPausedGames = mongoose.model("UserPausedGames", userActiveGamesSchema, 'user_game_results');
-let UserGameHistory = mongoose.model("UserGameHistory", userGameStatsSchema, 'user_game_results');
+let UserPausedGames = mongoose.model("UserPausedGames", userActiveGamesSchema, 'user_game_info');
+let UserGameHistory = mongoose.model("UserGameHistory", userGameStatsSchema, 'user_game_info');
 
 export = { UserPausedGames, UserGameHistory };

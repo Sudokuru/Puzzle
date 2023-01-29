@@ -40,12 +40,15 @@ routes.delete("/user/profiles", userProfileController.remove);
 // routes.patch("/user/gameSearchFilters", userGameStatisticsController.update);
 // routes.delete("/user/gameSearchFilters", userGameStatisticsController.remove);
 //
-// const userInProgressGamesController = require ('../controllers/userInProgressGames.controller');
-//
-// routes.post("/user/inProgressGames", userInProgressGamesController.create);
-// routes.get("/user/inProgressGames", userInProgressGamesController.search);
-// routes.patch("/user/inProgressGames", userInProgressGamesController.update);
-// routes.delete("/user/inProgressGames", userInProgressGamesController.remove);
+const userActiveGamesController = require ('../controllers/userInProgressGames.controller');
+
+const { validateUserActiveGamesBodyPOST, validateUserActiveGamesParameters, validateUserActivePuzzlesBodyPATCH } = require("../validationAndSanitation/userActiveGames.validationAndSanitation");
+
+
+routes.post("/user/inProgressGames", validateUserActiveGamesBodyPOST,  validationErrorHandler, userActiveGamesController.create);
+routes.get("/user/inProgressGames", validateUserActiveGamesParameters, validationErrorHandler, userActiveGamesController.search);
+routes.patch("/user/inProgressGames", validateUserActiveGamesParameters, validateUserActivePuzzlesBodyPATCH, validationErrorHandler, userActiveGamesController.update);
+routes.delete("/user/inProgressGames", validateUserActiveGamesParameters, validationErrorHandler, userActiveGamesController.remove);
 //
 // const userGameHistoryController = require ('../controllers/userGameHistory.controller');
 //

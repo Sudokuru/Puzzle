@@ -132,6 +132,7 @@ export interface userActiveGames {
     userId: string,
     inProgressGames: [{
         puzzle: string,
+        puzzleCurrentState: string,
         currentTime: number,
         moves: moves[],
         numHintsAskedFor: number,
