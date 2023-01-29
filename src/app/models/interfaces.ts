@@ -67,12 +67,9 @@ interface strategyTypes {
 }
 
 interface moves {
-    moveNumber: number,
-    notesState: string,
-    row: number,
-    column: number,
-    value: number,
-    moveTime: number
+    puzzleCurrentState: string,
+    puzzleNotesCurrentState: string
+    // moveTime: number
 }
 
 /**
@@ -130,7 +127,7 @@ export interface UserGameSearchFilters {
 
 export interface userActiveGames {
     userId: string,
-    inProgressGames: [{
+    activeGames: [{
         puzzle: string,
         puzzleCurrentState: string,
         currentTime: number,

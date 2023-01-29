@@ -44,11 +44,10 @@ const userActiveGamesController = require ('../controllers/userInProgressGames.c
 
 const { validateUserActiveGamesBodyPOST, validateUserActiveGamesParameters, validateUserActivePuzzlesBodyPATCH } = require("../validationAndSanitation/userActiveGames.validationAndSanitation");
 
-
-routes.post("/user/inProgressGames", validateUserActiveGamesBodyPOST,  validationErrorHandler, userActiveGamesController.create);
-routes.get("/user/inProgressGames", validateUserActiveGamesParameters, validationErrorHandler, userActiveGamesController.search);
-routes.patch("/user/inProgressGames", validateUserActiveGamesParameters, validateUserActivePuzzlesBodyPATCH, validationErrorHandler, userActiveGamesController.update);
-routes.delete("/user/inProgressGames", validateUserActiveGamesParameters, validationErrorHandler, userActiveGamesController.remove);
+routes.post("/user/activeGames", validateUserActiveGamesBodyPOST,  validationErrorHandler, userActiveGamesController.create);
+routes.get("/user/activeGames", validateUserActiveGamesParameters, validationErrorHandler, userActiveGamesController.search);
+routes.patch("/user/activeGames", validateUserActiveGamesParameters, validateUserActivePuzzlesBodyPATCH, validationErrorHandler, userActiveGamesController.update);
+routes.delete("/user/activeGames", validateUserActiveGamesParameters, validationErrorHandler, userActiveGamesController.remove);
 //
 // const userGameHistoryController = require ('../controllers/userGameHistory.controller');
 //
