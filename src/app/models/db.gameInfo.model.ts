@@ -20,7 +20,7 @@ mongoose.set({ debug: true, autoCreate: true})
  * the game can be resumed and the stats can be transferred at the end of the game
  */
 const userActiveGamesSchema = new Schema<userActiveGames>({
-    userId: { type: String, required: true, unique: true },
+    userID: { type: String, required: true, unique: true },
     activeGames: [{
         puzzle: { type: String, required: true, unique: true },
         currentTime: { type: Number, required: true },

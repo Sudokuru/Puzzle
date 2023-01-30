@@ -40,7 +40,7 @@ routes.delete("/user/profiles", userProfileController.remove);
 // routes.patch("/user/gameSearchFilters", userGameStatisticsController.update);
 // routes.delete("/user/gameSearchFilters", userGameStatisticsController.remove);
 //
-const userActiveGamesController = require ('../controllers/userInProgressGames.controller');
+const userActiveGamesController = require ('../controllers/userActiveGames.controller');
 
 const { validateUserActiveGamesBodyPOST, validateUserActiveGamesParameters, validateUserActivePuzzlesBodyPATCH } = require("../validationAndSanitation/userActiveGames.validationAndSanitation");
 

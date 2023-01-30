@@ -9,12 +9,12 @@
  */
 
 import {matchedData} from "express-validator";
-const puzzleService = require('../services/puzzle.service');
+const userActiveGamesService = require('../services/userActiveGames.service');
 
 /**
  * Returns 201 if userActiveGameService is successful
  * Otherwise catches error and sends to our errorHandler
- * Takes sanitized input and sends it to puzzleService
+ * Takes sanitized input and sends it to userActiveGamesService
  * @param req This is the request object
  * @param res This is the response object
  * @param next This takes us to the errorHandler if request fails
@@ -22,12 +22,15 @@ const puzzleService = require('../services/puzzle.service');
 async function createUserActiveGame(req, res, next) {
 
     const allData = Object.values(matchedData(req, { locations: ['body'] }));
+    console.log(allData.values());
     // this is needed because the last element in matchedData array is the original request for some reason.
     // I believe this is a bug with express-validator relating to bodies that have arrays
-    allData.pop();
+    console.log(allData);
+    console.log("Hello!" + allData);
+    console.log(Object.keys(allData.keys()));
     try {
         // override successful completion code of 200 to 201 for successful object creation
-        res.status(201).json(await puzzleService.createPuzzle(allData));
+        res.status(201).json(await userActiveGamesService.createUserActiveGames(allData));
     } catch(err) {
         next(err);
     }
@@ -36,7 +39,7 @@ async function createUserActiveGame(req, res, next) {
 /**
  * Returns 200 if userActiveGameService is successful
  * Otherwise catches error and sends to our errorHandler
- * Takes sanitized input and sends it to puzzleService
+ * Takes sanitized input and sends it to userActiveGamesService
  * @param req This is the request object
  * @param res This is the response object
  * @param next This takes us to the errorHandler if request fails
@@ -45,16 +48,16 @@ async function searchUserActiveGame(req, res, next) {
 
     const allData = matchedData(req, { locations: ['query'] });
     try {
-        res.json(await puzzleService.searchPuzzle(allData));
+        res.json(await userActiveGamesService.userActiveGamesPuzzle(allData));
     } catch(err) {
         next(err);
     }
 }
 
 /**
- * Returns 200 if puzzleService is successful
+ * Returns 200 if userActiveGamesService is successful
  * Otherwise catches error and sends to our errorHandler
- * Takes sanitized input and sends it to puzzleService
+ * Takes sanitized input and sends it to userActiveGamesService
  * @param req This is the request object
  * @param res This is the response object
  * @param next This takes us to the errorHandler if request fails
@@ -64,7 +67,7 @@ async function updateUserActiveGame(req, res, next) {
     const queryData = matchedData(req, { locations: ['query'] });
     const bodyData = matchedData(req, { locations: ['body'] });
     try {
-        res.json(await puzzleService.updatePuzzle(bodyData, queryData));
+        res.json(await userActiveGamesService.updateUserActiveGames(bodyData, queryData));
     } catch(err) {
         next(err);
     }
@@ -73,7 +76,7 @@ async function updateUserActiveGame(req, res, next) {
 /**
  * Returns 200 if userActiveGameService is successful
  * Otherwise catches error and sends to our errorHandler
- * Takes sanitized input and sends it to puzzleService
+ * Takes sanitized input and sends it to userActiveGamesService
  * @param req This is the request object
  * @param res This is the response object
  * @param next This takes us to the errorHandler if request fails
@@ -82,7 +85,7 @@ async function removeUserActiveGame(req, res, next) {
 
     const allData = matchedData(req, { locations: ['query'] });
     try {
-        res.json(await puzzleService.removePuzzle(allData));
+        res.json(await userActiveGamesService.removeUserActiveGames(allData));
     } catch(err) {
         next(err);
     }

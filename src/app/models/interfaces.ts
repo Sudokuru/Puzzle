@@ -126,7 +126,7 @@ export interface UserGameSearchFilters {
 }
 
 export interface userActiveGames {
-    userId: string,
+    userID: string,
     activeGames: [{
         puzzle: string,
         puzzleCurrentState: string,

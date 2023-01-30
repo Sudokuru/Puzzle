@@ -11,7 +11,7 @@
 import {CustomError, CustomErrorEnum} from "../models/error.model";
 
 const dataBase = require ('./db.service');
-const UserActiveGamesModel = require("../models/db.gameInfo.model");
+const UserInfoModel = require("../models/db.gameInfo.model");
 
 /**
  * This function takes the Active Games JSON objects and sends them to the upload function
@@ -19,7 +19,7 @@ const UserActiveGamesModel = require("../models/db.gameInfo.model");
  * @param userActiveGames This is an array of Active Games JSON objects puzzles
  */
 async function userActiveGamesCreateService(userActiveGames) {
-    return await dataBase.queryUpload(userActiveGames, UserActiveGamesModel);
+    return await dataBase.queryUpload(userActiveGames, UserInfoModel.UserPausedGames);
 }
 
 /**
@@ -29,7 +29,7 @@ async function userActiveGamesCreateService(userActiveGames) {
  * @param userActiveGames this is a JSON object that stores the input query
  */
 async function userActiveGamesSearchService(userActiveGames) {
-    let res = await dataBase.querySearchAND(filterInputQuery(userActiveGames), UserActiveGamesModel);
+    let res = await dataBase.querySearchAND(filterInputQuery(userActiveGames), UserInfoModel);
 
     if (res.length == 0){
         throw new CustomError(CustomErrorEnum.USER_ACTIVE_GAME_NOT_FOUND, 404);
@@ -45,7 +45,7 @@ async function userActiveGamesSearchService(userActiveGames) {
  * @param queryData this stores a JSON object with values used to retrieve puzzles to be updated
  */
 async function userActiveGamesUpdateService(bodyData, queryData) {
-    return await dataBase.queryUpdate(filterInputQuery(queryData), bodyData, UserActiveGamesModel);
+    return await dataBase.queryUpdate(filterInputQuery(queryData), bodyData, UserInfoModel);
 }
 
 /**
@@ -55,7 +55,7 @@ async function userActiveGamesUpdateService(bodyData, queryData) {
  * @param userActiveGames this stores a JSON object that stores the query
  */
 async function puzzleRemoveService(userActiveGames) {
-    return await dataBase.queryDeleteAND(filterInputQuery(userActiveGames), UserActiveGamesModel);
+    return await dataBase.queryDeleteAND(filterInputQuery(userActiveGames), UserInfoModel);
 }
 
 /**
@@ -91,5 +91,5 @@ function filterInputQuery(userActiveGames){
     return filterValues;
 }
 
-export = { createPuzzle: userActiveGamesCreateService, searchPuzzle: userActiveGamesSearchService, updatePuzzle: userActiveGamesUpdateService, removePuzzle: puzzleRemoveService };
+export = { createUserActiveGames: userActiveGamesCreateService, userActiveGamesPuzzle: userActiveGamesSearchService, updateUserActiveGames: userActiveGamesUpdateService, removeUserActiveGames: puzzleRemoveService };
 
