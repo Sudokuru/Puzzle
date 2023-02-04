@@ -28,7 +28,7 @@ exports.validatePuzzleBodyPOST = [
             "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
             "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
 
-    body('*.difficulty', "difficulty is not an integer or is not in correct range").isInt({ min: 1, max: 10}),
+    body('*.difficulty', "difficulty is not an integer or is not in correct range").isInt({ min: 1, max: 1000}),
     body('*.fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
     body('*.averageSolveTime', 'average solve time is not an integer').optional().isInt(),
     body('*.numUsersPlayed', 'num users played is not an integer').optional().isInt(),
@@ -64,7 +64,7 @@ exports.validatePuzzleParameters = [
             "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
             "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
 
-    query('difficulty', "difficulty is not an integer or is not in correct range").optional().isInt({ min: 1, max: 10 }),
+    query('difficulty', "difficulty is not an integer or is not in correct range").optional().isInt({ min: 1, max: 1000 }),
     query('fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
     query('averageSolveTime', 'average solve time is not an integer').optional().isInt(),
     query('numUsersPlayed', 'num users played is not an integer').optional().isInt(),
@@ -96,7 +96,7 @@ exports.validatePuzzleBodyPATCH = [
             "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
             "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
 
-    body('difficulty', "difficulty is not an integer or is not in correct range").optional().isInt({ min: 1, max: 10}),
+    body('difficulty', "difficulty is not an integer or is not in correct range").optional().isInt({ min: 1, max: 1000 }),
     body('fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
     body('averageSolveTime', 'average solve time is not an integer').optional().isInt(),
     body('numUsersPlayed', 'num users played is not an integer').optional().isInt(),
