@@ -3363,9 +3363,17 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "4e850e13-c237-48ed-bea1-12659d7d2191",
+						"id": "f4f04d94-d02b-4dcd-becc-377d19fce66e",
 						"type": "text/javascript",
 						"exec": [
+							"// Script that deletes everything before request",
+							"pm.sendRequest({",
+							"    url: \"http://localhost:3000/api/v1/puzzles/\",",
+							"    method: 'DELETE',",
+							"}, function (err, res) {",
+							"    console.log(res);",
+							"});",
+							"",
 							"puzzleTools = {",
 							"    puzzleResponseChecker: function(jsonData, vNum, vPuz, vSol, vStrat, vDif, vfast, vAver, vNumUsers, vNumTimes, vUnique, v__v, vDrill, vCDate, vImageUrl, vDesc) {",
 							"        pm.expect(jsonData[vNum].puzzle).to.eql(vPuz);",
@@ -3422,7 +3430,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ca310992-9b4e-42c2-b47b-6842e4203e7b",
+						"id": "0ed35c85-bfc6-4d46-bff7-51855de7dc66",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -3562,7 +3570,7 @@
 							"name": "Code 201",
 							"item": [
 								{
-									"name": "POST_ONE_MINIMAL_PUZZLE Copy",
+									"name": "POST_ONE_MINIMAL_ACTIVE_PUZZLE",
 									"event": [
 										{
 											"listen": "test",
@@ -3602,7 +3610,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"],\r\n    \"difficulty\": 5,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"trulyUnique\": false,\r\n    \"drillStrategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\"],\r\n    \"calendarDate\": \"2019-12-12\",\r\n    \"imageUrl\": \"image/url\",\r\n    \"description\": \"This is the puzzle description!\"\r\n}]\r\n",
+											"raw": "[{\r\n    \"userID\": \"Thomas\",\r\n    \"activeGames\": [{\r\n        \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\",\r\n        \"currentTime\": \"100\",\r\n        \"moves\": [{\r\n                \"puzzleCurrentState\": \"316084002200150006570003010423708095760030000009562030050006070007000900000001500\",\r\n                \"puzzleCurrentNotesState\": \"000000100101010111111111111111111111111000000000000000000000000000000000011111111111111110000000000000000000011111111111111100000000000000000001111111111111100000000000000000000000000000011111111111111111000000000000000\"\r\n            }\r\n        ],\r\n        \"numHintsAskedFor\": 3,\r\n        \"numWrongCellsPlayed\": 1\r\n    }]\r\n}]\r\n",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -3610,7 +3618,7 @@
 											}
 										},
 										"url": {
-											"raw": "http://localhost:3000/api/v1/puzzles/",
+											"raw": "http://localhost:3000/api/v1/user/activeGames",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -3619,8 +3627,8 @@
 											"path": [
 												"api",
 												"v1",
-												"puzzles",
-												""
+												"user",
+												"activeGames"
 											]
 										}
 									},
@@ -3633,7 +3641,35 @@
 					"id": "043e4aca-489f-45d2-83fe-b68373ddf926"
 				}
 			],
-			"id": "de2b2023-9db7-4c79-a268-3434b897cbc7"
+			"id": "de2b2023-9db7-4c79-a268-3434b897cbc7",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5106aa47-f1b4-4061-bacf-6b688047f4e1",
+						"type": "text/javascript",
+						"exec": [
+							"// Script that deletes everything before request",
+							"pm.sendRequest({",
+							"    url: \"http://localhost:3000/api/v1/user/activeGames\",",
+							"    method: 'DELETE',",
+							"}, function (err, res) {",
+							"    console.log(res);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "cfbea396-d408-4bc6-920d-b30b9729d539",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
 		},
 		{
 			"name": "UserGameHistory",
@@ -3645,16 +3681,9 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "868bdca5-9e3c-4aef-a9c1-a6443b818167",
+				"id": "98cc14b0-3530-42a6-808b-f62c63c5f336",
 				"type": "text/javascript",
 				"exec": [
-					"// Script that deletes everything before request",
-					"pm.sendRequest({",
-					"    url: \"http://localhost:3000/api/v1/puzzles/\",",
-					"    method: 'DELETE',",
-					"}, function (err, res) {",
-					"    console.log(res);",
-					"});",
 					"",
 					"// helpful function for checking if delete response is correct",
 					"backendTools = {",
@@ -3669,7 +3698,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "71dc88a7-efc7-4157-979b-dc8c99bcccab",
+				"id": "8ba67683-e32a-422e-9204-99936f5bc339",
 				"type": "text/javascript",
 				"exec": [
 					""
