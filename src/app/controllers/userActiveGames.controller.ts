@@ -22,12 +22,6 @@ const userActiveGamesService = require('../services/userActiveGames.service');
 async function createUserActiveGame(req, res, next) {
 
     const allData = Object.values(matchedData(req, { locations: ['body'] }));
-    console.log(allData.values());
-    // this is needed because the last element in matchedData array is the original request for some reason.
-    // I believe this is a bug with express-validator relating to bodies that have arrays
-    console.log(allData);
-    console.log("Hello!" + allData);
-    console.log(Object.keys(allData.keys()));
     try {
         // override successful completion code of 200 to 201 for successful object creation
         res.status(201).json(await userActiveGamesService.createUserActiveGames(allData));
