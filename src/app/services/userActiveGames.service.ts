@@ -19,7 +19,6 @@ const UserInfoModel = require("../models/db.gameInfo.model");
  * @param userActiveGames This is an array of Active Games JSON objects puzzles
  */
 async function userActiveGamesCreateService(userActiveGames) {
-    dataBase.drop(UserInfoModel);
     return await dataBase.queryUpload(userActiveGames, UserInfoModel.UserPausedGames);
 }
 
