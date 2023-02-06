@@ -20,42 +20,40 @@ mongoose.set({ debug: true, autoCreate: true})
  * the game can be resumed and the stats can be transferred at the end of the game
  */
 const userActiveGamesSchema = new Schema<userActiveGames>({
-    userID: { type: String, required: true, unique: true },
-    activeGames: [{
-        puzzle: { type: String, required: true, unique: true },
-        currentTime: { type: Number, required: true },
-        moves: [{
-            puzzleCurrentState: { type: String, required: true },
-            puzzleCurrentNotesState: { type: String, required: true }
-            // moveTime: { type: Number, required: true }
-        }],
-        numHintsAskedFor: { type: Number, required: true },
-        numWrongCellsPlayed: { type: Number, required: true },
-        numWrongCellsPlayedPerStrategy: {
-            NAKED_SINGLE: { type: Number, required: false },
-            HIDDEN_SINGLE: { type: Number, required: false },
-            NAKED_PAIR: { type: Number, required: false },
-            NAKED_TRIPLET: { type: Number, required: false },
-            NAKED_QUADRUPLET: { type: Number, required: false },
-            NAKED_QUINTUPLET: { type: Number, required: false },
-            NAKED_SEXTUPLET: { type: Number, required: false },
-            NAKED_SEPTUPLET: { type: Number, required: false },
-            NAKED_OCTUPLET: { type: Number, required: false },
-            HIDDEN_PAIR: { type: Number, required: false },
-            HIDDEN_TRIPLET: { type: Number, required: false },
-            HIDDEN_QUADRUPLET: { type: Number, required: false },
-            HIDDEN_QUINTUPLET: { type: Number, required: false },
-            HIDDEN_SEXTUPLET: { type: Number, required: false },
-            HIDDEN_SEPTUPLET: { type: Number, required: false },
-            HIDDEN_OCTUPLET: { type: Number, required: false },
-            POINTING_PAIR: { type: Number, required: false },
-            POINTING_TRIPLET: { type: Number, required: false },
-            BOX_LINE_REDUCTION: { type: Number, required: false },
-            X_WING: { type: Number, required: false },
-            SWORDFISH: { type: Number, required: false },
-            SINGLES_CHAINING: { type: Number, required: false }
-        }
-    }]
+    userID: { type: String, required: true, unique: false },
+    puzzle: { type: String, required: true },
+    currentTime: { type: Number, required: true },
+    moves: [{
+        puzzleCurrentState: { type: String, required: true, unique: false },
+        puzzleCurrentNotesState: { type: String, required: true, unique: false }
+        // moveTime: { type: Number, required: true }
+    }],
+    numHintsAskedFor: { type: Number, required: true },
+    numWrongCellsPlayed: { type: Number, required: true },
+    numWrongCellsPlayedPerStrategy: {
+        NAKED_SINGLE: { type: Number, required: false },
+        HIDDEN_SINGLE: { type: Number, required: false },
+        NAKED_PAIR: { type: Number, required: false },
+        NAKED_TRIPLET: { type: Number, required: false },
+        NAKED_QUADRUPLET: { type: Number, required: false },
+        NAKED_QUINTUPLET: { type: Number, required: false },
+        NAKED_SEXTUPLET: { type: Number, required: false },
+        NAKED_SEPTUPLET: { type: Number, required: false },
+        NAKED_OCTUPLET: { type: Number, required: false },
+        HIDDEN_PAIR: { type: Number, required: false },
+        HIDDEN_TRIPLET: { type: Number, required: false },
+        HIDDEN_QUADRUPLET: { type: Number, required: false },
+        HIDDEN_QUINTUPLET: { type: Number, required: false },
+        HIDDEN_SEXTUPLET: { type: Number, required: false },
+        HIDDEN_SEPTUPLET: { type: Number, required: false },
+        HIDDEN_OCTUPLET: { type: Number, required: false },
+        POINTING_PAIR: { type: Number, required: false },
+        POINTING_TRIPLET: { type: Number, required: false },
+        BOX_LINE_REDUCTION: { type: Number, required: false },
+        X_WING: { type: Number, required: false },
+        SWORDFISH: { type: Number, required: false },
+        SINGLES_CHAINING: { type: Number, required: false }
+    }
 });
 
 /**
@@ -65,10 +63,10 @@ const userActiveGamesSchema = new Schema<userActiveGames>({
  * User's total stats can be stored in a separate object or retrieved as needed.
  */
 const userGameStatsSchema = new Schema<userGameStats>({
-    userId: { type: String, required: true, unique: true },
+    userID: { type: String, required: true, unique: false },
     dateRange: { type: String, required: true }, // we will be storing users stats in batches of months.
     gamesPlayed: [{
-        puzzle: { type: String, required: true, unique: true },
+        puzzle: { type: String, required: true },
         moves: [{
             moveNumber: {type: Number, required: true },
             notesState: {type: String, required: true },
