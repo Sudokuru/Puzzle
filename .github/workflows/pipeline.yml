@@ -60,9 +60,6 @@ jobs:
       - name: Dump mongo logs
         if: failure()
         uses: jwalton/gh-docker-logs@v2
-        with:
-          images: 'mongo'
-          tail: '100'
 
   deploy_documentation:
     name: Deploy Documentation
