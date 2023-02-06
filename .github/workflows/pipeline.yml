@@ -57,6 +57,13 @@ jobs:
         run: |
           postman collection run "${{ github.workspace }}/postman/collections/Sudokuru-Backend.json"
 
+      - name: Dump mongo logs
+        if: failure()
+        uses: jwalton/gh-docker-logs@v2
+        with:
+          images: 'mongo'
+          tail: '100'
+
   deploy_documentation:
     name: Deploy Documentation
     if: ${{ github.ref == 'refs/heads/main' }}
