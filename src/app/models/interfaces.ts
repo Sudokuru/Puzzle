@@ -68,7 +68,7 @@ interface strategyTypes {
 
 interface moves {
     puzzleCurrentState: string,
-    puzzleNotesCurrentState: string
+    puzzleCurrentNotesState: string
     // moveTime: number
 }
 
@@ -127,15 +127,12 @@ export interface UserGameSearchFilters {
 
 export interface userActiveGames {
     userID: string,
-    activeGames: [{
-        puzzle: string,
-        puzzleCurrentState: string,
-        currentTime: number,
-        moves: moves[],
-        numHintsAskedFor: number,
-        numWrongCellsPlayed: number,
-        numWrongCellsPlayedPerStrategy: numWrongCellsPlayedPerStrategy
-    }]
+    puzzle: string,
+    currentTime: number,
+    moves: moves[],
+    numHintsAskedFor: number,
+    numWrongCellsPlayed: number,
+    numWrongCellsPlayedPerStrategy: numWrongCellsPlayedPerStrategy
 }
 
 export interface userGameStats {
