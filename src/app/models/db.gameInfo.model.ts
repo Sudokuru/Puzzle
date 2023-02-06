@@ -20,7 +20,7 @@ mongoose.set({ debug: true, autoCreate: true})
  * the game can be resumed and the stats can be transferred at the end of the game
  */
 const userActiveGamesSchema = new Schema<userActiveGames>({
-    userID: { type: String, required: true },
+    userID: { type: String, required: true, unique: false},
     puzzle: { type: String, required: true, unique: true },
     currentTime: { type: Number, required: true },
     moves: [{
@@ -63,7 +63,7 @@ const userActiveGamesSchema = new Schema<userActiveGames>({
  * User's total stats can be stored in a separate object or retrieved as needed.
  */
 const userGameStatsSchema = new Schema<userGameStats>({
-    userId: { type: String, required: true, unique: true },
+    userID: { type: String, required: true, unique: false },
     dateRange: { type: String, required: true }, // we will be storing users stats in batches of months.
     gamesPlayed: [{
         puzzle: { type: String, required: true, unique: true },

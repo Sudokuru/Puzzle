@@ -136,7 +136,7 @@ export interface userActiveGames {
 }
 
 export interface userGameStats {
-    userId: string,
+    userID: string,
     dateRange: string,
     gamesPlayed: [{
         puzzle: string,
