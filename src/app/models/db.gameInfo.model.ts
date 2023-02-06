@@ -20,12 +20,12 @@ mongoose.set({ debug: true, autoCreate: true})
  * the game can be resumed and the stats can be transferred at the end of the game
  */
 const userActiveGamesSchema = new Schema<userActiveGames>({
-    userID: { type: String, required: true, unique: false},
-    puzzle: { type: String, required: true, unique: true },
+    userID: { type: String, required: true, unique: false },
+    puzzle: { type: String, required: true },
     currentTime: { type: Number, required: true },
     moves: [{
-        puzzleCurrentState: { type: String, required: true },
-        puzzleCurrentNotesState: { type: String, required: true }
+        puzzleCurrentState: { type: String, required: true, unique: false },
+        puzzleCurrentNotesState: { type: String, required: true, unique: false }
         // moveTime: { type: Number, required: true }
     }],
     numHintsAskedFor: { type: Number, required: true },
@@ -66,7 +66,7 @@ const userGameStatsSchema = new Schema<userGameStats>({
     userID: { type: String, required: true, unique: false },
     dateRange: { type: String, required: true }, // we will be storing users stats in batches of months.
     gamesPlayed: [{
-        puzzle: { type: String, required: true, unique: true },
+        puzzle: { type: String, required: true },
         moves: [{
             moveNumber: {type: Number, required: true },
             notesState: {type: String, required: true },
