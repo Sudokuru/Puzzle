@@ -31,7 +31,7 @@ jobs:
         committer_username: asyncapi-bot
         committer_email: info@asyncapi.io
         commit_message: "chore: update License.md"
-        topics_to_include: gnu-v2
+        topics_to_include: gnu-v3
 
   # This replicates all openAPIs to repos with the openapi3 topic
   replicate_openAPIs:
