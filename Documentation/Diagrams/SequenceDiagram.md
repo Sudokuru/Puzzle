@@ -9,28 +9,38 @@ sequenceDiagram
     participant NPM Package
     participant BFF
     participant UserGameSearch
+    participant Puzzle
+    participant UserGameStatistics
     
     #GetNewPuzzle
     Frontend->>NPM Package: getNewPuzzle(URL, Token, Parameters)
     NPM Package->>BFF: GET getPuzzle endpoint
 
-    critical Get User Game Search Filters
-        BFF->>Backend: GET UserGameSearchFilters
-    option User Game Search Filters Not Found
-        Backend-->>BFF: 404 Not Found
-        BFF-->>Backend: POST Create User Search Preferences
-    option User Game Search Filters Found
-        Backend-->>BFF: 200 Found
+    critical Get User Game Search Preferences
+        BFF->>UserGameSearch: GET UserGameSearchPreferences
+    option User Game Search Preferences Not Found
+        UserGameSearch-->>BFF: 404 Not Found
+        BFF-->>UserGameSearch: POST Create User Search Preferences
+    option User Game Search Preferences Found
+        UserGameSearch-->>BFF: 200 Found
     end
 
     critical Get Puzzle
-        BFF->>Backend: GET Puzzle
+        BFF->>Puzzle: GET Puzzle
     option Puzzle Not Found
-        Backend-->>BFF: 404 Not Found
+        Puzzle-->>BFF: 404 Not Found
         BFF-->>NPM Package: 404 Not Found
         NPM Package-->>Frontend: Return Null or Error Invalid Search Criteria
     option Puzzle Found
-        Backend-->>BFF: 200 Found
+        Puzzle-->>BFF: 200 Found
+        critical Get User Game History
+            BFF-->>UserGameStatistics: GET User Game Statistics
+        option User Game Statistics Not Found
+            UserGameStatistics-->>BFF: 404 Not Found
+            BFF-->>UserGameStatistics: POST User Game Statistics
+        option User Game Statistics Found
+            UserGameStatistics-->>BFF: 200 Found
+        end
         BFF-->>NPM Package: Return Puzzle Object
         NPM Package-->>Frontend: Return Puzzle Object
     end
