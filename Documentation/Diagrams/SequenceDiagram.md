@@ -1,7 +1,7 @@
 
 ### These diagrams do not consider 400, 401, or 500 errors for simplicity. They only consider 404, 200/201 error codes. 
 
-### Flow for the frontend to get a puzzle
+### Flow for the frontend to start a game
 
 ```mermaid
 sequenceDiagram
@@ -12,9 +12,9 @@ sequenceDiagram
     participant Puzzle
     participant UserGameStatistics
     
-    #GetNewPuzzle
-    Frontend->>NPM Package: getNewPuzzle(URL, Token, Parameters)
-    NPM Package->>BFF: GET getPuzzle endpoint
+    #Start Game
+    Frontend->>NPM Package: Puzzle.startGame(URL, Token, Parameters)
+    NPM Package->>BFF: GET startGame endpoint
 
     critical Get User Game Search Preferences
         BFF->>UserGameSearch: GET UserGameSearchPreferences
@@ -46,7 +46,7 @@ sequenceDiagram
     end
 ```
 
-### Flow for the frontend to save an active puzzle
+### Flow for the frontend to save a game
 
 ```mermaid
 sequenceDiagram
@@ -55,9 +55,9 @@ sequenceDiagram
     participant BFF
     participant Backend
 
-    #saveActivePuzzle
-    Frontend->>NPM Package: saveActivePuzzle(URL, Token, Puzzle)
-    NPM Package->>BFF: PATCH saveActivePuzzle endpoint
+    #Save Game
+    Frontend->>NPM Package: Puzzle.saveGame(URL, Token, Puzzle)
+    NPM Package->>BFF: PATCH saveGame endpoint
 
     critical Get User Active Game
         BFF->>Backend: GET UserActiveGames
@@ -73,7 +73,7 @@ sequenceDiagram
         NPM Package->>Frontend: Return Success
 ```
 
-### Flow for frontend to end game
+### Flow for frontend to end a game
 
 ```mermaid
 sequenceDiagram
@@ -83,7 +83,7 @@ sequenceDiagram
     participant Backend
 
     #endGame
-    Frontend->>NPM Package: endGame(URL, Token, Puzzle)
+    Frontend->>NPM Package: Puzzle.endGame(URL, Token, Puzzle)
     NPM Package->>BFF: DELETE endGame endpoint
 
     critical Get User Active Game
