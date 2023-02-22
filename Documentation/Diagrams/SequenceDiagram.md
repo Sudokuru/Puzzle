@@ -1,6 +1,26 @@
 
 ### These diagrams do not consider 400, 401, or 500 errors for simplicity. They only consider 404, 200/201 error codes. 
 
+
+### Flow to get User Game Preferences
+<!-- 
+```mermaid
+sequenceDiagram
+    participant Frontend
+    participant NPM Package
+    participant BFF
+    participant UserGamePreferences
+    
+    #Get User Game Preferences
+    Frontend->>NPM Package: Puzzle.getUserGamePreferences(URL, Token, Parameters)
+    NPM Package->>BFF: Get userGamePreferences endpoint
+    
+    critical Get User Game Search Preferences
+        BFF->> -->
+
+### Flow to update User Game Preferences
+
+
 ### Flow for the frontend to start a game
 
 ```mermaid
@@ -8,7 +28,7 @@ sequenceDiagram
     participant Frontend
     participant NPM Package
     participant BFF
-    participant UserGameSearch
+    participant UserGamePreferences
     participant Puzzle
     participant UserGameStatistics
     participant UserActiveGames
@@ -18,12 +38,12 @@ sequenceDiagram
     NPM Package->>BFF: GET startGame endpoint
 
     critical Get User Game Search Preferences
-        BFF->>UserGameSearch: GET UserGameSearchPreferences
+        BFF->>UserGamePreferences: GET User Game Preferences
     option User Game Search Preferences Not Found
-        UserGameSearch-->>BFF: 404 Not Found
-        BFF-->>UserGameSearch: POST Create User Search Preferences
+        UserGamePreferences-->>BFF: 404 Not Found
+        BFF-->>UserGamePreferences: POST Create User Search Preferences
     option User Game Search Preferences Found
-        UserGameSearch-->>BFF: 200 Found
+        UserGamePreferences-->>BFF: 200 Found
     end
 
     critical Get Puzzle
