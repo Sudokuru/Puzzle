@@ -11,11 +11,10 @@ flowchart LR
     BFF[Backend for the Frontend]
     PS[Puzzle Service]
     UAG[User Active Games Service]
-    UGH[User Game History Service]
-    UGSt[User Game Statistics Service]
-    UGSe[User Game Search Service]
+    UGS[User Game Statistics Service]
+    UGP[User Game Preferences Service]
     UP[User Profile Service]
-    BFF <--> PS & UAG & UGH & UGSt & UGSe & UP
+    BFF <--> PS & UAG & UGS & UGP & UP
   end
   frontend <--> backend
  ```
