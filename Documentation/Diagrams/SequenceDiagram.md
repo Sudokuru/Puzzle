@@ -11,6 +11,7 @@ sequenceDiagram
     participant UserGameSearch
     participant Puzzle
     participant UserGameStatistics
+    participant UserActiveGames
     
     #Start Game
     Frontend->>NPM Package: Puzzle.startGame(URL, Token, Parameters)
@@ -41,6 +42,8 @@ sequenceDiagram
         option User Game Statistics Found
             UserGameStatistics-->>BFF: 200 Found
         end
+        BFF->>UserActiveGames: POST User Active Game
+        UserActiveGames->>BFF: 200 Success
         BFF-->>NPM Package: Return Puzzle Object
         NPM Package-->>Frontend: Return Puzzle Object
     end
@@ -74,25 +77,20 @@ sequenceDiagram
 sequenceDiagram
     participant Frontend
     participant NPM Package
-    participant BFF
-    participant Backend
+    participant UserActiveGames
 
     #Save Game
     Frontend->>NPM Package: Puzzle.saveGame(URL, Token, Puzzle)
-    NPM Package->>BFF: PATCH saveGame endpoint
 
     critical Get User Active Game
-        BFF->>Backend: GET UserActiveGames
+        NPM Package->>UserActiveGames: GET UserActiveGames
     option Active Game Not Found
-        Backend-->>BFF: 404 Not Found
-        BFF-->>Backend: POST User Active Game
+        UserActiveGames-->>NPM Package: 404 Not Found
+        NPM Package-->>Frontend: 404 Active Game Not Found
     option Active Game Found
-        Backend-->>BFF: 200 Found
-        BFF-->>Backend: PATCH User Active Game
+        UserActiveGames-->>NPM Package: 200 Found
+        NPM Package-->>Frontend: 200 Success
     end
-        Backend->>BFF: 200 Success
-        BFF->>NPM Package: 200 Success
-        NPM Package->>Frontend: Return Success
 ```
 
 ### Flow for frontend to end a game
