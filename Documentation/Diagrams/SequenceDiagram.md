@@ -100,33 +100,34 @@ sequenceDiagram
     participant Frontend
     participant NPM Package
     participant BFF
-    participant Backend
+    participant UserActiveGames
+    participant UserGameStatistics
 
     #endGame
     Frontend->>NPM Package: Puzzle.endGame(URL, Token, Puzzle)
     NPM Package->>BFF: DELETE endGame endpoint
 
     critical Get User Active Game
-        BFF->>Backend: GET UserActiveGame
+        BFF->>UserActiveGames: GET UserActiveGame
     option Active Game Not Found
-        Backend-->>BFF: 404 Not Found
+        UserActiveGames-->>BFF: 404 Not Found
         BFF-->>NPM Package: 404 Not Found
         NPM Package-->>Frontend: Return Null or Error Game Not Activve
     option Active Game Found
-        Backend-->>BFF: 200 Found
-        BFF-->>Backend: DELETE User Active Game
-        Backend-->>BFF: 200 Success
+        UserActiveGames-->>BFF: 200 Found
+        BFF-->>UserActiveGames: DELETE User Active Game
+        UserActiveGames-->>BFF: 200 Success
 
         critical Get User Game Stats
-            BFF-->>Backend: GET User Game Stats
+            BFF-->>UserGameStatistics: GET User Game Stats
         option User Game Stats Not Found
-            Backend-->>BFF: 404 Not Found
-            BFF-->>Backend: POST User Game Stats
-            Backend-->>BFF: 200 Success
+            UserGameStatistics-->>BFF: 404 Not Found
+            BFF-->>UserGameStatistics: POST User Game Stats
+            UserGameStatistics-->>BFF: 200 Success
         option User Game Stats Found
-            Backend-->>BFF: 200 Found
-            BFF-->>Backend: PATCH User Game Stats
-            Backend-->>BFF: 200 Success
+            UserGameStatistics-->>BFF: 200 Found
+            BFF-->>UserGameStatistics: PATCH User Game Stats
+            UserGameStatistics-->>BFF: 200 Success
         end
 
         BFF-->>NPM Package: 200 Success
