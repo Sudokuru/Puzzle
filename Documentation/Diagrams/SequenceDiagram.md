@@ -6,13 +6,13 @@
 ```mermaid
 sequenceDiagram
     participant Frontend
-    participant NPM Library
+    participant NPM Package
     participant BFF
-    participant Backend
+    participant UserGameSearch
     
     #GetNewPuzzle
-    Frontend->>NPM Library: getNewPuzzle(URL, Token, Parameters)
-    NPM Library->>BFF: GET getPuzzle endpoint
+    Frontend->>NPM Package: getNewPuzzle(URL, Token, Parameters)
+    NPM Package->>BFF: GET getPuzzle endpoint
 
     critical Get User Game Search Filters
         BFF->>Backend: GET UserGameSearchFilters
@@ -27,12 +27,12 @@ sequenceDiagram
         BFF->>Backend: GET Puzzle
     option Puzzle Not Found
         Backend-->>BFF: 404 Not Found
-        BFF-->>NPM Library: 404 Not Found
-        NPM Library-->>Frontend: Return Null or Error Invalid Search Criteria
+        BFF-->>NPM Package: 404 Not Found
+        NPM Package-->>Frontend: Return Null or Error Invalid Search Criteria
     option Puzzle Found
         Backend-->>BFF: 200 Found
-        BFF-->>NPM Library: Return Puzzle Object
-        NPM Library-->>Frontend: Return Puzzle Object
+        BFF-->>NPM Package: Return Puzzle Object
+        NPM Package-->>Frontend: Return Puzzle Object
     end
 ```
 
@@ -41,13 +41,13 @@ sequenceDiagram
 ```mermaid
 sequenceDiagram
     participant Frontend
-    participant NPM Library
+    participant NPM Package
     participant BFF
     participant Backend
 
     #saveActivePuzzle
-    Frontend->>NPM Library: saveActivePuzzle(URL, Token, Puzzle)
-    NPM Library->>BFF: PATCH saveActivePuzzle endpoint
+    Frontend->>NPM Package: saveActivePuzzle(URL, Token, Puzzle)
+    NPM Package->>BFF: PATCH saveActivePuzzle endpoint
 
     critical Get User Active Game
         BFF->>Backend: GET UserActiveGames
@@ -59,8 +59,8 @@ sequenceDiagram
         BFF-->>Backend: PATCH User Active Game
     end
         Backend->>BFF: 200 Success
-        BFF->>NPM Library: 200 Success
-        NPM Library->>Frontend: Return Success
+        BFF->>NPM Package: 200 Success
+        NPM Package->>Frontend: Return Success
 ```
 
 ### Flow for frontend to end game
@@ -68,20 +68,20 @@ sequenceDiagram
 ```mermaid
 sequenceDiagram
     participant Frontend
-    participant NPM Library
+    participant NPM Package
     participant BFF
     participant Backend
 
     #endGame
-    Frontend->>NPM Library: endGame(URL, Token, Puzzle)
-    NPM Library->>BFF: DELETE endGame endpoint
+    Frontend->>NPM Package: endGame(URL, Token, Puzzle)
+    NPM Package->>BFF: DELETE endGame endpoint
 
     critical Get User Active Game
         BFF->>Backend: GET UserActiveGame
     option Active Game Not Found
         Backend-->>BFF: 404 Not Found
-        BFF-->>NPM Library: 404 Not Found
-        NPM Library-->>Frontend: Return Null or Error Game Not Activve
+        BFF-->>NPM Package: 404 Not Found
+        NPM Package-->>Frontend: Return Null or Error Game Not Activve
     option Active Game Found
         Backend-->>BFF: 200 Found
         BFF-->>Backend: DELETE User Active Game
@@ -99,7 +99,7 @@ sequenceDiagram
             Backend-->>BFF: 200 Success
         end
 
-        BFF-->>NPM Library: 200 Success
-        NPM Library-->>Frontend: Return Success
+        BFF-->>NPM Package: 200 Success
+        NPM Package-->>Frontend: Return Success
     end
 ```
