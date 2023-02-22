@@ -46,6 +46,33 @@ sequenceDiagram
     end
 ```
 
+### Flow for the frontend to resume a game
+
+```mermaid
+sequenceDiagram
+    participant Frontend
+    participant NPM Package
+    participant BFF
+    participant UserActiveGames
+
+    #Save Game
+    Frontend->>NPM Package: Puzzle.resumeGame(URL, Token, Puzzle)
+    NPM Package->>BFF: GET resumeGame endpoint
+
+    critical Get User Active Game
+        BFF->>UserActiveGames: GET UserActiveGames
+    option Active Game Not Found
+        Backend-->>BFF: 404 Not Found
+        BFF-->>NPM Package: 404 Not Found
+        NPM Package-->>Frontend: User has no active games
+    option Active Game Found
+        UserActiveGames-->>BFF: 200 Found
+        Backend->>BFF: 200 Success
+        BFF->>NPM Package: 200 Success
+        NPM Package->>Frontend: Return Active Game
+    end
+```
+
 ### Flow for the frontend to save a game
 
 ```mermaid
