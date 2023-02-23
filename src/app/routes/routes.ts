@@ -6,18 +6,26 @@
  * @module Routes
  */
 
+const { auth, requiredScopes } = require('express-oauth2-jwt-bearer');
 const express = require("express");
 const routes = express.Router();
+
+// Authorization middleware. When used, the Access Token must
+// exist and be verified against the Auth0 JSON Web Key Set.
+const checkJwt = auth({
+    audience: process.env.AUTH0_AUDIENCE,
+    issuerBaseURL: `https://` + process.env.AUTH0_BASE_URL + '/',
+});
 
 const puzzleController = require('../controllers/puzzle.controller');
 
 const { validatePuzzleBodyPOST, validatePuzzleParameters, validatePuzzleBodyPATCH } = require("../validationAndSanitation/puzzle.validationAndSanitation");
 const { validationErrorHandler } = require('../validationAndSanitation/errorValidation');
 
-routes.post("/puzzles/", validatePuzzleBodyPOST, validationErrorHandler, puzzleController.create);
-routes.get("/puzzles/", validatePuzzleParameters, validationErrorHandler, puzzleController.search);
-routes.patch("/puzzles/", validatePuzzleParameters, validatePuzzleBodyPATCH, validationErrorHandler, puzzleController.update);
-routes.delete("/puzzles/", validatePuzzleParameters, validationErrorHandler, puzzleController.remove);
+routes.post("/puzzles/", checkJwt, validatePuzzleBodyPOST, validationErrorHandler, puzzleController.create);
+routes.get("/puzzles/", checkJwt, validatePuzzleParameters, validationErrorHandler, puzzleController.search);
+routes.patch("/puzzles/", checkJwt, validatePuzzleParameters, validatePuzzleBodyPATCH, validationErrorHandler, puzzleController.update);
+routes.delete("/puzzles/", checkJwt, validatePuzzleParameters, validationErrorHandler, puzzleController.remove);
 
 const userProfileController = require ('../controllers/userProfile.controller');
 
