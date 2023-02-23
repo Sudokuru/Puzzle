@@ -46,7 +46,7 @@ jobs:
         run: npm run app
 
       - name: Sleep for 20 seconds
-        run: sleep 20s
+        run: sleep 60s
         shell: bash
 
 #      - name: Run 500 API tests
