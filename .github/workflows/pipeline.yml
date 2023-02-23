@@ -28,12 +28,12 @@ jobs:
         with:
           node-version: 16.x
 
-      - name: Install Postman CLI
-        run: |
-          curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
-
-      - name: Login to Postman CLI
-        run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
+#      - name: Install Postman CLI
+#        run: |
+#          curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+#
+#      - name: Login to Postman CLI
+#        run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
 
       - name: Replace localhost Mongo Url
         uses: microsoft/variable-substitution@v1
@@ -53,17 +53,17 @@ jobs:
 #        run: |
 #          postman collection run "${{ github.workspace }}/postman/collections/Sudokuru-Backend-500s.json"
 
-      - name: Run API tests
-        run: |
-          postman collection run "${{ github.workspace }}/postman/collections/Sudokuru-Backend.json" -e "${{ secrets.POSTMAN_ENV_ID }}"
-
 #      - name: Run API tests
 #        run: |
-#          npm i
-#          npm run test:integration
-#        env:
-#          POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }}
-#          POSTMAN_ENV_ID: ${{ secrets.POSTMAN_ENV_ID }}
+#          postman collection run "${{ github.workspace }}/postman/collections/Sudokuru-Backend.json" -e "${{ secrets.POSTMAN_ENV_ID }}"
+
+      - name: Run API tests
+        run: |
+          npm i
+          npm run start & npm run test:integration
+        env:
+          POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }}
+          POSTMAN_ENV_ID: ${{ secrets.POSTMAN_ENV_ID }}
       - name: Dump mongo logs
         if: failure()
         uses: jwalton/gh-docker-logs@v2
