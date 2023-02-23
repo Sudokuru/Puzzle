@@ -23,6 +23,9 @@ function handleError(
         else if (err.name == "InsufficientScopeError"){
             err = new CustomError(CustomErrorEnum.INSUFFICIENT_SCOPE_ERROR, 403);
         }
+        else if (err.name == "InvalidTokenError"){
+            err = new CustomError(CustomErrorEnum.INVALID_TOKEN, 401);
+        }
         else if (err.name == "UnauthorizedError"){
             err = new CustomError(CustomErrorEnum.NO_TOKEN_PROVIDED, 401);
         }
