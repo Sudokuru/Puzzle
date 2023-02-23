@@ -55,7 +55,7 @@ jobs:
 
       - name: Run API tests
         run: |
-          postman collection run "${{ github.workspace }}/postman/collections/Sudokuru-Backend.json" -e "${{ secrets.POSTMAN_ENV_ID }}"
+          postman collection run "${{ github.workspace }}/postman/collections/Sudokuru-Backend.json"
 
 #      - name: Run API tests
 #        run: |
