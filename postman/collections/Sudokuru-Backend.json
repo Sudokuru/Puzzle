@@ -79,6 +79,11 @@
 									"key": "audience",
 									"value": "{{audience}}",
 									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "create:sudoku_puzzle update:sudoku_puzzle delete:sudoku_puzzle",
+									"type": "text"
 								}
 							],
 							"options": {
