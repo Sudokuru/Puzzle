@@ -23,10 +23,14 @@ const puzzleController = require('../controllers/puzzle.controller');
 const { validatePuzzleBodyPOST, validatePuzzleParameters, validatePuzzleBodyPATCH } = require("../validationAndSanitation/puzzle.validationAndSanitation");
 const { validationErrorHandler } = require('../validationAndSanitation/errorValidation');
 
-routes.post("/puzzles/", checkJwt, validatePuzzleBodyPOST, validationErrorHandler, puzzleController.create);
+const postCheckScopes = requiredScopes('create:sudoku_puzzle');
+const patchCheckScopes = requiredScopes('update:sudoku_puzzle');
+const deleteCheckScopes = requiredScopes('delete:sudoku_puzzle');
+
+routes.post("/puzzles/", checkJwt, postCheckScopes, validatePuzzleBodyPOST, validationErrorHandler, puzzleController.create);
 routes.get("/puzzles/", checkJwt, validatePuzzleParameters, validationErrorHandler, puzzleController.search);
-routes.patch("/puzzles/", checkJwt, validatePuzzleParameters, validatePuzzleBodyPATCH, validationErrorHandler, puzzleController.update);
-routes.delete("/puzzles/", checkJwt, validatePuzzleParameters, validationErrorHandler, puzzleController.remove);
+routes.patch("/puzzles/", checkJwt, patchCheckScopes, validatePuzzleParameters, validatePuzzleBodyPATCH, validationErrorHandler, puzzleController.update);
+routes.delete("/puzzles/", checkJwt, deleteCheckScopes, validatePuzzleParameters, validationErrorHandler, puzzleController.remove);
 
 const userProfileController = require ('../controllers/userProfile.controller');
 
