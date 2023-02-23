@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "a8bdb682-bcf6-4c5c-8c2f-9bdf99cf560d",
+		"name": "Helper Functions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "23651156-a8bdb682-bcf6-4c5c-8c2f-9bdf99cf560d"
+	},
+	"item": [
+		{
+			"name": "GET ACCESS TOKEN",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d6e897b5-f31e-4c7f-804f-868a4c3c0953",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "d36b5ff6-4e08-4901-80ca-15e91f2b0aa8",
+						"exec": [
+							"pm.test(\"JSON response is correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"    var strategyTypes = [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"NAKED_TRIPLET\", \"NAKED_QUADRUPLET\", \"NAKED_QUINTUPLET\", \"NAKED_SEXTUPLET\", \"NAKED_SEPTUPLET\", \"NAKED_OCTUPLET\", \"HIDDEN_PAIR\", \"HIDDEN_TRIPLET\", \"HIDDEN_QUADRUPLET\", \"HIDDEN_QUINTUPLET\", \"HIDDEN_SEXTUPLET\", \"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\", \"X_WING\", \"SWORDFISH\", \"SINGLES_CHAINING\"];\r",
+							"\r",
+							"    var drillStrategies = [\"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\"];\r",
+							"\r",
+							"    puzzleTools.puzzleResponseChecker(jsonData, 0, \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", strategyTypes, 5, 0, 0, 10, 20, false, 0, drillStrategies, \"2019-12-12T00:00:00.000Z\", \"image/url\", \"This is the puzzle description!\");\r",
+							"\r",
+							"    puzzleTools.puzzleResponseChecker(jsonData, 1, \"603002001500000020901730006810400090060000000000690040350000004002070005000500108\", \"683942751574816329921735486817453692469287513235691847358169274142378965796524138\", strategyTypes, 5, 0, 0, 10, 20, false, 0, drillStrategies);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "97663b55-a07f-4c42-899a-b99e715d3e3b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "{{clientSecret}}",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "{{clientId}}",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "{{tokenUrl}}",
+							"type": "string"
+						},
+						{
+							"key": "audience",
+							"value": {
+								"70ad7d2a-f376-42a4-b98a-0ba6f4aa791f": "{{audience}}"
+							},
+							"type": "any"
+						},
+						{
+							"key": "grant_type",
+							"value": "password_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenName",
+							"value": "Auth0 Login",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://dev-2a2cfx07i0jw6jgj.us.auth0.com/oauth/authorize",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://www.getpostman.com/oauth2/callback",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"NAKED_TRIPLET\", \"NAKED_QUADRUPLET\", \"NAKED_QUINTUPLET\", \"NAKED_SEXTUPLET\", \"NAKED_SEPTUPLET\", \"NAKED_OCTUPLET\", \"HIDDEN_PAIR\", \"HIDDEN_TRIPLET\", \"HIDDEN_QUADRUPLET\", \"HIDDEN_QUINTUPLET\", \"HIDDEN_SEXTUPLET\", \"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\", \"X_WING\", \"SWORDFISH\", \"SINGLES_CHAINING\"],\r\n    \"difficulty\": 5,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"trulyUnique\": false,\r\n    \"drillStrategies\": [\"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\"],\r\n    \"calendarDate\": \"2019-12-12\",\r\n    \"imageUrl\": \"image/url\",\r\n    \"description\": \"This is the puzzle description!\"\r\n}, {\r\n    \"puzzle\": \"603002001500000020901730006810400090060000000000690040350000004002070005000500108\", \r\n    \"puzzleSolution\": \"683942751574816329921735486817453692469287513235691847358169274142378965796524138\", \r\n    \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\", \"NAKED_TRIPLET\", \"NAKED_QUADRUPLET\", \"NAKED_QUINTUPLET\", \"NAKED_SEXTUPLET\", \"NAKED_SEPTUPLET\", \"NAKED_OCTUPLET\", \"HIDDEN_PAIR\", \"HIDDEN_TRIPLET\", \"HIDDEN_QUADRUPLET\", \"HIDDEN_QUINTUPLET\", \"HIDDEN_SEXTUPLET\", \"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\", \"X_WING\", \"SWORDFISH\", \"SINGLES_CHAINING\"],\r\n    \"difficulty\": 5,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"trulyUnique\": false,\r\n    \"drillStrategies\": [\"HIDDEN_SEPTUPLET\", \"HIDDEN_OCTUPLET\", \"POINTING_PAIR\", \"POINTING_TRIPLET\", \"BOX_LINE_REDUCTION\"]\r\n}\r\n]\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/puzzles/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"puzzles",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Access Token",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d6e897b5-f31e-4c7f-804f-868a4c3c0953",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "d36b5ff6-4e08-4901-80ca-15e91f2b0aa8",
+						"exec": [
+							"pm.test(\"Access token is retrieved\", function () {\r",
+							"    var data = JSON.parse(responseBody);    \r",
+							"    pm.environment.set(\"token\", data.access_token);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "43243698-6057-4aca-b987-7d64da8d8907",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{clientId}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{clientSecret}}",
+							"type": "text"
+						},
+						{
+							"key": "audience",
+							"value": "{{audience}}",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{tokenUrl}}",
+					"host": [
+						"{{tokenUrl}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
