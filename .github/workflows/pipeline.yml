@@ -55,7 +55,7 @@ jobs:
 
       - name: Run API tests
         run: |
-          postman collection run "${{ github.workspace }}/postman/collections/Sudokuru-Backend.json"
+          postman collection run "${{ github.workspace }}/postman/collections/Sudokuru-Backend.json" -e ${{ secrets.POSTMAN_ENVIRONMENT_ID }}
 
       - name: Dump mongo logs
         if: failure()
