@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
     command: npm run start
     ports:
-      - "3002:3002"
+      - "3000:3000"
     links:
       - mongo
   mongo:

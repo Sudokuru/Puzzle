@@ -12,7 +12,7 @@ import {CustomError, CustomErrorEnum} from "./app/models/error.model";
 const serverless = require('serverless-http');
 const expressApp = require('express');
 const app = expressApp();
-const port = process.env.APP_PORT || 3002;
+const port = process.env.APP_PORT || 3000;
 
 // Runs on local port if ran using node app.js local
 let local:boolean = false;
