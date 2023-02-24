@@ -54,7 +54,7 @@ jobs:
         shell: bash
 
       - name: Docker port
-        run: Docker port express-app
+        run: docker port express-app
 
 #      - name: Run 500 API tests
 #        run: |
