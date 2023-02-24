@@ -47,7 +47,9 @@ jobs:
         shell: bash
 
       - name: Run Docker image
-        run: npm run app
+        run: | 
+          npm run app
+          docker ps
 #
       - name: Sleep for 20 seconds
         run: sleep 20s
