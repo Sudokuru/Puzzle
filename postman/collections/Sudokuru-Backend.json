@@ -8,6 +8,128 @@
 	},
 	"item": [
 		{
+			"name": "Pretest",
+			"item": [
+				{
+					"name": "Retrieve Access Token",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d6e897b5-f31e-4c7f-804f-868a4c3c0953",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "d36b5ff6-4e08-4901-80ca-15e91f2b0aa8",
+								"exec": [
+									"pm.test(\"Access token is retrieved\", function () {\r",
+									"    var data = JSON.parse(responseBody);    \r",
+									"    pm.environment.set(\"token\", data.access_token);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "6b31bcff-cae1-48c9-8eb8-75c1012e3e12",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{clientId}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{clientSecret}}",
+									"type": "text"
+								},
+								{
+									"key": "audience",
+									"value": "{{audience}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "create:sudoku_puzzle update:sudoku_puzzle delete:sudoku_puzzle",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{tokenUrl}}",
+							"host": [
+								"{{tokenUrl}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "071774b3-933e-4f09-9a43-bec7114f71d7",
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4242cea7-81a8-4a41-aaac-8c33ac1163d6",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b8b631d1-94b9-4c2a-ba52-5bf7d1b35af3",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
 			"name": "Global Invalid Paths Return 400",
 			"item": [
 				{
@@ -1012,16 +1134,6 @@
 										"disableBodyPruning": true
 									},
 									"request": {
-										"auth": {
-											"type": "oauth2",
-											"oauth2": [
-												{
-													"key": "addTokenTo",
-													"value": "header",
-													"type": "string"
-												}
-											]
-										},
 										"method": "POST",
 										"header": [],
 										"body": {
@@ -1825,7 +1937,7 @@
 													"pm.sendRequest({\r",
 													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
 													"    method: 'POST',\r",
-													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    header: {\"Authorization\" : \"Bearer \" + pm.environment.get(\"token\"), \"Content-Type\": \"application/json\"},\r",
 													"    body: {\r",
 													"        mode: 'raw',\r",
 													"        raw: JSON.stringify(\r",
@@ -1897,7 +2009,7 @@
 													"pm.sendRequest({\r",
 													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
 													"    method: 'POST',\r",
-													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    header: {\"Authorization\" : \"Bearer \" + pm.environment.get(\"token\"), \"Content-Type\": \"application/json\"},\r",
 													"    body: {\r",
 													"        mode: 'raw',\r",
 													"        raw: JSON.stringify(\r",
@@ -2096,7 +2208,7 @@
 													"pm.sendRequest({\r",
 													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
 													"    method: 'POST',\r",
-													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    header: {\"Authorization\" : \"Bearer \" + pm.environment.get(\"token\"), \"Content-Type\": \"application/json\"},\r",
 													"    body: {\r",
 													"        mode: 'raw',\r",
 													"        raw: JSON.stringify(\r",
@@ -2169,7 +2281,7 @@
 													"pm.sendRequest({\r",
 													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
 													"    method: 'POST',\r",
-													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    header: {\"Authorization\" : \"Bearer \" + pm.environment.get(\"token\"), \"Content-Type\": \"application/json\"},\r",
 													"    body: {\r",
 													"        mode: 'raw',\r",
 													"        raw: JSON.stringify(\r",
@@ -2261,7 +2373,7 @@
 													"pm.sendRequest({\r",
 													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
 													"    method: 'POST',\r",
-													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    header: {\"Authorization\" : \"Bearer \" + pm.environment.get(\"token\"), \"Content-Type\": \"application/json\"},\r",
 													"    body: {\r",
 													"        mode: 'raw',\r",
 													"        raw: JSON.stringify(\r",
@@ -2353,7 +2465,7 @@
 													"pm.sendRequest({\r",
 													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
 													"    method: 'POST',\r",
-													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    header: {\"Authorization\" : \"Bearer \" + pm.environment.get(\"token\"), \"Content-Type\": \"application/json\"},\r",
 													"    body: {\r",
 													"        mode: 'raw',\r",
 													"        raw: JSON.stringify(\r",
@@ -2463,7 +2575,7 @@
 													"pm.sendRequest({\r",
 													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
 													"    method: 'POST',\r",
-													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    header: {\"Authorization\" : \"Bearer \" + pm.environment.get(\"token\"), \"Content-Type\": \"application/json\"},\r",
 													"    body: {\r",
 													"        mode: 'raw',\r",
 													"        raw: JSON.stringify(\r",
@@ -2480,7 +2592,7 @@
 													"pm.sendRequest({\r",
 													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
 													"    method: 'POST',\r",
-													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    header: {\"Authorization\" : \"Bearer \" + pm.environment.get(\"token\"), \"Content-Type\": \"application/json\"},\r",
 													"    body: {\r",
 													"        mode: 'raw',\r",
 													"        raw: JSON.stringify(\r",
@@ -2501,7 +2613,7 @@
 													"pm.sendRequest({\r",
 													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
 													"    method: 'POST',\r",
-													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    header: {\"Authorization\" : \"Bearer \" + pm.environment.get(\"token\"), \"Content-Type\": \"application/json\"},\r",
 													"    body: {\r",
 													"        mode: 'raw',\r",
 													"        raw: JSON.stringify(\r",
@@ -2522,7 +2634,7 @@
 													"pm.sendRequest({\r",
 													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
 													"    method: 'POST',\r",
-													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    header: {\"Authorization\" : \"Bearer \" + pm.environment.get(\"token\"), \"Content-Type\": \"application/json\"},\r",
 													"    body: {\r",
 													"        mode: 'raw',\r",
 													"        raw: JSON.stringify(\r",
@@ -2909,7 +3021,7 @@
 													"pm.sendRequest({\r",
 													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
 													"    method: 'POST',\r",
-													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    header: {\"Authorization\" : \"Bearer \" + pm.environment.get(\"token\"), \"Content-Type\": \"application/json\"},\r",
 													"    body: {\r",
 													"        mode: 'raw',\r",
 													"        raw: JSON.stringify(\r",
@@ -2975,7 +3087,7 @@
 													"pm.sendRequest({\r",
 													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
 													"    method: 'POST',\r",
-													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    header: {\"Authorization\" : \"Bearer \" + pm.environment.get(\"token\"), \"Content-Type\": \"application/json\"},\r",
 													"    body: {\r",
 													"        mode: 'raw',\r",
 													"        raw: JSON.stringify(\r",
@@ -2992,7 +3104,7 @@
 													"pm.sendRequest({\r",
 													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
 													"    method: 'POST',\r",
-													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    header: {\"Authorization\" : \"Bearer \" + pm.environment.get(\"token\"), \"Content-Type\": \"application/json\"},\r",
 													"    body: {\r",
 													"        mode: 'raw',\r",
 													"        raw: JSON.stringify(\r",
@@ -3013,7 +3125,7 @@
 													"pm.sendRequest({\r",
 													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
 													"    method: 'POST',\r",
-													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    header: {\"Authorization\" : \"Bearer \" + pm.environment.get(\"token\"), \"Content-Type\": \"application/json\"},\r",
 													"    body: {\r",
 													"        mode: 'raw',\r",
 													"        raw: JSON.stringify(\r",
@@ -3034,7 +3146,7 @@
 													"pm.sendRequest({\r",
 													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
 													"    method: 'POST',\r",
-													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    header: {\"Authorization\" : \"Bearer \" + pm.environment.get(\"token\"), \"Content-Type\": \"application/json\"},\r",
 													"    body: {\r",
 													"        mode: 'raw',\r",
 													"        raw: JSON.stringify(\r",
@@ -3283,7 +3395,7 @@
 													"pm.sendRequest({\r",
 													"    url: \"http://localhost:3000/api/v1/puzzles/\",\r",
 													"    method: 'POST',\r",
-													"    header: {\"Content-Type\": \"application/json\"},\r",
+													"    header: {\"Authorization\" : \"Bearer \" + pm.environment.get(\"token\"), \"Content-Type\": \"application/json\"},\r",
 													"    body: {\r",
 													"        mode: 'raw',\r",
 													"        raw: JSON.stringify(\r",
@@ -3387,12 +3499,13 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "f4f04d94-d02b-4dcd-becc-377d19fce66e",
+						"id": "7e972da3-362a-4a6f-81a8-1f27b68929ff",
 						"type": "text/javascript",
 						"exec": [
 							"// Script that deletes everything before request",
 							"pm.sendRequest({",
 							"    url: \"http://localhost:3000/api/v1/puzzles/\",",
+							"    header: {\"Authorization\" : \"Bearer \" + pm.environment.get(\"token\")},",
 							"    method: 'DELETE',",
 							"}, function (err, res) {",
 							"    console.log(res);",
@@ -3454,7 +3567,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "0ed35c85-bfc6-4d46-bff7-51855de7dc66",
+						"id": "76423a72-29a9-426f-84a7-c3d66bbb994b",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -3874,11 +3987,21 @@
 			"id": "55c60a80-01a4-43d7-aecd-901655b2b01c"
 		}
 	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "98cc14b0-3530-42a6-808b-f62c63c5f336",
+				"id": "0ee24e84-2640-482e-808a-7a70d60af5b8",
 				"type": "text/javascript",
 				"exec": [
 					"",
@@ -3895,7 +4018,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "8ba67683-e32a-422e-9204-99936f5bc339",
+				"id": "9920f62c-ceb7-49c4-a1ae-be3d7a47d99a",
 				"type": "text/javascript",
 				"exec": [
 					""

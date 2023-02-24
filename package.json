@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test:unit": "jest --testPathPattern=src/tests/unit",
-    "test:integration": "newman run \"postman/collections/Sudokuru-Backend.json\"",
+    "test:integration": "dotenv -- cross-var newman run \"postman/collections/Sudokuru-Backend.json\" --environment \"https://api.getpostman.com/environments/%POSTMAN_ENV_ID%?apikey=%POSTMAN_API_KEY%\"",
     "test:integration500s": "newman run \"postman/collections/Sudokuru-Backend-500s\"",
     "update-docs": "typedoc --entryPoints src --entryPointStrategy expand --out docs --plugin typedoc-theme-hierarchy --theme hierarchy",
     "docker": "docker-compose up -d",
@@ -27,6 +27,7 @@
   "dependencies": {
     "@types/mongoose": "^5.11.97",
     "express": "^4.18.2",
+    "express-oauth2-jwt-bearer": "^1.3.0",
     "express-validator": "^6.14.2",
     "mongoose": "^6.8.1",
     "serverless-http": "^3.1.0"

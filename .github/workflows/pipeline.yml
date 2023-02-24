@@ -26,7 +26,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18.x
 
       - name: Install Postman CLI
         run: |
@@ -35,16 +35,20 @@ jobs:
       - name: Login to Postman CLI
         run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
 
-      - name: Replace localhost Mongo Url
-        uses: microsoft/variable-substitution@v1
+      - name: Add .env file
+        uses: SpicyPizza/create-envfile@v1.3
         with:
-          files: 'Variables.json'
-        env:
-          MONGO_URL: mongodb://mongo:27017/
+          envkey_AUTH0_AUDIENCE: ${{ secrets.AUTH0_AUDIENCE }}
+          envkey_AUTH0_BASE_URL: ${{ secrets.AUTH0_BASE_URL }}
+          envkey_MONGO_URL: mongodb://mongo:27017
+          directory: .
+          file_name: .env
+          fail_on_empty: true
 
       - name: Run Docker image
-        run: npm run app
-
+        run: | 
+          npm run app
+#
       - name: Sleep for 20 seconds
         run: sleep 20s
         shell: bash
@@ -55,7 +59,7 @@ jobs:
 
       - name: Run API tests
         run: |
-          postman collection run "${{ github.workspace }}/postman/collections/Sudokuru-Backend.json"
+          postman collection run "${{ github.workspace }}/postman/collections/Sudokuru-Backend.json" -e "${{ secrets.POSTMAN_ENV_ID }}"
 
       - name: Dump mongo logs
         if: failure()
@@ -103,12 +107,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Replace ${{ matrix.environment }} Mongo Url
-        uses: microsoft/variable-substitution@v1
+      - name: Add .env file
+        uses: SpicyPizza/create-envfile@v1.3
         with:
-          files: 'Variables.json'
-        env:
-          MONGO_URL: ${{secrets.DATABASE_URL}}
+          envkey_AUTH0_AUDIENCE: ${{ secrets.AUTH0_AUDIENCE }}
+          envkey_AUTH0_BASE_URL: ${{ secrets.AUTH0_BASE_URL }}
+          envkey_MONGO_URL: ${{secrets.DATABASE_URL}}
+          directory: .
+          file_name: .env
+          fail_on_empty: true
 
       - run: npm ci
       - run: npm i serverless

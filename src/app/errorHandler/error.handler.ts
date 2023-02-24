@@ -20,6 +20,15 @@ function handleError(
         if (err.name == "MongoBulkWriteError"){
             err = new CustomError(CustomErrorEnum.MONGO_BULK_WRITE_ERROR, 400);
         }
+        else if (err.name == "InsufficientScopeError"){
+            err = new CustomError(CustomErrorEnum.INSUFFICIENT_SCOPE_ERROR, 403);
+        }
+        else if (err.name == "InvalidTokenError"){
+            err = new CustomError(CustomErrorEnum.INVALID_TOKEN, 401);
+        }
+        else if (err.name == "UnauthorizedError"){
+            err = new CustomError(CustomErrorEnum.NO_TOKEN_PROVIDED, 401);
+        }
         else if (err.name == "MongooseServerSelectionError"){
             err = new CustomError(CustomErrorEnum.SERVER_SELECTION_ERROR, 500);
         }
@@ -39,7 +48,7 @@ function handleError(
             customError = new CustomError(CustomErrorEnum.DEFAULT_400_ERROR, 400);
         }
 
-        if (err.Status == 401){
+        if (err.Status == 401 || err.Status == 403){
             customError = new CustomError(CustomErrorEnum.DEFAULT_401_ERROR, 401);
         }
 

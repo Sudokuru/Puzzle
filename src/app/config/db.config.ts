@@ -5,5 +5,5 @@
  * @module DbConfig
  */
 
-let jsonString = require('../../../Variables.json');
-export = { url: jsonString.MONGO_URL };
+require('dotenv').config();
+export = { url: process.env.MONGO_URL };
