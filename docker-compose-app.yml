@@ -4,7 +4,7 @@ services:
   app:
     container_name: express-app
     build: .
-    restart: unless-stopped
+    #restart: unless-stopped
     command: npm run start
     ports:
       - "3000:3000"
@@ -13,6 +13,6 @@ services:
   mongo:
     container_name: mongo
     image: mongo:5.0.2
-    restart: unless-stopped
+    #restart: unless-stopped
     ports:
       - "27017:27017"
