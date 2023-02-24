@@ -52,7 +52,7 @@ jobs:
           docker ps
 #
       - name: Sleep for 20 seconds
-        run: sleep 20s
+        run: sleep 120s
         shell: bash
 
       - name: Docker port
