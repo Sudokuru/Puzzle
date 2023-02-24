@@ -42,22 +42,18 @@ jobs:
         env:
           MONGO_URL: mongodb://mongo:27017
 
+      - name: Run Docker image
+        run: | 
+          npm run app
+          docker ps -a
+#
       - name: Sleep for 20 seconds
         run: sleep 20s
         shell: bash
 
-      - name: Run Docker image
-        run: | 
-          npm run app
-          docker ps
-#
-      - name: Sleep for 20 seconds
-        run: sleep 120s
-        shell: bash
-
       - name: Docker port
         run: | 
-          docker ps
+          docker ps -a
           docker port express-app
 
 #      - name: Run 500 API tests
