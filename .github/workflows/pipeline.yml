@@ -53,6 +53,9 @@ jobs:
         run: sleep 20s
         shell: bash
 
+      - name: Docker port
+        run: Docker port express-app
+
 #      - name: Run 500 API tests
 #        run: |
 #          postman collection run "${{ github.workspace }}/postman/collections/Sudokuru-Backend-500s.json"
