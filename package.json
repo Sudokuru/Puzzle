@@ -9,7 +9,7 @@
     "test:integration500s": "newman run \"postman/collections/Sudokuru-Backend-500s\"",
     "update-docs": "typedoc --entryPoints src --entryPointStrategy expand --out docs --plugin typedoc-theme-hierarchy --theme hierarchy",
     "docker": "docker-compose up -d",
-    "app": "docker-compose -f docker-compose-app.yml up -d",
+    "app": "docker-compose -f docker-compose-app.yml up -d --build",
     "start": "ts-node src/app.ts local",
     "deploy": "tsc && serverless deploy -c serverless.yml"
   },
