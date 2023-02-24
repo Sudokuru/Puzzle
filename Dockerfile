@@ -1,6 +1,6 @@
 FROM node:18
 WORKDIR .
 COPY package*.json ./
-RUN npm ci
+RUN npm i
 COPY . .
 EXPOSE 3000
