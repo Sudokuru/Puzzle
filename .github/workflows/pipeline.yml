@@ -26,7 +26,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18.x
 
       - name: Install Postman CLI
         run: |
@@ -41,6 +41,15 @@ jobs:
           files: 'Variables.json'
         env:
           MONGO_URL: mongodb://mongo:27017
+
+      - name: Add .env file
+        uses: SpicyPizza/create-envfile@v1.3
+        with:
+          envkey_AUTH0_AUDIENCE: ${{ secrets.AUTH0_AUDIENCE }}
+          envkey_AUTH0_BASE_URL: ${{ secrets.AUTH0_BASE_URL }}
+          directory: .
+          file_name: .env
+          fail_on_empty: true
 
       - name: Run Docker image
         run: | 
@@ -116,6 +125,15 @@ jobs:
           files: 'Variables.json'
         env:
           MONGO_URL: ${{secrets.DATABASE_URL}}
+
+      - name: Add .env file
+        uses: SpicyPizza/create-envfile@v1.3
+        with:
+          envkey_AUTH0_AUDIENCE: ${{ secrets.AUTH0_AUDIENCE }}
+          envkey_AUTH0_BASE_URL: ${{ secrets.AUTH0_BASE_URL }}
+          directory: .
+          file_name: .env
+          fail_on_empty: true
 
       - run: npm ci
       - run: npm i serverless
