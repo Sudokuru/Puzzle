@@ -26,7 +26,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18.x
 
       - name: Install Postman CLI
         run: |
@@ -35,12 +35,12 @@ jobs:
       - name: Login to Postman CLI
         run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
 
-      - name: Replace localhost Mongo Url
-        uses: microsoft/variable-substitution@v1
-        with:
-          files: 'Variables.json'
-        env:
-          MONGO_URL: mongodb://mongo:27017/
+#      - name: Replace localhost Mongo Url
+#        uses: microsoft/variable-substitution@v1
+#        with:
+#          files: 'Variables.json'
+#        env:
+#          MONGO_URL: mongodb://mongo:27017/
 
       - name: Run Docker image
         run: npm run app
