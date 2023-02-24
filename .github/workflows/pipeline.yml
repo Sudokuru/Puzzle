@@ -40,7 +40,7 @@ jobs:
         with:
           files: 'Variables.json'
         env:
-          MONGO_URL: mongodb://mongo:27017/
+          MONGO_URL: mongodb://mongo:27017
 
       - name: Sleep for 20 seconds
         run: sleep 20s
@@ -54,7 +54,9 @@ jobs:
         shell: bash
 
       - name: Docker port
-        run: docker port express-app
+        run: | 
+          docker ps
+          docker port express-app
 
 #      - name: Run 500 API tests
 #        run: |
