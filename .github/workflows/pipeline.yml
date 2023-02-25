@@ -98,7 +98,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        environment: [ dev ]
+        environment: [ dev, prod ]
     environment: ${{ matrix.environment }}
     env:
       AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
@@ -107,7 +107,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Add .env file
+      - name: Add ${{ matrix.environment }} .env file
         uses: SpicyPizza/create-envfile@v1.3
         with:
           envkey_AUTH0_AUDIENCE: ${{ secrets.AUTH0_AUDIENCE }}
