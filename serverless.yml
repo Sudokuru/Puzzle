@@ -1,4 +1,4 @@
-service: Backend
+service: Puzzle
 provider:
   name: aws
   runtime: nodejs18.x
