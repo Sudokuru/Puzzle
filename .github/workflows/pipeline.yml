@@ -38,8 +38,8 @@ jobs:
       - name: Add .env file
         uses: SpicyPizza/create-envfile@v1.3
         with:
-          envkey_AUTH0_AUDIENCE: ${{ secrets.AUTH0_AUDIENCE }}
-          envkey_AUTH0_BASE_URL: ${{ secrets.AUTH0_BASE_URL }}
+          envkey_AUTH0_AUDIENCE: ${{ secrets.BACKEND_AUTH0_AUDIENCE }}
+          envkey_AUTH0_BASE_URL: ${{ secrets.BACKEND_AUTH0_BASE_URL }}
           envkey_MONGO_URL: mongodb://mongo:27017
           directory: .
           file_name: .env
