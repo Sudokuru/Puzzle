@@ -20,8 +20,6 @@ export enum CustomErrorEnum {
     INVALID_SYNTAX = "The request has invalid syntax",
     MONGO_BULK_WRITE_ERROR = "There was an error writing to the database",
     PUZZLE_NOT_FOUND = "Puzzle matching search criteria was not found",
-    USER_ACTIVE_GAME_NOT_FOUND = "User Active Game matching search criteria was not found",
-    USER_PROFILE_NOT_FOUND = "User profile matching search criteria was not found",
     DEFAULT_400_ERROR = "Invalid Request",
     DEFAULT_401_ERROR = "Invalid Permission",
     DEFAULT_404_ERROR = "Resource Not Found",

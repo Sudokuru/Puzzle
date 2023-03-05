@@ -32,42 +32,5 @@ routes.get("/puzzles/", checkJwt, validatePuzzleParameters, validationErrorHandl
 routes.patch("/puzzles/", checkJwt, patchCheckScopes, validatePuzzleParameters, validatePuzzleBodyPATCH, validationErrorHandler, puzzleController.update);
 routes.delete("/puzzles/", checkJwt, deleteCheckScopes, validatePuzzleParameters, validationErrorHandler, puzzleController.remove);
 
-const userProfileController = require ('../controllers/userProfile.controller');
-
-routes.post("/user/profiles", userProfileController.create);
-routes.get("/user/profiles", userProfileController.search);
-routes.patch("/user/profiles", userProfileController.update);
-routes.delete("/user/profiles", userProfileController.remove);
-
-// const userGameStatisticsController = require ('../controllers/userGameStatistics.controller');
-//
-// routes.post("/user/gameStatistics", userGameStatisticsController.create);
-// routes.get("/user/gameStatistics", userGameStatisticsController.search);
-// routes.patch("/user/gameStatistics", userGameStatisticsController.update);
-// routes.delete("/user/gameStatistics", userGameStatisticsController.remove);
-//
-// const userGameSearchFiltersController = require ('../controllers/userGameSearchFilters.controller');
-//
-// routes.post("/user/gameSearchFilters", userGameSearchFiltersController.create);
-// routes.get("/user/gameSearchFilters", userGameStatisticsController.search);
-// routes.patch("/user/gameSearchFilters", userGameStatisticsController.update);
-// routes.delete("/user/gameSearchFilters", userGameStatisticsController.remove);
-//
-const userActiveGamesController = require ('../controllers/userActiveGames.controller');
-
-const { validateUserActiveGamesBodyPOST, validateUserActiveGamesParameters, validateUserActivePuzzlesBodyPATCH } = require("../validationAndSanitation/userActiveGames.validationAndSanitation");
-
-routes.post("/user/activeGames", validateUserActiveGamesBodyPOST,  validationErrorHandler, userActiveGamesController.create);
-routes.get("/user/activeGames", validateUserActiveGamesParameters, validationErrorHandler, userActiveGamesController.search);
-routes.patch("/user/activeGames", validateUserActiveGamesParameters, validateUserActivePuzzlesBodyPATCH, validationErrorHandler, userActiveGamesController.update);
-routes.delete("/user/activeGames", validateUserActiveGamesParameters, validationErrorHandler, userActiveGamesController.remove);
-//
-// const userGameHistoryController = require ('../controllers/userGameHistory.controller');
-//
-// routes.post("/user/gameHistory", userGameHistoryController.create);
-// routes.get("/user/gameHistory", userGameHistoryController.search);
-// routes.patch("/user/gameHistory", userGameHistoryController.update);
-// routes.delete("/user/gameHistory", userGameHistoryController.remove);
-
 export = routes;
 
