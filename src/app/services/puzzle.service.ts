@@ -31,8 +31,7 @@ async function puzzleCreateService(puzzles) {
 async function puzzleSearchService(puzzles) {
 
     let count:number = 0;
-    if ('strategies' in puzzles){
-        console.log(puzzles.count);
+    if ('count' in puzzles){
         count = puzzles.count;
     }
 
