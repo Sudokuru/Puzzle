@@ -55,6 +55,7 @@ exports.validatePuzzleBodyPOST = [
  */
 exports.validatePuzzleParameters = [
     query('id').optional(),
+    query('count', 'count is not an integer').optional().isInt(),
     query('puzzle', 'puzzle did not match whitelist').optional().whitelist("0123456789"),
     query('puzzle', 'puzzle is not of correct length').optional().isLength({ min: 81, max: 81 }),
     query('puzzleSolution', 'puzzle solution did not match whitelist').optional().whitelist("123456789"),
