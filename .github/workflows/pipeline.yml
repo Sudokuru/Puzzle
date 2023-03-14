@@ -11,9 +11,11 @@ on:
 concurrency: main_workflow
 
 permissions:
-  contents: read
+  contents: write
   pages: write
+  checks: write
   id-token: write
+  packages: write
 
 jobs:
   test:
