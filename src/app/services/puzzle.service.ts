@@ -29,7 +29,13 @@ async function puzzleCreateService(puzzles) {
  * @param puzzles this is a JSON object that stores the input query
  */
 async function puzzleSearchService(puzzles) {
-    let res = await dataBase.querySearchAND(filterInputQuery(puzzles), PuzzleModel);
+
+    let count:number = 0;
+    if ('count' in puzzles){
+        count = puzzles.count;
+    }
+
+    let res = await dataBase.querySearchAND(filterInputQuery(puzzles), PuzzleModel, count);
 
     if (res.length == 0){
         throw new CustomError(CustomErrorEnum.PUZZLE_NOT_FOUND, 404);

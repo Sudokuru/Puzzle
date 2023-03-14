@@ -48,10 +48,11 @@ async function queryUpload(inputObject, collection) {
  * @param filterValues this provides the parameters with which we can search for puzzles to retrieve
  * @param collection this is the puzzle schema which dictates the collection as well as the
  * Mongoose schema that will be used to upload our object
+ * @param count determines how many puzzles to return, (0 is no limit)
  */
-async function querySearchAND(filterValues, collection) {
+async function querySearchAND(filterValues, collection, count) {
     await module.exports.connectToDB();
-    return await collection.find({ $and : filterValues });
+    return await collection.find({ $and : filterValues }).limit(count);
 }
 
 /**
