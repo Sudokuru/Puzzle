@@ -65,6 +65,37 @@ jobs:
         if: failure()
         uses: jwalton/gh-docker-logs@v2
 
+  deploy_docker_image:
+    name: Deploy Docker Image
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs: [ test ]
+    runs-on: ubuntu-latest
+    env:
+      REGISTRY: ghcr.io
+      IMAGE_NAME: ${{ github.repository }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Add .env file
+        uses: SpicyPizza/create-envfile@v1.3
+        with:
+          envkey_AUTH0_AUDIENCE: ${{ secrets.BACKEND_AUTH0_AUDIENCE }}
+          envkey_AUTH0_BASE_URL: ${{ secrets.BACKEND_AUTH0_BASE_URL }}
+          envkey_MONGO_URL: mongodb://mongo:27017
+          directory: .
+          file_name: .env
+          fail_on_empty: true
+
+      - name: Publish to Registry
+        uses: elgohr/Publish-Docker-Github-Action@v5
+        with:
+          name: ${{ github.repository }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ghcr.io
+          tags: "latest,${{ github.run_number }}"
+
   deploy_documentation:
     name: Deploy Documentation
     if: ${{ github.ref == 'refs/heads/main' }}
@@ -94,7 +125,7 @@ jobs:
   deploy:
     name: Deploy to AWS Lambda
     if: ${{ github.ref == 'refs/heads/main' }}
-    needs: [ deploy_documentation ]
+    needs: [ deploy_documentation, deploy_docker_image ]
     runs-on: ubuntu-latest
     strategy:
       matrix:
