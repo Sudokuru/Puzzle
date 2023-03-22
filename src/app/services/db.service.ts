@@ -50,9 +50,9 @@ async function queryUpload(inputObject, collection) {
  * Mongoose schema that will be used to upload our object
  * @param count determines how many puzzles to return, (0 is no limit)
  */
-async function querySearchAND(filterValues, collection, count) {
+async function querySearchAND(filterValues, collection, count, sort) {
     await module.exports.connectToDB();
-    return await collection.find({ $and : filterValues }).limit(count);
+    return await collection.find({ $and : filterValues }).limit(count).sort(sort);
 }
 
 /**
