@@ -86,6 +86,25 @@ function filterInputQuery(puzzles){
             filterValues.push({ 'drillStrategies': { $in : puzzles['drillStrategies'] } });
             delete puzzles.drillStrategies;
         }
+
+        // we want to find all puzzles that have the lowest difference between difficulty and closestDifficulty
+        // we then sort the results so that the results with the lowest difference are at the top
+        if ('closestDifficulty' in puzzles){
+            filterValues.push({ diff: {$abs: {$subtract: [puzzles['closestDifficulty'], '$difficulty']}}}, {$sort: {diff: 1}})
+        }
+
+        // we want to limit the results to difficulties greater than or equal to the minDifficulty
+        if ('minDifficulty' in puzzles) {
+            filterValues.push({ 'minDifficulty': { $gte : puzzles['minDifficulty'] } });
+            delete puzzles.minDifficulty;
+        }
+
+        // we want ot limit the results to difficulties less than or equal to the maxDifficulty
+        if ('maxDifficulty' in puzzles) {
+            filterValues.push({ 'maxDifficulty': { $lte : puzzles['maxDifficulty'] } });
+            delete puzzles.maxDifficulty
+        }
+
         // since we have removed drillStrategies and strategies, if the object is not empty we push remaining
         // parameters to the query
         if (Object.keys(puzzles).length !== 0){

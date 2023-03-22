@@ -30,7 +30,7 @@ exports.validatePuzzleBodyPOST = [
             "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
             "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
 
-    body('*.difficulty', "difficulty is not an integer or is not in correct range").isInt({ min: 1, max: 1000}),
+    body('*.difficulty', "difficulty is not an integer or is not in correct range").isInt({ min: 0, max: 1000}),
     body('*.fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
     body('*.averageSolveTime', 'average solve time is not an integer').optional().isInt(),
     body('*.numUsersPlayed', 'num users played is not an integer').optional().isInt(),
@@ -56,6 +56,9 @@ exports.validatePuzzleBodyPOST = [
 exports.validatePuzzleParameters = [
     query('id').optional(),
     query('count', 'count is not an integer').optional().isInt(),
+    query('maxDifficulty', 'maxDifficulty is not an integeror is not in correct range').optional().isInt({ min: 0, max: 1000 }),
+    query('minDifficulty', 'minDifficulty is not an integeror is not in correct range').optional().isInt({ min: 0, max: 1000 }),
+    query('closestDifficulty', 'closestDifficulty is not an integeror is not in correct range').optional().isInt({ min: 0, max: 1000 }),
     query('puzzle', 'puzzle did not match whitelist').optional().whitelist("0123456789"),
     query('puzzle', 'puzzle is not of correct length').optional().isLength({ min: 81, max: 81 }),
     query('puzzleSolution', 'puzzle solution did not match whitelist').optional().whitelist("123456789"),
@@ -67,7 +70,7 @@ exports.validatePuzzleParameters = [
             "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
             "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
 
-    query('difficulty', "difficulty is not an integer or is not in correct range").optional().isInt({ min: 1, max: 1000 }),
+    query('difficulty', "difficulty is not an integer or is not in correct range").optional().isInt({ min: 0, max: 1000 }),
     query('fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
     query('averageSolveTime', 'average solve time is not an integer').optional().isInt(),
     query('numUsersPlayed', 'num users played is not an integer').optional().isInt(),
@@ -99,7 +102,7 @@ exports.validatePuzzleBodyPATCH = [
             "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
             "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
 
-    body('difficulty', "difficulty is not an integer or is not in correct range").optional().isInt({ min: 1, max: 1000 }),
+    body('difficulty', "difficulty is not an integer or is not in correct range").optional().isInt({ min: 0, max: 1000 }),
     body('fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
     body('averageSolveTime', 'average solve time is not an integer').optional().isInt(),
     body('numUsersPlayed', 'num users played is not an integer').optional().isInt(),
