@@ -44,7 +44,6 @@ async function createPuzzle(req, res, next) {
 async function searchPuzzle(req, res, next) {
 
     const allData = matchedData(req, { locations: ['query'] });
-    console.log(allData);
     try {
         res.json(await puzzleService.searchPuzzle(allData));
     } catch(err) {
