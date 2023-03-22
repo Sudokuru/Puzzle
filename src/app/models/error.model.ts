@@ -13,6 +13,7 @@
 export enum CustomErrorEnum {
     SERVER_SELECTION_ERROR = "The service is not able to connect to the database",
     DATABASE_REQUEST_REJECTED = "The database rejected/failed your request",
+    CLOSEST_DIFFICULTY_IS_NOT_IN_RANGE = "The closestDifficulty value provided is not in the range of minDifficulty or maxDifficulty",
     INSUFFICIENT_SCOPE_ERROR = "The user does not have the required scopes",
     NO_TOKEN_PROVIDED = "No Token Provided",
     INVALID_TOKEN = "Invalid Token",
