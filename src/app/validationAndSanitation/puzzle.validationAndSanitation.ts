@@ -70,6 +70,12 @@ exports.validatePuzzleParameters = [
             "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
             "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
 
+    query('excludeStrategies', 'Exclude strategy array is not valid').optional().isArray().isIn(
+        ["NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",
+            "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
+            "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
+            "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
+
     query('difficulty', "difficulty is not an integer or is not in correct range").optional().isInt({ min: 0, max: 1000 }),
     query('fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
     query('averageSolveTime', 'average solve time is not an integer').optional().isInt(),

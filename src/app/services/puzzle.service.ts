@@ -126,6 +126,12 @@ function filterInputQuery(puzzles){
             filterValues.push({ 'strategies': { $in : puzzles['strategies'] } });
             delete puzzles.strategies;
         }
+        // we want to find all puzzles that do not contain the strategies in the strategyArray
+        if ('excludeStrategies' in puzzles){
+            filterValues.push({ 'strategies': { $nin : puzzles['excludeStrategies'] } });
+            delete puzzles.excludeStrategies;
+        }
+
         // we want to find all puzzles that contain the drillStrategies in the drillStrategyArray
         if ('drillStrategies' in puzzles){
             filterValues.push({ 'drillStrategies': { $in : puzzles['drillStrategies'] } });
