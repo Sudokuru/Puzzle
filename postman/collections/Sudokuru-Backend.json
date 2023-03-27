@@ -133,62 +133,6 @@
 			"name": "Global Invalid Paths Return 400",
 			"item": [
 				{
-					"name": "POST_INVALID_PATH_2",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "374858ef-2211-4162-b6a3-8903b12ef1ac",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategyTypes\": { \r\n        \"NAKED_SINGLE\": true,\r\n        \"HIDDEN_SINGLE\": true,\r\n        \"NAKED_PAIR\": true,\r\n        \"NAKED_TRIPLET\": true,\r\n        \"NAKED_QUADRUPLET\": true,\r\n        \"NAKED_QUINTUPLET\": true,\r\n        \"NAKED_SEXTUPLET\": true,\r\n        \"NAKED_SEPTUPLET\": true,\r\n        \"NAKED_OCTUPLET\": true,\r\n        \"HIDDEN_PAIR\": true,\r\n        \"HIDDEN_TRIPLET\": true,\r\n        \"HIDDEN_QUADRUPLET\": true,\r\n        \"HIDDEN_QUINTUPLET\": true,\r\n        \"HIDDEN_SEXTUPLET\": true,\r\n        \"HIDDEN_SEPTUPLET\": true,\r\n        \"HIDDEN_OCTUPLET\": true,\r\n        \"POINTING_PAIRS\": true,\r\n        \"POINTING_TRIPLETS\": true,\r\n        \"BOX_LINE_REDUCTION\": true,\r\n        \"X_WING\": true,\r\n        \"SWORDFISH\": true,\r\n        \"SINGLES_CHAINING\": true\r\n    },\r\n    \"difficulty\": 0,\r\n    \"fastestSolveTime\": 0, \r\n    \"averageSolveTime\": 0, \r\n    \"numUsersPlayed\": 10, \r\n    \"numTimesPlayed\": 20, \r\n    \"truleyUnique\": false \r\n}]\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/v1/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"v1",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "POST_INVALID_PATH_4",
 					"event": [
 						{
@@ -403,62 +347,6 @@
 					"response": []
 				},
 				{
-					"name": "GET_INVALID_PATH_2",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "700b41d8-f83e-4202-a62f-bdc6c9981e1b",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/v1/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"v1",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "GET_INVALID_PATH_4",
 					"event": [
 						{
@@ -668,62 +556,6 @@
 								"localhost"
 							],
 							"port": "3000"
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "DELETE_INVALID_PATH_2",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "936302f0-c523-4fa4-9a3d-cd07743e8ab8",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/v1/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"v1",
-								""
-							]
 						}
 					},
 					"response": []
