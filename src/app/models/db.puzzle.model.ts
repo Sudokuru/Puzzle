@@ -28,7 +28,7 @@ const PuzzleModelSchema = new Schema<Puzzle>({
     numUsersPlayed: { type: Number, required: true, default: 0 },
     numTimesPlayed: { type: Number, required: true, default: 0 },
     trulyUnique: { type: Boolean, required: true, default: false },
-    drillStrategies: [{ type: String, required: true }],
+    drillStrategies: [{ type: String, required: false }],
     calendarDate: { type: Date, required: false },
     imageUrl: { type: String, required: false },
     description: { type: String, required: false }
