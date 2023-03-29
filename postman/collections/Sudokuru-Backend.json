@@ -1685,69 +1685,6 @@
 									"id": "34a35a27-d622-4bd7-9b7f-e66979dd21da"
 								},
 								{
-									"name": "Invalid Drill Strategies Field",
-									"item": [
-										{
-											"name": "POST_NO_DRILL_STRATEGIES_FIELD",
-											"event": [
-												{
-													"listen": "test",
-													"script": {
-														"id": "43b408ba-a3e9-4f9c-8809-740bdf7557f7",
-														"exec": [
-															""
-														],
-														"type": "text/javascript"
-													}
-												},
-												{
-													"listen": "prerequest",
-													"script": {
-														"id": "67d549ef-42bd-47dd-9185-4c35494492d4",
-														"exec": [
-															""
-														],
-														"type": "text/javascript"
-													}
-												}
-											],
-											"id": "37671d65-8a50-440c-815e-e0f9dc5e7597",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [],
-												"body": {
-													"mode": "raw",
-													"raw": "[{\r\n    \"puzzle\": \"310084002200150006570003010423708095760030000009562030050006070007000900000001500\", \r\n    \"puzzleSolution\": \"316984752298157346574623819423718695765439128189562437851396274637245981942871563\", \r\n    \"strategies\": [\"NAKED_SINGLE\", \"HIDDEN_SINGLE\", \"NAKED_PAIR\"],\r\n    \"difficulty\": 5\r\n}]\r\n",
-													"options": {
-														"raw": {
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "http://localhost:3000/api/v1/puzzles/",
-													"protocol": "http",
-													"host": [
-														"localhost"
-													],
-													"port": "3000",
-													"path": [
-														"api",
-														"v1",
-														"puzzles",
-														""
-													]
-												}
-											},
-											"response": []
-										}
-									],
-									"id": "8aabaacb-17be-4a78-b524-2fd4896d8a77"
-								},
-								{
 									"name": "POST_DUPLICATE_PUZZLE",
 									"event": [
 										{
