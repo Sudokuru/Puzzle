@@ -56,9 +56,9 @@ exports.validatePuzzleBodyPOST = [
 exports.validatePuzzleParameters = [
     query('id').optional(),
     query('count', 'count is not an integer').optional().isInt(),
-    query('maxDifficulty', 'maxDifficulty is not an integeror is not in correct range').optional().isInt({ min: 0, max: 1000 }),
-    query('minDifficulty', 'minDifficulty is not an integeror is not in correct range').optional().isInt({ min: 0, max: 1000 }),
-    query('closestDifficulty', 'closestDifficulty is not an integeror is not in correct range').optional().isInt({ min: 0, max: 1000 }),
+    query('maxDifficulty', 'maxDifficulty is not an integer or is not in correct range').optional().isInt({ min: 0, max: 1000 }),
+    query('minDifficulty', 'minDifficulty is not an integer or is not in correct range').optional().isInt({ min: 0, max: 1000 }),
+    query('random', "random is not a boolean").optional().isBoolean(),
     query('puzzle', 'puzzle did not match whitelist').optional().whitelist("0123456789"),
     query('puzzle', 'puzzle is not of correct length').optional().isLength({ min: 81, max: 81 }),
     query('puzzleSolution', 'puzzle solution did not match whitelist').optional().whitelist("123456789"),

@@ -31,11 +31,22 @@ async function puzzleCreateService(puzzles) {
 async function puzzleSearchService(puzzles) {
 
     let count:number = 0;
+    let random:boolean = false;
+
     if ('count' in puzzles){
         count = puzzles.count;
+        delete puzzles.count;
     }
 
-    let res = await dataBase.querySearchAND(filterInputQuery(puzzles), PuzzleModel, count);
+    if ('random' in puzzles){
+        random = puzzles.random;
+        delete puzzles.random;
+    }
+
+
+
+
+    let res = await dataBase.querySearchAND(filterInputQuery(puzzles), PuzzleModel, count, random);
 
     if (res.length == 0){
         throw new CustomError(CustomErrorEnum.PUZZLE_NOT_FOUND, 404);
