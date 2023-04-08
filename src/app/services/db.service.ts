@@ -54,7 +54,7 @@ async function querySearchAND(filterValues, collection, count) {
     await module.exports.connectToDB();
 
     // retrieves a random value to skip by
-    let skip = collection.count({ $and : filterValues });
+    let skip = await collection.count({ $and : filterValues });
     let random = Math.floor(Math.random() * skip);
 
     return await collection.find({ $and : filterValues }).limit(count).skip(random);
