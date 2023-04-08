@@ -30,57 +30,12 @@ async function puzzleCreateService(puzzles) {
  */
 async function puzzleSearchService(puzzles) {
 
-    const puzzleCopy = copy(puzzles);
-
-    let res = null;
-
     let count:number = 0;
     if ('count' in puzzles){
         count = puzzles.count;
     }
 
-    // we want to find all puzzles that have the lowest difference between difficulty and closestDifficulty
-    // we then sort the results so that the results with the lowest difference are at the top
-    if ('closestDifficulty' in puzzles){
-
-        // verify that closestDifficulty is in a valid range
-        if ('minDifficulty' in puzzles && puzzles['minDifficulty'] > puzzles['closestDifficulty']){
-            throw new CustomError(CustomErrorEnum.CLOSEST_DIFFICULTY_IS_NOT_IN_RANGE, 400);
-        }
-        if ('maxDifficulty' in puzzles && puzzles['maxDifficulty'] < puzzles['closestDifficulty']){
-            throw new CustomError(CustomErrorEnum.CLOSEST_DIFFICULTY_IS_NOT_IN_RANGE, 400);
-        }
-
-        const closestDifficulty:number = puzzles['closestDifficulty'];
-
-        let filterInputQuery1 = filterInputQuery(puzzles);
-        filterInputQuery1.push({"difficulty": {$lte: closestDifficulty}});
-        let closestEasierDifficulty = await dataBase.querySearchAND(filterInputQuery1, PuzzleModel, count, {"difficulty": -1});
-
-        let filterInputQuery2 = filterInputQuery(puzzleCopy);
-        filterInputQuery2.push({"difficulty": {$gte: closestDifficulty}});
-        let closestHarderDifficulty = await dataBase.querySearchAND(filterInputQuery2, PuzzleModel, count, {"difficulty": 1});
-
-        // If we only receive one value, we return that value.
-        // If we receive no values, we return PUZZLE_NOT_FOUND error.
-        if (closestHarderDifficulty.length == 0 && closestEasierDifficulty.length == 0){
-            throw new CustomError(CustomErrorEnum.PUZZLE_NOT_FOUND, 404);
-        } else if (closestHarderDifficulty.length == 0){
-            return closestEasierDifficulty;
-        } else if (closestEasierDifficulty.length == 0){
-            return closestHarderDifficulty;
-        }
-
-        // We return the object that has difficulty closest to the closestValue
-        if ((Math.abs(closestDifficulty - closestEasierDifficulty[0].difficulty) <= (Math.abs(closestDifficulty - closestHarderDifficulty[0].difficulty)))){
-            return closestEasierDifficulty;
-        } else {
-            return closestHarderDifficulty;
-        }
-    }
-    else {
-        res = await dataBase.querySearchAND(filterInputQuery(puzzles), PuzzleModel, count, {});
-    }
+    let res = await dataBase.querySearchAND(filterInputQuery(puzzles), PuzzleModel, count);
 
     if (res.length == 0){
         throw new CustomError(CustomErrorEnum.PUZZLE_NOT_FOUND, 404);

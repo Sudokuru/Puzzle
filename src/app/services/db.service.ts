@@ -50,9 +50,14 @@ async function queryUpload(inputObject, collection) {
  * Mongoose schema that will be used to upload our object
  * @param count determines how many puzzles to return, (0 is no limit)
  */
-async function querySearchAND(filterValues, collection, count, sort) {
+async function querySearchAND(filterValues, collection, count) {
     await module.exports.connectToDB();
-    return await collection.find({ $and : filterValues }).limit(count).sort(sort);
+
+    // retrieves a random value to skip by
+    let skip = collection.count({ $and : filterValues });
+    let random = Math.floor(Math.random() * skip);
+
+    return await collection.find({ $and : filterValues }).limit(count).skip(random);
 }
 
 /**
