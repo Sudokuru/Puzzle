@@ -23,16 +23,18 @@
 
 1. Install Docker on your machine. Tutorial is linked below:<br>
    [![Docker Tutorial](https://img.youtube.com/vi/2ezNqqaSjq8/0.jpg)](https://www.youtube.com/watch?v=2ezNqqaSjq8)<br>
-2. Once docker is installed, the Mongo image can be run with this command:<br>
-running the command<br>
+2. The Mongo image can be run with this command in the root folder:<br>
+   Note use ```sudo``` on Linux/Mac<br>
 ```console
 npm run docker
 ```
-3. The app can then be run with the command:<br>
+3. Create .env file with environment variables
+4. Run npm i
+5. The app can then be run with the command:<br>
 ```console
 npm run start
 ```
-4. Integration tests can be run when the app is running with this command:<br>
+6. Integration tests can be run when the app is running with this command:<br>
 ```console
 npm run test:integration
 ```
