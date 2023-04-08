@@ -23,16 +23,23 @@
 
 1. Install Docker on your machine. Tutorial is linked below:<br>
    [![Docker Tutorial](https://img.youtube.com/vi/2ezNqqaSjq8/0.jpg)](https://www.youtube.com/watch?v=2ezNqqaSjq8)<br>
-2. Once docker is installed, the Mongo image can be run with this command:<br>
-running the command<br>
+2. Login to docker with the command ```docker login --username <GitHub_Username>```<br>
+   You will be asked for your password, which is your GitHub Token. Make sure your GitHub Token has permissions to access GitHub's Container Registry!<br>
+   The needed scope is ```read:packages```<br>
+   This command should be run in the terminal in the root folder of this project.<br>
+3. Follow this tutorial here for ensuring docker images are up to date: [Docker image tutorial](https://phoenixnap.com/kb/update-docker-image-container)<br>
+4. The Mongo image can be run with this command in the root folder:<br>
+   Note use ```sudo``` on Linux/Mac<br>
 ```console
 npm run docker
 ```
-3. The app can then be run with the command:<br>
+5. Create .env file with environment variables
+6. Run npm i
+7. The app can then be run with the command:<br>
 ```console
 npm run start
 ```
-4. Integration tests can be run when the app is running with this command:<br>
+8. Integration tests can be run when the app is running with this command:<br>
 ```console
 npm run test:integration
 ```
