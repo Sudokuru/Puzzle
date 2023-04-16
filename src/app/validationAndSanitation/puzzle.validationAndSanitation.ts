@@ -24,11 +24,7 @@ exports.validatePuzzleBodyPOST = [
     body('*.puzzleSolution', 'puzzle solution did not match whitelist').whitelist("123456789"),
     body('*.puzzleSolution', 'puzzle solution is not of correct length').isLength( { min: 81, max: 81 }),
 
-    body('*.strategies', 'Strategy array is not valid').isArray().isIn(
-        ["NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",
-            "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
-            "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
-            "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
+    body('*.strategies', 'Strategy array is not valid').isArray(),
 
     body('*.difficulty', "difficulty is not an integer or is not in correct range").isInt({ min: 0, max: 1000}),
     body('*.fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
@@ -64,17 +60,9 @@ exports.validatePuzzleParameters = [
     query('puzzleSolution', 'puzzle solution did not match whitelist').optional().whitelist("123456789"),
     query('puzzleSolution', 'puzzle solution is not of correct length').optional().isLength( { min: 81, max: 81 }),
 
-    query('strategies', 'Strategy array is not valid').optional().isArray().isIn(
-        ["NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",
-            "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
-            "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
-            "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
+    query('strategies', 'Strategy array is not valid').optional().isArray(),
 
-    query('excludeStrategies', 'Exclude strategy array is not valid').optional().isArray().isIn(
-        ["NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",
-            "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
-            "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
-            "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
+    query('excludeStrategies', 'Exclude strategy array is not valid').optional().isArray(),
 
     query('difficulty', "difficulty is not an integer or is not in correct range").optional().isInt({ min: 0, max: 1000 }),
     query('fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
@@ -102,11 +90,7 @@ exports.validatePuzzleParameters = [
  * We also leave out the puzzle and puzzleSolution fields because we do not want to replace those during a PATCH operation
  */
 exports.validatePuzzleBodyPATCH = [
-    body('strategies', 'Strategy array is not valid').optional().isArray().isIn(
-        ["NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",
-            "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
-            "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
-            "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
+    body('strategies', 'Strategy array is not valid').optional().isArray(),
 
     body('difficulty', "difficulty is not an integer or is not in correct range").optional().isInt({ min: 0, max: 1000 }),
     body('fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
@@ -115,11 +99,7 @@ exports.validatePuzzleBodyPATCH = [
     body('numTimesPlayed', 'num times played is not an integer').optional().isInt(),
     body('trulyUnique', 'truly unique is not a boolean').optional().isBoolean(),
 
-    body('drillStrategies', 'drillStrategy array is not valid').optional().isArray().isIn(
-        ["NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",
-            "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
-            "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
-            "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
+    body('drillStrategies', 'drillStrategy array is not valid').optional().isArray(),
 
     body('calendarDate', 'calendar date is not a date').optional().isDate({ strictMode: true, format: "YYYY-MM-DD" }),
     body('imageUrl', 'imageUrl is not a string').optional().isString(),
