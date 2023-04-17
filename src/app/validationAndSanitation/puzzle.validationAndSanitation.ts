@@ -33,11 +33,7 @@ exports.validatePuzzleBodyPOST = [
     body('*.numTimesPlayed', 'num times played is not an integer').optional().isInt(),
     body('*.trulyUnique', 'truly unique is not a boolean').optional().isBoolean(),
 
-    body('*.drillStrategies', 'drillStrategy array is not valid').optional().isArray().isIn(
-            ["NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",
-            "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
-            "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
-            "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING", ""]),
+    body('*.drillStrategies', 'drillStrategy array is not valid').optional().isArray(),
 
     body('*.calendarDate', 'calendar date is not a date').optional().isDate({ strictMode: true, format: "YYYY-MM-DD" }),
     body('*.imageUrl', 'imageUrl is not a string').optional().isString(),
@@ -71,11 +67,7 @@ exports.validatePuzzleParameters = [
     query('numTimesPlayed', 'num times played is not an integer').optional().isInt(),
     query('trulyUnique', 'truly unique is not a boolean').optional().isBoolean(),
 
-    query('drillStrategies', 'drillStrategy array is not valid').optional().isArray().isIn(
-        ["NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",
-            "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
-            "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
-            "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
+    query('drillStrategies', 'drillStrategy array is not valid').optional().isArray(),
 
     query('calendarDate', 'calendar date is not a date').optional().isDate({ strictMode: true }),
     query('imageUrl', 'imageUrl is not a string').optional().isString(),
