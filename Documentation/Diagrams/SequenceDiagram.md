@@ -74,20 +74,24 @@ sequenceDiagram
 ```mermaid
 sequenceDiagram
     participant Frontend
-    participant NPM Package
+    participant Package
+    participant UserActiveGamesBFF
     participant UserActiveGames
 
-    #Save Game
-    Frontend->>NPM Package: Puzzle.resumeGame(URL, Token, Puzzle)
+    #Resume Game
+    Frontend->>Package: Puzzle.resumeGame(URL, Token, Puzzle)
 
     critical Get User Active Game
-        NPM Package->>UserActiveGames: GET UserActiveGames
+        Package->>UserActiveGamesBFF: GET UserActiveGames
+        UserActiveGamesBFF->>UserActiveGames: GET UserActiveGames
     option Active Game Not Found
-        UserActiveGames-->>NPM Package: 404 Not Found
-        NPM Package-->>Frontend: User has no active games
+        UserActiveGames-->>UserActiveGamesBFF: 404 Not Found
+        UserActiveGamesBFF-->>Package: 404 Not Found
+        Package-->>Frontend: User has no active games
     option Active Game Found
-        UserActiveGames-->>NPM Package: 200 Found
-        NPM Package->>Frontend: Return Active Game
+        UserActiveGames-->>UserActiveGamesBFF: 200 Not Found
+        UserActiveGamesBFF-->>Package: 200 Found
+        Package->>Frontend: Return Active Game
     end
 ```
 
